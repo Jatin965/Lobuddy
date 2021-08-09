@@ -1,0 +1,30 @@
+footer {
+  padding: 80px 60px;
+  background: #faf9f9;
+
+  .MuiGrid-container {
+    justify-content: center;
+    max-width: 80vw;
+
+    .MuiGrid-item {
+      text-align: center;
+
+      & div:first-child {
+        font-size: 1.4rem;
+        padding: 15px 0;
+      }
+
+      div {
+        padding: 3px 0;
+        a {
+          text-decoration: none;
+          color: $text-black;
+
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+    }
+  }
+}
