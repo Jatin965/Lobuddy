@@ -1,121 +1,57 @@
 import React, { useState, useCallback } from "react";
 
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Hidden,
-  IconButton,
-  Grid,
-  makeStyles,
-} from "@material-ui/core";
-import { NavLink as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import MenuIcon from "@material-ui/icons/Menu";
-
-import NavigationDrawer from "./NavigationDrawer";
-
-// import Logo from "../../resources/Logo/M.png";
+import CategoryIcon from "@material-ui/icons/Category";
+import LocalMallIcon from "@material-ui/icons/LocalMall";
+import PersonIcon from "@material-ui/icons/Person";
 
 const Header = () => {
-  const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
-
-  const handleMobileDrawerOpen = useCallback(() => {
-    setIsMobileDrawerOpen(true);
-  }, [setIsMobileDrawerOpen]);
-
-  const handleMobileDrawerClose = useCallback(() => {
-    setIsMobileDrawerOpen(false);
-  }, [setIsMobileDrawerOpen]);
-
-  const useStyles = makeStyles({
-    root: {
-      zIndex: 0,
-      boxShadow: "none",
-    },
-    contain: {
-      width: "80vw",
-      margin: "auto",
-    },
-    ul: {
-      listStyle: "none",
-      display: "flex !important",
-      justifyContent: "space-around",
-      textAlign: "right",
-    },
-    li: {
-      textDecoration: "none",
-      color: "#171717",
-      paddingRight: 10,
-    },
-    img: {
-      height: 40,
-      width: 250,
-      aspectRatio: "auto",
-      alignItems: "left",
-    },
-    toolbar: {
-      width: "90vw",
-    },
-    appBar: {
-      // boxShadow: "0px 0.5px 0px 0px",
-      color: "#171717",
-    },
-  });
-
-  const menuItems = [];
-
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <AppBar position="sticky" color="secondary" className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Grid item sm={8} xs={11}>
-            <Link to="/">
-              <img className={classes.img} src={""} alt="Lobuddy" />
-            </Link>
-          </Grid>
-          <Grid item md={4} sm={1}>
-            <Hidden mdUp>
-              <IconButton
-                color="primary"
-                onClick={handleMobileDrawerOpen}
-                aria-label="Open Navigation"
-              >
-                <MenuIcon color="primary" />
-              </IconButton>
-            </Hidden>
-            <Hidden smDown>
-              <div className={classes.ul}></div>
-            </Hidden>
-          </Grid>
-        </Toolbar>
+    <header>
+      <div className={"container-fluid"}>
+        <div className="row">
+          <div className="col-xl-2 col-lg-2 col-md-6 col-4">
+            {/* header logo */}
+            <div className={`logo`}>
+              <Link to={process.env.PUBLIC_URL + "/"}>
+                <img
+                  alt=""
+                  src={process.env.PUBLIC_URL + "../../assets/images/l2.png"}
+                />
+              </Link>
+            </div>
+          </div>
+          <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+            <button className="btn bg-transparent">
+              <CategoryIcon /> Categories
+            </button>
+          </div>
+          <div className="col-xl-6 col-lg-6 col-sm-12 search__box">
+            <input
+              type="text"
+              placeholder="Search for product, brands and more..."
+            />
+          </div>
+          <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+            {/* Icon group */}
+            {/* <IconGroup /> */}
+            <LocalMallIcon /> <PersonIcon />
+          </div>
+        </div>
 
-        <Toolbar>
-          <Grid item xs={7} sm={2}>
-            <Typography variant="body1">
-              <Link className={classes.li} to="/contact">
-                HOW LOBUDDY WORKS?
-              </Link>
-            </Typography>
-          </Grid>
-          <Grid item xs={5} sm={2}>
-            <Typography variant="body1">
-              <Link className={classes.li} to="/contact">
-                OUR BEST DEALS
-              </Link>
-            </Typography>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-      <NavigationDrawer
-        menuItems={menuItems}
-        anchor="right"
-        open={isMobileDrawerOpen}
-        onClose={handleMobileDrawerClose}
-      />
-    </div>
+        <div className="row pt-4">
+          <div className="col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-7">
+            HOW LOBUDDY WORKS?
+          </div>
+          <div className="col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-5">
+            OUR BEST DEALS
+          </div>
+        </div>
+      </div>
+      {/* mobile menu */}
+      {/* <MobileMenu /> */}
+    </header>
   );
 };
 

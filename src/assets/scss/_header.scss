@@ -1,0 +1,38 @@
+header {
+  box-shadow: $shadow;
+  .container-fluid {
+    padding: 20px 80px;
+    @media #{$xl-layout} {
+      padding: 5px 15px;
+    }
+    @media #{$lg-layout} {
+      padding: 8px 30px;
+    }
+    @media #{$md-layout} {
+      padding: 10px 40px;
+    }
+    @media #{$xs-layout} {
+      padding: 3px 15px;
+    }
+
+    .row {
+      div {
+        button {
+          border-radius: 32px;
+          box-shadow: $shadow;
+        }
+      }
+    }
+  }
+  .search__box {
+    input {
+      width: 90%;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      box-shadow: $shadow;
+      height: 35px;
+      padding-left: 18px;
+    }
+  }
+}
