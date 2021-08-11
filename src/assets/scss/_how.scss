@@ -1,0 +1,35 @@
+.how {
+  width: 90vw;
+  margin: 0 auto;
+
+  .how-header {
+    display: flex;
+    margin-top: 15px;
+    // align-items: center;
+
+    .how-icon {
+      color: $theme-color;
+      font-size: 60px;
+      padding: 5px;
+    }
+  }
+
+  .how-1 {
+    img {
+      max-width: 800px;
+      height: auto;
+    }
+  }
+  .how-2 {
+    img {
+      max-width: 800px;
+      height: auto;
+    }
+  }
+  .how-3 {
+    img {
+      max-width: 800px;
+      height: auto;
+    }
+  }
+}

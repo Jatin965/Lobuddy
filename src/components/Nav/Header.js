@@ -1,10 +1,12 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import CategoryIcon from "@material-ui/icons/Category";
-import LocalMallIcon from "@material-ui/icons/LocalMall";
-import PersonIcon from "@material-ui/icons/Person";
+import {
+  AppstoreOutlined,
+  ShoppingOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 const Header = () => {
   return (
@@ -15,16 +17,13 @@ const Header = () => {
             {/* header logo */}
             <div className={`logo`}>
               <Link to={process.env.PUBLIC_URL + "/"}>
-                <img
-                  alt=""
-                  src={process.env.PUBLIC_URL + "../../assets/images/l2.png"}
-                />
+                <img src="../../assets/images/l2.png" alt="lobuddy" />
               </Link>
             </div>
           </div>
           <div className="col-xl-2 col-lg-2 col-md-6 col-8">
             <button className="btn bg-transparent">
-              <CategoryIcon /> Categories
+              <AppstoreOutlined /> Categories
             </button>
           </div>
           <div className="col-xl-6 col-lg-6 col-sm-12 search__box">
@@ -36,7 +35,7 @@ const Header = () => {
           <div className="col-xl-2 col-lg-2 col-md-6 col-8">
             {/* Icon group */}
             {/* <IconGroup /> */}
-            <LocalMallIcon /> <PersonIcon />
+            <ShoppingOutlined /> <UserOutlined />
           </div>
         </div>
 

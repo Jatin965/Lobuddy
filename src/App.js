@@ -1,18 +1,10 @@
 import "./App.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 
-// import { ThemeProvider, createTheme } from "@material-ui/core";
-
 import Header from "./components/Nav/Header";
 import Home from "./pages/Home.js";
 import Footer from "./components/Nav/Footer";
-
-// const theme = createTheme({
-//   palette: {
-//     primary: { main: "#f68a1e" },
-//     secondary: { main: "#fff" },
-//   },
-// });
+import How from "./pages/How";
 
 function App() {
   return (
@@ -24,6 +16,10 @@ function App() {
         <main>
           <Route path="/" exact>
             <Home />
+          </Route>
+
+          <Route path="/how">
+            <How />
           </Route>
         </main>
 
