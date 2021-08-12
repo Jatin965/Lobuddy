@@ -4,32 +4,63 @@
 
   .how-header {
     display: flex;
-    margin-top: 15px;
-    // align-items: center;
+    margin: 25px 0;
+    align-items: center;
 
     .how-icon {
       color: $theme-color;
-      font-size: 60px;
-      padding: 5px;
+      font-size: 50px;
+      // padding: 5px;
+    }
+
+    h1 {
+      padding-left: 10px;
     }
   }
 
   .how-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     img {
       max-width: 800px;
       height: auto;
     }
   }
   .how-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    img {
+      max-width: 800px;
+      height: auto;
+    }
+
+    .how-content-2 {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+  .how-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     img {
       max-width: 800px;
       height: auto;
     }
   }
-  .how-3 {
-    img {
-      max-width: 800px;
-      height: auto;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    .benefit {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

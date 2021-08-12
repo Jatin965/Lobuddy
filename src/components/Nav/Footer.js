@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { animateScroll } from "react-scroll";
-// import FooterCopyright from "../../compnts/footer/FooterCopyright";
-// import FooterNewsletter from "./FooterNewsletter";
+import { DoubleLeftOutlined } from "@ant-design/icons";
 
 const Footer = () => {
   const [scroll, setScroll] = useState(0);
@@ -25,8 +24,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className={`footer-area bg-gray pt-100 pb-70`}>
-      <div className={`container`}>
+    <footer className="footer-area bg-gray pt-100 pb-70">
+      <div className="container">
         <div className="row">
           <div className={`col-lg-3 col-sm-4`}>
             {/* footer copyright */}
@@ -147,7 +146,7 @@ const Footer = () => {
         onClick={() => scrollToTop()}
         style={{ background: "#ff9f00" }}
       >
-        <i className="fa fa-angle-double-up"></i>
+        <DoubleLeftOutlined rotate={90} />
       </button>
     </footer>
   );
