@@ -5,6 +5,7 @@ import Header from "./components/Nav/Header";
 import Home from "./pages/Home.js";
 import Footer from "./components/Nav/Footer";
 import How from "./pages/How";
+import Best from "./pages/Best";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
 
           <Route path="/how">
             <How />
+          </Route>
+
+          <Route path="/best-deals">
+            <Best />
           </Route>
         </main>
 

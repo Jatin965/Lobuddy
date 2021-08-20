@@ -25,7 +25,7 @@ const How = () => {
         <h1>How it works!</h1>
       </div>
       <div className="how-1">
-        <img src={im1} />
+        <img src={im1} alt='display-1' />
         <div className="how-content-1">
           <CircleBag child={<h1>1</h1>} />
           <h1>Select what you need</h1>
@@ -36,10 +36,10 @@ const How = () => {
           <CircleBag child={<h1>2</h1>} />
           <h1>Decide rental period</h1>
         </div>
-        <img src={im2} />
+        <img src={im2} alt='display-2' />
       </div>
       <div className="how-3">
-        <img src={im3} />
+        <img src={im3} alt='display-3' />
         <div className="how-content-3">
           <CircleBag child={<h1>3</h1>} />
           <h1>Enjoy the tech</h1>
