@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { useToasts } from "react-toast-notifications";
-import { getDiscountPrice } from "../../helpers/product";
 
+import { ShoppingCartOutlined } from '@ant-design/icons'
 
 const Product = ({
   product,
@@ -16,16 +15,13 @@ const Product = ({
   compareItem,
   sliderClassName,
   spaceBottomClass,
-  colorClass
+  colorClass,
 }) => {
   const [modalShow, setModalShow] = useState(false);
-  const { addToast } = useToasts();
 
-  const discountedPrice = getDiscountPrice(product.price, product.discount);
-  const finalProductPrice = +(product.price * currency.currencyRate).toFixed(2);
-  const finalDiscountedPrice = +(
-    discountedPrice * currency.currencyRate
-  ).toFixed(2);
+  const discountedPrice = product.price;
+  const finalProductPrice = product.price;
+  const finalDiscountedPrice = discountedPrice;
 
   return (
     <Fragment>
@@ -43,18 +39,9 @@ const Product = ({
             <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
               <img
                 className="default-img"
-                src={process.env.PUBLIC_URL + product.image[0]}
+                src={'http://127.0.0.1:8000' + product.image[0]}
                 alt=""
               />
-              {product.image.length > 1 ? (
-                <img
-                  className="hover-img"
-                  src={process.env.PUBLIC_URL + product.image[1]}
-                  alt=""
-                />
-              ) : (
-                ""
-              )}
             </Link>
             {product.discount || product.new ? (
               <div className="product-img-badges">
@@ -78,7 +65,8 @@ const Product = ({
                   title="Buy now"
                 >
                   {" "}
-                  <i className="fa fa-shopping-cart"></i>{" "}
+                  {/*<i className="fa fa-shopping-cart"></i>{" "}*/}
+                  <ShoppingCartOutlined />
                 </a>
               ) : product.variation && product.variation.length >= 1 ? (
                 <Link
@@ -89,7 +77,7 @@ const Product = ({
                 </Link>
               ) : product.stock && product.stock > 0 ? (
                 <button
-                  onClick={() => addToCart(product, addToast)}
+                  onClick={() => addToCart(product)}
                   className={
                     cartItem !== undefined && cartItem.quantity > 0
                       ? "active"
@@ -108,22 +96,7 @@ const Product = ({
                 </button>
               )}
 
-              <button onClick={() => setModalShow(true)} title="Quick View">
-                <i className="fa fa-eye"></i>
-              </button>
-
-              <button
-                className={compareItem !== undefined ? "active" : ""}
-                disabled={compareItem !== undefined}
-                title={
-                  compareItem !== undefined
-                    ? "Added to compare"
-                    : "Add to compare"
-                }
-                onClick={() => addToCompare(product, addToast)}
-              >
-                <i className="fa fa-retweet"></i>
-              </button>
+                
             </div>
             <div className="pro-wishlist-2">
               <button
@@ -134,7 +107,7 @@ const Product = ({
                     ? "Added to wishlist"
                     : "Add to wishlist"
                 }
-                onClick={() => addToWishlist(product, addToast)}
+                onClick={() => addToWishlist(product)}
               >
                 <i className="fa fa-heart-o" />
               </button>
@@ -151,10 +124,10 @@ const Product = ({
                 {discountedPrice !== null ? (
                   <Fragment>
                     <span className="old">
-                      {currency.currencySymbol + finalProductPrice}
+                      {finalProductPrice}
                     </span>{" "}
                     <span>
-                      {currency.currencySymbol + finalDiscountedPrice}
+                      { finalDiscountedPrice}
                     </span>
                   </Fragment>
                 ) : (
@@ -180,7 +153,7 @@ Product.propTypes = {
   sliderClassName: PropTypes.string,
   spaceBottomClass: PropTypes.string,
   colorClass: PropTypes.string,
-  wishlistItem: PropTypes.object
+  wishlistItem: PropTypes.object,
 };
 
 export default Product;

@@ -1,0 +1,35 @@
+.home {
+    width: 90vw;
+    margin: 10px auto;
+
+    .home-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .home-header-image {
+            height: inherit;
+            width: inherit;
+            background: rgba($theme-color, 0.1);
+            border-radius: 20px;
+            margin-right: 10vw;
+        }
+
+        .home-header-content {
+            h1 {
+                color: $theme-color;
+            }
+            h4 {
+
+            }
+
+            button {
+                color: white;
+                background: $theme-color;
+                width: 100px;
+                height: 40px;
+                border-radius: 20px;
+            }
+        }
+    }
+}

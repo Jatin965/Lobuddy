@@ -1,0 +1,32 @@
+.best {
+  width: 90vw;
+  margin: 0 auto;
+
+  .best-header {
+    display: flex;
+    margin: 25px 0;
+    align-items: center;
+
+    .how-icon {
+      color: $theme-color;
+      font-size: 50px;
+      // padding: 5px;
+    }
+
+    h1 {
+      padding-left: 10px;
+    }
+  }
+
+	.best-header-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.best-header-content-text {
+			h1 {
+				color: $theme-color;
+			}
+		}
+	}
+}

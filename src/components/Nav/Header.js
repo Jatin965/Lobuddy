@@ -44,7 +44,9 @@ const Header = () => {
             HOW LOBUDDY WORKS?
           </div>
           <div className="col-xl-2 col-lg-3 col-md-4 col-sm-5 col-xs-5">
+            <Link to='best-deals'>
             OUR BEST DEALS
+            </Link>
           </div>
         </div>
       </div>

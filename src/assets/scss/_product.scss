@@ -1,0 +1,219 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 80px;
+  row-gap: 50px;
+  margin: 50px 0;
+
+  .col-lg-4 {
+    width: 100%
+  }
+}
+
+
+.product-wrap-7 {
+    position: relative;
+    overflow: hidden;
+
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: $shadow;
+    margin: 10px 10px;
+    padding: 20px;
+
+    .product-img {
+      position: relative;
+      img {
+        max-width: 345px;
+        height: auto;
+        max-height: 340px;
+      }
+      span {
+        font-size: 14px;
+        font-weight: 500;
+  
+        position: absolute;
+        top: 20px;
+        right: 20px;
+  
+        color: $theme-color;
+      }
+      & .default-img {
+        transition: all 0.5s ease-in-out;
+      }
+      & .hover-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+  
+        visibility: hidden;
+  
+        width: 100%;
+  
+        transition: all 0.5s ease-in-out;
+        transform: translateX(100%);
+  
+        opacity: 0;
+      }
+      .product-action-2 {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+  
+        display: flex;
+        justify-content: flex-end;
+  
+        width: 100%;
+        a,
+        button {
+          font-size: 16px;
+          line-height: 42px;
+  
+          display: inline-block;
+  
+          width: 42px;
+          height: 42px;
+          margin: 0 3px;
+  
+          transition: all 0.4s ease-in-out;
+          transform: scaleX(0);
+          text-align: center;
+  
+          color: #fff;
+          border: none;
+          background: none;
+          background-color: #555;
+          &:hover,
+          &.active {
+            background-color: $theme-color;
+          }
+        }
+      }
+  
+      &-badges {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        & > span {
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 1;
+  
+          position: static;
+  
+          display: block;
+  
+          margin-bottom: 10px;
+          padding: 3px 11px;
+  
+          border-radius: 3px;
+  
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+  
+      .pro-wishlist-2 {
+        line-height: 35px;
+  
+        position: absolute;
+        z-index: 9;
+        top: 20px;
+        right: 20px;
+  
+        text-align: center;
+  
+        a,
+        button {
+          font-size: 16px;
+  
+          display: inline-block;
+  
+          width: 35px;
+          height: 35px;
+  
+          transition: all 0.3s ease-in-out;
+  
+          color: #fff;
+          border: none;
+          border-radius: 100%;
+          background: #555555;
+          &:hover,
+          &.active {
+            background: $theme-color;
+          }
+        }
+      }
+    }
+    .product-content-2 {
+      display: flex;
+      justify-content: space-between;
+  
+      margin: 20px 0 0;
+      .title-price-wrap-2 {
+        h3 {
+          line-height: 1;
+  
+          margin: 0 0 6px;
+          a {
+            font-size: 16px;
+            font-weight: 500;
+  
+            color: #444;
+            &:hover {
+              color: $theme-color;
+            }
+          }
+        }
+        .price-2 {
+          span {
+            font-size: 15px;
+  
+            position: relative;
+  
+            margin-right: 17px;
+  
+            color: #444;
+            &.old {
+              text-decoration: line-through;
+  
+              color: #444;
+              &.red {
+                color: #ff3d2a;
+              }
+            }
+            &::before {
+              position: absolute;
+              top: 10px;
+              right: -13px;
+  
+              width: 6px;
+              height: 2px;
+  
+              content: "";
+  
+              background-color: #a5a5a5;
+            }
+            &:last-child:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    &:hover .hover-img {
+      visibility: visible;
+  
+      transform: translateX(0);
+  
+      opacity: 1;
+    }
+  
+    &:hover .product-action-2 a {
+      transform: scaleX(1);
+    }
+    &:hover .product-action-2 button {
+      transform: scaleX(1);
+    }
+  }
