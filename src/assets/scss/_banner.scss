@@ -1,0 +1,47 @@
+.banner {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(255, 153, 0, 0.1);
+  margin: 4vh 0;
+  border-radius: 20px;
+
+  &-content {
+    flex: 0.5;
+
+    h1 {
+      color: $text-black;
+    }
+
+    p {
+      color: $text-grey;
+    }
+  }
+
+	&-images {
+		.left {
+			max-height: 250px;
+			transform: rotate(-15deg);
+			margin-right: -2vw;
+		}
+		.top {
+			max-height: 250px;
+			transform: rotate(9deg);
+		}
+		.right {
+			max-height: 325px;
+			transform: rotate(21deg);
+			margin-left: -2vw;
+		}
+
+		.logo {
+			display: flex;
+			justify-content: center;
+
+			img {
+				max-height: 100px;
+			}
+		}
+	}
+}
