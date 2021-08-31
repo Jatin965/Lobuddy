@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Iphone from "../assets/images/home/ip.png";
+import Customer from "../assets/images/home/cus.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
@@ -15,6 +16,10 @@ import app1 from "../assets/images/banner/apple/1.png";
 import app2 from "../assets/images/banner/apple/2.png";
 import app3 from "../assets/images/banner/apple/3.png";
 import appLogo from "../assets/images/banner/apple/logo.png";
+
+import CircleBag from "../components/UI/CircleBag";
+
+import { MobileOutlined, LaptopOutlined } from "@ant-design/icons";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -67,6 +72,40 @@ const Home = () => {
         logo={samLogo}
       />
 
+      <div className="category-phone">
+        <div className="category-phone-header">
+          <CircleBag child={<MobileOutlined className="circle-icon" />} />
+          <h1>Phones</h1>
+        </div>
+
+        <div className="category-phone-products">
+          {products
+            .filter((ps) => ps.category === "Mobiles")
+            .slice(0, 5)
+            .map((product) => (
+              <Product product={product} />
+            ))}
+
+          <button>View all</button>
+        </div>
+      </div>
+
+      <div className="category-laptop">
+        <div className="category-laptop-header">
+          <CircleBag child={<LaptopOutlined className="circle-icon" />} />
+          <h1>Laptops</h1>
+        </div>
+
+        <div className="category-laptop-products">
+          {products
+            .filter((ps) => ps.category === "Laptop")
+            .slice(0, 5)
+            .map((product) => (
+              <Product product={product} />
+            ))}
+        </div>
+      </div>
+
       <Banner
         head="Apple - Think different
         Everything is here"
@@ -78,6 +117,24 @@ const Home = () => {
         img3={app3}
         logo={appLogo}
       />
+
+      <div className="home-most">
+        <h3>Our best deals</h3>
+
+        <div className="home-most-products">
+          {products.slice(10, 14).map((product) => (
+            <Product product={product} />
+          ))}
+        </div>
+      </div>
+
+      <div className="testimonials">
+        <div className="content">
+          <h1>Our happy customers</h1>
+          <p>Check out what our customer saying about us</p>
+        </div>
+        <img src={Customer} alt="Customer" />
+      </div>
     </div>
   );
 };

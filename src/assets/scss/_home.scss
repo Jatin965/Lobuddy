@@ -45,4 +45,62 @@
       }
     }
   }
+
+  .category-phone {
+    &-header {
+      display: flex;
+      align-items: center;
+
+      h1 {
+        padding-left: 10px;
+      }
+    }
+
+    &-products {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-column-gap: 80px;
+      row-gap: 50px;
+      margin: 50px 0;
+
+      .col-lg-4 {
+        width: 100%;
+      }
+    }
+  }
+
+  .category-laptop {
+    &-header {
+      display: flex;
+      align-items: center;
+
+      h1 {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .testimonials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4vh 0;
+
+    .content {
+      h1 {
+        color: $theme-color;
+        font-size: 4rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: $text-grey;
+      }
+    }
+
+    img {
+      max-height: 450px;
+      width: auto;
+    }
+  }
 }
