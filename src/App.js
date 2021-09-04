@@ -6,7 +6,7 @@ import Footer from "./components/Nav/Footer";
 import Home from "./pages/Home.js";
 import How from "./pages/How";
 import Best from "./pages/Best";
-import Product from "./pages/Product";
+import Product from "./pages/ProductDetail";
 
 function App() {
   return (

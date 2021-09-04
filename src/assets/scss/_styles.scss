@@ -12,3 +12,31 @@
   color: $theme-color;
   font-size: 50px;
 }
+
+.faq {
+  box-shadow: $shadow;
+  width: 70%;
+  padding: 20px;
+  border-radius: 26px;
+
+  .site-collapse-custom-collapse {
+    .ant-collapse-header {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      margin: 2vh 0;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      .anticon {
+        font-size: 18px;
+        vertical-align: auto !important;
+      }
+    }
+    p {
+      color: $text-grey;
+      font-size: 18px;
+      margin-top: -1vh;
+    }
+  }
+}

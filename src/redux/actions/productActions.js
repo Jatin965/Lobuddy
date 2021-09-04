@@ -41,8 +41,6 @@ export const detailProduct = (id) => async (dispatch) => {
       type: PRODUCT_DETAILS_SUCCESS,
       payload: data,
     });
-
-    console.log(data);
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAILS_FAIL,
