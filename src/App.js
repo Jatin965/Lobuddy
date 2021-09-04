@@ -2,10 +2,11 @@ import "./App.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Header from "./components/Nav/Header";
-import Home from "./pages/Home.js";
 import Footer from "./components/Nav/Footer";
+import Home from "./pages/Home.js";
 import How from "./pages/How";
 import Best from "./pages/Best";
+import Product from "./pages/Product";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
 
           <Route path="/best-deals">
             <Best />
+          </Route>
+
+          <Route path="/product/:id">
+            <Product />
           </Route>
         </main>
 
