@@ -1,0 +1,55 @@
+.detail {
+  width: 90vw;
+  margin: 4vh auto;
+
+  &-product {
+    width: 70%;
+    box-shadow: $shadow;
+    border-radius: 26px;
+    padding: 30px;
+    margin: 4vh 0;
+  }
+
+  .sec3 {
+    display: flex;
+    justify-content: space-between;
+
+    .what {
+      box-shadow: $shadow;
+      border-radius: 26px;
+      padding: 30px;
+    }
+  }
+
+  &-most {
+    margin-top: 4vh;
+
+    .most-products {
+      display: flex;
+    }
+  }
+
+  .testimonials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4vh 0;
+
+    .content {
+      h1 {
+        color: $theme-color;
+        font-size: 4rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: $text-grey;
+      }
+    }
+
+    img {
+      max-height: 450px;
+      width: auto;
+    }
+  }
+}
