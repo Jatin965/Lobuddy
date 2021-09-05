@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { detailProduct, listProducts } from "../redux/actions/productActions";
 
 import { Slider } from "antd";
+import { TagFilled } from "@ant-design/icons";
 
 import Faq from "../components/UI/Faq";
 import Product from "../components/Cards/Product";
@@ -60,6 +61,16 @@ const ProductDetail = () => {
 
   return (
     <div className="detail">
+      <div className="tag">
+        <TagFilled
+          style={{ transform: "scale(-1,1)", fontSize: 50, color: "white" }}
+        />
+        <p>
+          Welcome Buddy. Use discount coupon <span>Hellobuddy007</span> and get
+          70% off in your first rental plan - It's valid till 31.02.21.
+        </p>
+      </div>
+
       <div className="detail-show">
         <div className="detail-show-content">
           <div className="detail-show-content-left">

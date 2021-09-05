@@ -2,6 +2,27 @@
   width: 90vw;
   margin: 4vh auto;
 
+  .tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    border-radius: 26px;
+    padding: 20px;
+    box-shadow: $shadow;
+    background-color: rgba($theme-color, 0.1);
+
+    p {
+      font-size: 1.2em;
+      font-weight: bold;
+      padding-left: 20px;
+
+      span {
+        color: $theme-color;
+      }
+    }
+  }
+
   &-show {
     display: flex;
     justify-content: space-between;
@@ -12,7 +33,7 @@
 
     &-content {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       box-shadow: $shadow;
       border-radius: 26px;
       padding: 30px;
