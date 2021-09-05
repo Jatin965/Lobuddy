@@ -9,6 +9,7 @@ import Faq from "../components/UI/Faq";
 import Product from "../components/Cards/Product";
 
 import Customer from "../assets/images/home/cus.png";
+import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySideThumb";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -42,6 +43,10 @@ const ProductDetail = () => {
 
   return (
     <div className="detail">
+      <div className="detail-show">
+        <ProductImageGalleryLeftThumb product={product} />
+      </div>
+
       <div className="detail-product">
         <h2>Product Details</h2>
         {product.description}

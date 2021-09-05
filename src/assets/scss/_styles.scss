@@ -40,3 +40,137 @@
     }
   }
 }
+
+.product-large-image-wrapper {
+  position: relative;
+  .product-img-badges {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 20px;
+    span {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+
+      display: block;
+
+      margin-bottom: 10px;
+      padding: 3px 11px;
+
+      color: #fff;
+      border-radius: 3px;
+      &.pink {
+        background-color: #fa6bff;
+      }
+      &.purple {
+        background-color: #a749ff;
+      }
+    }
+  }
+
+  .react_lightgallery_item {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    button {
+      font-size: 30px;
+
+      padding: 0;
+
+      border: none;
+      background: none;
+    }
+  }
+
+  &--slider {
+    .ht-swiper-button-nav {
+      font-size: 50px;
+
+      visibility: hidden;
+
+      padding: 0;
+
+      transition: 0.3s;
+
+      opacity: 0;
+      color: #333;
+      border: none;
+      background: none;
+    }
+
+    &:hover {
+      .ht-swiper-button-nav {
+        visibility: visible;
+
+        opacity: 1;
+      }
+    }
+  }
+
+  .single-image {
+    img {
+      max-width: auto;
+      max-height: 200px;
+    }
+  }
+}
+
+.shop-area {
+  .sticky {
+    top: 70px !important;
+  }
+}
+
+.product-small-image-wrapper {
+  .ht-swiper-button-nav {
+    visibility: hidden;
+
+    opacity: 0;
+    color: #333;
+    border: none;
+    background: none;
+    i {
+      font-size: 40px;
+    }
+  }
+  .single-image {
+    cursor: pointer;
+    img {
+      max-width: 150px;
+      height: auto;
+    }
+  }
+
+  &:hover {
+    .ht-swiper-button-nav {
+      visibility: visible;
+
+      opacity: 1;
+    }
+  }
+  .single-image {
+    height: 100%;
+    img {
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .swiper-container-vertical {
+    height: 100%;
+  }
+
+  &--side-thumb {
+    overflow: hidden;
+
+    height: 630px;
+    @media #{$lg-layout,
+    $md-layout,
+    $xs-layout} {
+      height: auto;
+      margin-top: 15px;
+    }
+  }
+}
