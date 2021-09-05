@@ -110,7 +110,7 @@
 
   .single-image {
     img {
-      max-width: auto;
+      width: auto;
       max-height: 200px;
     }
   }
@@ -152,7 +152,7 @@
   .single-image {
     height: 100%;
     img {
-      height: 100%;
+      max-height: 90px;
 
       object-fit: cover;
       object-position: center;

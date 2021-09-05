@@ -5,11 +5,28 @@ import { useRouteMatch } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { detailProduct, listProducts } from "../redux/actions/productActions";
 
+import { Slider } from "antd";
+
 import Faq from "../components/UI/Faq";
 import Product from "../components/Cards/Product";
 
 import Customer from "../assets/images/home/cus.png";
 import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySideThumb";
+
+const marks = {
+  0: "1",
+  9: "2",
+  18: "3",
+  27: "4",
+  36: "5",
+  45: "6",
+  54: "7",
+  63: "8",
+  72: "9",
+  81: "10",
+  90: "11",
+  100: "12",
+};
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -44,6 +61,19 @@ const ProductDetail = () => {
   return (
     <div className="detail">
       <div className="detail-show">
+        <div className="detail-show-content">
+          <div className="detail-show-content-left">
+            <h2>{product.name}</h2>
+            <h5>{product.details}</h5>
+            <Slider step={9} />
+          </div>
+          <div className="detail-show-content-right">
+            <h3>{product.price}</h3>
+            <h5>per month, thereafter cancel anytime With Lobuddy </h5>
+            <button>Rent it</button>
+          </div>
+        </div>
+
         <ProductImageGalleryLeftThumb product={product} />
       </div>
 
