@@ -27,9 +27,9 @@
     display: flex;
     justify-content: space-between;
 
-    // & > * {
-    //   flex-basis: 50%;
-    // }
+    & > * {
+      flex-basis: 100%;
+    }
 
     &-content {
       display: flex;

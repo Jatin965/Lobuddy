@@ -43,6 +43,10 @@
 
 .product-large-image-wrapper {
   position: relative;
+
+  .swiper-container {
+    width: 50vw;
+  }
   .product-img-badges {
     position: absolute;
     z-index: 3;
@@ -110,8 +114,8 @@
 
   .single-image {
     img {
-      width: auto;
-      max-height: 200px;
+      width: 25vw;
+      max-height: auto;
     }
   }
 }

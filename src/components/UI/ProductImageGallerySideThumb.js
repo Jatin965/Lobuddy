@@ -3,6 +3,10 @@ import React, { Fragment, useEffect, useState } from "react";
 import { LightgalleryProvider, LightgalleryItem } from "react-lightgallery";
 import Swiper from "react-id-swiper";
 
+import { Row, Col } from "antd";
+
+import { ExpandOutlined } from "@ant-design/icons";
+
 const BASE = "http://127.0.0.1:8000";
 
 const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
@@ -25,7 +29,7 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
   // swiper slider settings
   const gallerySwiperParams = {
     getSwiper: getGallerySwiper,
-    spaceBetween: 5,
+    spaceBetween: 1,
     loopedSlides: 3,
     loop: true,
     effect: "fade",
@@ -33,7 +37,8 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
 
   const thumbnailSwiperParams = {
     getSwiper: getThumbnailSwiper,
-    spaceBetween: 5,
+    spaceBetween: 1,
+    innerHeight: "auto",
     slidesPerView: 3,
     loopedSlides: 3,
     touchRatio: 0.2,
@@ -42,23 +47,23 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
     direction: "vertical",
     breakpoints: {
       1200: {
-        slidesPerView: 4,
+        slidesPerView: 3,
         direction: "vertical",
       },
       992: {
-        slidesPerView: 4,
-        direction: "horizontal",
+        slidesPerView: 3,
+        direction: "vertical",
       },
       768: {
-        slidesPerView: 4,
-        direction: "horizontal",
+        slidesPerView: 3,
+        direction: "vertical",
       },
       640: {
-        slidesPerView: 4,
+        slidesPerView: 3,
         direction: "horizontal",
       },
       320: {
-        slidesPerView: 4,
+        slidesPerView: 3,
         direction: "horizontal",
       },
     },
@@ -66,14 +71,8 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
 
   return (
     <Fragment>
-      <div className="row row-5">
-        <div
-          className={` ${
-            thumbPosition && thumbPosition === "left"
-              ? "col-xl-10 order-1 order-xl-2"
-              : "col-xl-10"
-          }`}
-        >
+      <Row className="row row-5">
+        <Col span={20} className={"col-xl-10"}>
           <div className="product-large-image-wrapper">
             {product.discount || product.new ? (
               <div className="product-img-badges">
@@ -95,7 +94,7 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
                       <div key={key}>
                         <LightgalleryItem group="any" src={BASE + single}>
                           <button>
-                            <i className="pe-7s-expand1"></i>
+                            <ExpandOutlined />
                           </button>
                         </LightgalleryItem>
                         <div className="single-image">
@@ -111,8 +110,9 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
               </Swiper>
             </LightgalleryProvider>
           </div>
-        </div>
-        <div
+        </Col>
+        <Col
+          span={4}
           className={` ${
             thumbPosition && thumbPosition === "left"
               ? "col-xl-2 order-2 order-xl-1"
@@ -133,8 +133,8 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
                 })}
             </Swiper>
           </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </Fragment>
   );
 };

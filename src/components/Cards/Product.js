@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { ShoppingCartOutlined } from '@ant-design/icons'
+import { HeartOutlined } from "@ant-design/icons";
 
 const Product = ({
   product,
@@ -17,8 +17,6 @@ const Product = ({
   spaceBottomClass,
   colorClass,
 }) => {
-  const [modalShow, setModalShow] = useState(false);
-
   const discountedPrice = product.price;
   const finalProductPrice = product.price;
   const finalDiscountedPrice = discountedPrice;
@@ -39,7 +37,7 @@ const Product = ({
             <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
               <img
                 className="default-img"
-                src={'http://127.0.0.1:8000' + product.image[0]}
+                src={"http://127.0.0.1:8000" + product.image[0]}
                 alt=""
               />
             </Link>
@@ -56,48 +54,6 @@ const Product = ({
               ""
             )}
 
-            <div className="product-action-2">
-              {product.affiliateLink ? (
-                <a
-                  href={product.affiliateLink}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title="Buy now"
-                >
-                  {" "}
-                  {/*<i className="fa fa-shopping-cart"></i>{" "}*/}
-                  <ShoppingCartOutlined />
-                </a>
-              ) : product.variation && product.variation.length >= 1 ? (
-                <Link
-                  to={`${process.env.PUBLIC_URL}/product/${product.id}`}
-                  title="Select options"
-                >
-                  <i className="fa fa-cog"></i>
-                </Link>
-              ) : product.stock && product.stock > 0 ? (
-                <button
-                  onClick={() => addToCart(product)}
-                  className={
-                    cartItem !== undefined && cartItem.quantity > 0
-                      ? "active"
-                      : ""
-                  }
-                  disabled={cartItem !== undefined && cartItem.quantity > 0}
-                  title={
-                    cartItem !== undefined ? "Added to cart" : "Add to cart"
-                  }
-                >
-                  <i className="fa fa-shopping-cart"></i>
-                </button>
-              ) : (
-                <button disabled className="active" title="Out of stock">
-                  <i className="fa fa-shopping-cart"></i>
-                </button>
-              )}
-
-                
-            </div>
             <div className="pro-wishlist-2">
               <button
                 className={wishlistItem !== undefined ? "active" : ""}
@@ -109,7 +65,9 @@ const Product = ({
                 }
                 onClick={() => addToWishlist(product)}
               >
-                <i className="fa fa-heart-o" />
+                <p>
+                  <HeartOutlined style={{ fontSize: 25, color: "white" }} />
+                </p>
               </button>
             </div>
           </div>
@@ -123,15 +81,11 @@ const Product = ({
               <div className="price-2">
                 {discountedPrice !== null ? (
                   <Fragment>
-                    <span className="old">
-                      {finalProductPrice}
-                    </span>{" "}
-                    <span>
-                      { finalDiscountedPrice}
-                    </span>
+                    <span className="old">{"Rs " + finalProductPrice}</span>{" "}
+                    <span>{"Rs " + finalDiscountedPrice}</span>
                   </Fragment>
                 ) : (
-                  <span>{currency.currencySymbol + finalProductPrice} </span>
+                  <span>{"Rs " + finalProductPrice} </span>
                 )}
               </div>
             </div>
