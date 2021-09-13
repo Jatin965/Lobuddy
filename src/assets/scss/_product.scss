@@ -1,20 +1,24 @@
 .product-grid {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 80px;
-  row-gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 50px 0;
+}
 
-  .col-lg-4 {
-    width: 100%;
-  }
+.product-grid > * {
+  flex: 1 1 33%;
 }
 
 .product-wrap-7 {
   position: relative;
   overflow: hidden;
-
   height: 100%;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  justify-content: center;
+  max-width: 350px;
   border-radius: 30px;
   box-shadow: $shadow;
   margin: 10px 10px;

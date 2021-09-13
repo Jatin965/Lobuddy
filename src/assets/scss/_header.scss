@@ -16,6 +16,10 @@ header {
     }
 
     .row {
+      a {
+        text-decoration: none;
+        color: black;
+      }
       div {
         button {
           border-radius: 32px;

@@ -7,6 +7,7 @@ import Home from "./pages/Home.js";
 import How from "./pages/How";
 import Best from "./pages/Best";
 import Product from "./pages/ProductDetail";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <main>
           <Route path="/" exact>
             <Home />
+          </Route>
+
+          <Route path="/search">
+            <Search />
           </Route>
 
           <Route path="/how">

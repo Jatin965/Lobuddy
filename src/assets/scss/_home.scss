@@ -57,15 +57,16 @@
     }
 
     &-products {
-      display: grid;
-      grid-template-columns: auto auto auto;
-      grid-column-gap: 80px;
-      row-gap: 50px;
-      margin: 50px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 2vh 0;
+      row-gap: 3vh;
+    }
 
-      .col-lg-4 {
-        width: 100%;
-      }
+    &-products > * {
+      flex: 1 1 33%;
     }
   }
 

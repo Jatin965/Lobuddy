@@ -66,7 +66,9 @@ const Product = ({
                 onClick={() => addToWishlist(product)}
               >
                 <p>
-                  <HeartOutlined style={{ fontSize: 25, color: "white" }} />
+                  <HeartOutlined
+                    style={{ fontSize: 25, color: "white", paddingLeft: 0 }}
+                  />
                 </p>
               </button>
             </div>
