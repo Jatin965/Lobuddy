@@ -84,10 +84,12 @@ const Footer = () => {
               <div className="footer-list">
                 <ul>
                   <li>
-                    <Link to={process.env.PUBLIC_URL + "#/"}>PRIVACY</Link>
+                    <Link to={process.env.PUBLIC_URL + "/privacy-policy"}>
+                      PRIVACY
+                    </Link>
                   </li>
                   <li>
-                    <Link to={process.env.PUBLIC_URL + "#/"}>
+                    <Link to={process.env.PUBLIC_URL + "/terms-and-conditions"}>
                       TERMS & CONDITIONS
                     </Link>
                   </li>
@@ -130,7 +132,7 @@ const Footer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Lobuddy@gmail.com
+                      contact@lobuddy.com
                     </Link>
                   </li>
                 </ul>

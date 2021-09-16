@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
+import { listProducts } from "../../redux/actions/productActions";
 
 import logo from "../../assets/images/logo.png";
 
@@ -33,6 +36,26 @@ const menu = (
 );
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const [filterProducts, setFilterProducts] = useState([]);
+
+  const [key, setKey] = useState("");
+
+  const handleChange = (e) => {
+    setKey(e.target.value);
+    if (e.target.value === "") {
+      setFilterProducts([]);
+    } else {
+      setFilterProducts(products);
+    }
+  };
+  useEffect(() => {
+    dispatch(listProducts());
+  }, []);
+
+  const { products, loading, error } = useSelector(
+    (state) => state.productList
+  );
   return (
     <header>
       <div className={"container-fluid"}>
@@ -56,8 +79,34 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search for product, brands and more..."
+              onChange={handleChange}
+              value={key}
             />
+            {filterProducts.length != 0 && (
+              <div className="dataResult">
+                {products
+                  .filter((ps) =>
+                    ps.name.toLowerCase().includes(key.toLowerCase())
+                  )
+                  .slice(0, 15)
+                  .map((value, key) => {
+                    return (
+                      <Link
+                        to={`/search?q=${value.name}`}
+                        onClick={() => {
+                          setKey("");
+                          setFilterProducts([]);
+                        }}
+                        className="dataItem"
+                      >
+                        <p>{value.name.slice(0, 30)}... </p>
+                      </Link>
+                    );
+                  })}
+              </div>
+            )}
           </div>
+
           <div className="col-xl-2 col-lg-2 col-md-6 col-8">
             {/* Icon group */}
             {/* <IconGroup /> */}
