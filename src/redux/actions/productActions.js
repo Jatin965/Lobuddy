@@ -65,6 +65,7 @@ export const addUser = (name, email, phone) => async (dispatch) => {
       phone: phone,
     });
 
+    console.log(data);
     dispatch({
       type: USER_ADD_SUCCESS,
       payload: data,

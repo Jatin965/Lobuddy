@@ -3,7 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useRouteMatch } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { detailProduct, listProducts } from "../redux/actions/productActions";
+import {
+  detailProduct,
+  listProducts,
+  addUser,
+} from "../redux/actions/productActions";
 
 import { Slider, Modal } from "antd";
 import { TagFilled } from "@ant-design/icons";
@@ -34,21 +38,34 @@ const ProductDetail = () => {
   const match = useRouteMatch();
 
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [name, setName] = useState(false);
-  const [phone, setPhone] = useState(false);
-  const [email, setEmail] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
 
   const showModal = () => {
     setIsModalVisible(true);
   };
 
   const handleOk = () => {
+    if (name !== "" && phone !== "" && email !== "") {
+      dispatch(addUser(name, email, phone));
+    }
     setIsModalVisible(false);
   };
 
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+
+  const {
+    loading: loadingUser,
+    success,
+    error: errorUser,
+  } = useSelector((state) => state.userAdd);
+
+  console.log(loadingUser);
+  console.log(success);
+  console.log(errorUser);
 
   const {
     product,
@@ -113,16 +130,19 @@ const ProductDetail = () => {
                 onChange={(e) => setName(e.target.value)}
                 type="text"
                 placeholder="Name"
+                required
               />
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 placeholder="E-mail"
+                required
               />
               <input
                 onChange={(e) => setPhone(e.target.value)}
                 type="phone"
                 placeholder="Phone No."
+                required
               />
             </Modal>
           </div>
