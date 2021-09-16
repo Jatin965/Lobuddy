@@ -5,6 +5,9 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
+  USER_ADD_REQUEST,
+  USER_ADD_SUCCESS,
+  USER_ADD_FAIL,
 } from "../constants/productConstants";
 
 export const productListReducer = (state = { products: [] }, action) => {
@@ -38,6 +41,25 @@ export const productDetailReducer = (state = { product: {} }, action) => {
       };
 
     case PRODUCT_DETAILS_FAIL:
+      return { loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export const addUserReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_ADD_REQUEST:
+      return { loading: true };
+
+    case USER_ADD_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+      };
+
+    case USER_ADD_FAIL:
       return { loading: false, error: action.payload };
 
     default:
