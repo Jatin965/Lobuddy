@@ -19,11 +19,31 @@ header {
       a {
         text-decoration: none;
         color: black;
+
+        img {
+          max-width: 200px;
+          height: auto;
+        }
       }
       div {
         button {
+          display: flex;
+          align-items: center;
           border-radius: 32px;
           box-shadow: $shadow;
+          padding: 10px 20px;
+          border: none;
+        }
+
+        .coming {
+          display: flex;
+          align-items: center;
+          border-radius: 32px;
+          box-shadow: $shadow;
+          padding: 10px 20px;
+          border: none;
+          background: $theme-color;
+          color: white;
         }
       }
     }
@@ -35,8 +55,7 @@ header {
       border: none;
       outline: none;
       box-shadow: $shadow;
-      height: 35px;
-      padding-left: 18px;
+      padding: 10px 20px;
     }
   }
 }

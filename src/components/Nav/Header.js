@@ -2,11 +2,35 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
+import logo from "../../assets/images/logo.png";
+
+import { Menu, Dropdown } from "antd";
+
 import {
   AppstoreOutlined,
   ShoppingOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <Link style={{ textDecoration: "none" }} to="/search">
+        Phone
+      </Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link style={{ textDecoration: "none" }} to="/search">
+        Laptop
+      </Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link style={{ textDecoration: "none" }} to="/search">
+        Wearables
+      </Link>
+    </Menu.Item>
+  </Menu>
+);
 
 const Header = () => {
   return (
@@ -17,14 +41,16 @@ const Header = () => {
             {/* header logo */}
             <div className={`logo`}>
               <Link to={process.env.PUBLIC_URL + "/"}>
-                <img src="../../assets/images/l2.png" alt="lobuddy" />
+                <img src={logo} alt="lobuddy" />
               </Link>
             </div>
           </div>
           <div className="col-xl-2 col-lg-2 col-md-6 col-8">
-            <button className="btn bg-transparent">
-              <AppstoreOutlined /> Categories
-            </button>
+            <Dropdown overlay={menu} placement="bottomCenter">
+              <button className="btn bg-transparent">
+                <AppstoreOutlined /> Categories
+              </button>
+            </Dropdown>
           </div>
           <div className="col-xl-6 col-lg-6 col-sm-12 search__box">
             <input
@@ -35,7 +61,8 @@ const Header = () => {
           <div className="col-xl-2 col-lg-2 col-md-6 col-8">
             {/* Icon group */}
             {/* <IconGroup /> */}
-            <ShoppingOutlined /> <UserOutlined />
+            {/* <ShoppingOutlined /> <UserOutlined /> */}
+            <button className="coming">Coming Soon</button>
           </div>
         </div>
 
