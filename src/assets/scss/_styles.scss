@@ -43,9 +43,10 @@
 
 .product-large-image-wrapper {
   position: relative;
+  height: inherit;
 
   .swiper-container {
-    width: 50vw;
+    width: 30vw;
   }
   .product-img-badges {
     position: absolute;
@@ -114,8 +115,10 @@
 
   .single-image {
     img {
-      width: 25vw;
-      max-height: auto;
+      display: block;
+      margin: auto;
+      width: auto;
+      max-height: 35vh;
     }
   }
 }
@@ -154,7 +157,7 @@
     }
   }
   .single-image {
-    height: 100%;
+    height: auto !important;
     img {
       max-height: 90px;
 
@@ -164,6 +167,10 @@
   }
   .swiper-container-vertical {
     height: 100%;
+    .swiper-slide {
+      height: auto !important;
+      padding: 1vh 0;
+    }
   }
 
   &--side-thumb {

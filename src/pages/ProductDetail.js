@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useRouteMatch } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { detailProduct, listProducts } from "../redux/actions/productActions";
 
-import { Slider } from "antd";
+import { Slider, Modal } from "antd";
 import { TagFilled } from "@ant-design/icons";
 
 import Faq from "../components/UI/Faq";
@@ -33,6 +33,23 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
   const match = useRouteMatch();
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [name, setName] = useState(false);
+  const [phone, setPhone] = useState(false);
+  const [email, setEmail] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   const {
     product,
     loading: loadingDetail,
@@ -43,8 +60,8 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  console.log(product);
-  console.log(products);
+  // console.log(product);
+  // console.log(products);
 
   useEffect(() => {
     dispatch(detailProduct(match.params.id));
@@ -76,12 +93,38 @@ const ProductDetail = () => {
           <div className="detail-show-content-left">
             <h2>{product.name}</h2>
             <h5>{product.details}</h5>
-            <Slider step={9} />
+            {/* <Slider step={9} /> */}
           </div>
           <div className="detail-show-content-right">
             <h3>{product.price}</h3>
             <h5>per month, thereafter cancel anytime With Lobuddy </h5>
-            <button>Rent it</button>
+            <button onClick={showModal}>Rent it</button>
+            <Modal
+              title="LOBUDDY"
+              visible={isModalVisible}
+              onOk={handleOk}
+              onCancel={handleCancel}
+            >
+              <h4>
+                Some Content, as we have not started our services yet. Get early
+                access and huge discounts by sign up to our services now.
+              </h4>
+              <input
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder="Name"
+              />
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="E-mail"
+              />
+              <input
+                onChange={(e) => setPhone(e.target.value)}
+                type="phone"
+                placeholder="Phone No."
+              />
+            </Modal>
           </div>
         </div>
 

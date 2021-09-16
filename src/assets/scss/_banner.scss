@@ -17,31 +17,40 @@
     p {
       color: $text-grey;
     }
+
+    button {
+      padding: 10px 30px;
+      border-radius: 30px;
+      background-color: $theme-color;
+      color: white;
+      box-shadow: $shadow;
+      border: none;
+    }
   }
 
-	&-images {
-		.left {
-			max-height: 250px;
-			transform: rotate(-15deg);
-			margin-right: -2vw;
-		}
-		.top {
-			max-height: 250px;
-			transform: rotate(9deg);
-		}
-		.right {
-			max-height: 325px;
-			transform: rotate(21deg);
-			margin-left: -2vw;
-		}
+  &-images {
+    .left {
+      max-height: 250px;
+      transform: rotate(-15deg);
+      margin-right: -2vw;
+    }
+    .top {
+      max-height: 250px;
+      transform: rotate(9deg);
+    }
+    .right {
+      max-height: 325px;
+      transform: rotate(21deg);
+      margin-left: -2vw;
+    }
 
-		.logo {
-			display: flex;
-			justify-content: center;
+    .logo {
+      display: flex;
+      justify-content: center;
 
-			img {
-				max-height: 100px;
-			}
-		}
-	}
+      img {
+        max-height: 100px;
+      }
+    }
+  }
 }

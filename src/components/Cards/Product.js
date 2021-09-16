@@ -54,7 +54,7 @@ const Product = ({
               ""
             )}
 
-            <div className="pro-wishlist-2">
+            {/* <div className="pro-wishlist-2">
               <button
                 className={wishlistItem !== undefined ? "active" : ""}
                 disabled={wishlistItem !== undefined}
@@ -71,7 +71,7 @@ const Product = ({
                   />
                 </p>
               </button>
-            </div>
+            </div> */}
           </div>
           <div className="product-content-2">
             <div className="title-price-wrap-2">

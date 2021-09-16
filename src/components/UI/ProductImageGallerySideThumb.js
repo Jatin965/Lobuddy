@@ -37,8 +37,8 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
 
   const thumbnailSwiperParams = {
     getSwiper: getThumbnailSwiper,
-    spaceBetween: 1,
-    innerHeight: "auto",
+    spaceBetween: 2,
+    innerHeight: "fit",
     slidesPerView: 3,
     loopedSlides: 3,
     touchRatio: 0.2,

@@ -20,6 +20,7 @@ import appLogo from "../assets/images/banner/apple/logo.png";
 import CircleBag from "../components/UI/CircleBag";
 
 import { MobileOutlined, LaptopOutlined } from "@ant-design/icons";
+import ProductWidth from "../components/Cards/ProductWidth";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -101,7 +102,7 @@ const Home = () => {
             .filter((ps) => ps.category === "Laptop")
             .slice(0, 5)
             .map((product) => (
-              <Product product={product} />
+              <ProductWidth product={product} />
             ))}
         </div>
       </div>
