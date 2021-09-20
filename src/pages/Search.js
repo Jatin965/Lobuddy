@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
 
+import Product from "../components/Cards/Product";
+
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
 
@@ -10,6 +12,8 @@ const Search = ({ key }) => {
   const history = useHistory();
 
   let keyword = history.location.search;
+
+  console.log(keyword);
 
   const { products, loading, error } = useSelector(
     (state) => state.productList
@@ -21,8 +25,13 @@ const Search = ({ key }) => {
 
   console.log(products);
   return (
-    <div>
-      <h1>Searched Results!!!</h1>
+    <div className="search">
+      {products
+        .filter((ps) => ps.category === "Laptop")
+        .slice(0, 5)
+        .map((product) => (
+          <Product product={product} />
+        ))}
     </div>
   );
 };

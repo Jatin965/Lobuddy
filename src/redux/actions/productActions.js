@@ -11,7 +11,8 @@ import {
   USER_ADD_FAIL,
 } from "../constants/productConstants";
 
-const BASE_URL = "http://127.0.0.1:8000/api/";
+const BASE_UR = "http://127.0.0.1:8000/api/";
+const BASE_URL = "https://backend.lobuddy.in/api/";
 
 export const listProducts = () => async (dispatch) => {
   try {

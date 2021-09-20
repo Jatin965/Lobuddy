@@ -11,7 +11,7 @@ const ProductWidth = ({ product }) => {
         <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
           <img
             className="default-img"
-            src={"http://127.0.0.1:8000" + product.image[0]}
+            src={"https://backend.lobuddy.in" + product.image[0]}
             alt=""
           />
         </Link>
