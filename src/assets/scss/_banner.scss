@@ -7,6 +7,13 @@
   margin: 4vh 0;
   border-radius: 20px;
 
+  @media #{$md-layout} {
+    flex-direction: column-reverse;
+  }
+  @media #{$xs-layout} {
+    flex-direction: column-reverse;
+  }
+
   &-content {
     flex: 0.5;
 

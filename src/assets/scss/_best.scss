@@ -7,6 +7,13 @@
     margin: 25px 0;
     align-items: center;
 
+    @media #{$md-layout} {
+      flex-direction: column;
+    }
+    @media #{$xs-layout} {
+      flex-direction: column;
+    }
+
     .how-icon {
       color: $theme-color;
       font-size: 50px;
@@ -18,15 +25,15 @@
     }
   }
 
-	.best-header-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+  .best-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-		.best-header-content-text {
-			h1 {
-				color: $theme-color;
-			}
-		}
-	}
+    .best-header-content-text {
+      h1 {
+        color: $theme-color;
+      }
+    }
+  }
 }

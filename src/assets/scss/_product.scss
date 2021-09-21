@@ -17,6 +17,13 @@
   padding: 20px;
   margin: 5vh 0;
 
+  @media #{$md-layout} {
+    flex-direction: column;
+  }
+  @media #{$xs-layout} {
+    flex-direction: column;
+  }
+
   .product-img {
     img {
       max-width: 300px;

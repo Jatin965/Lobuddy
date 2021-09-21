@@ -7,6 +7,13 @@
     margin: 25px 0;
     align-items: center;
 
+    @media #{$md-layout} {
+      flex-direction: column;
+    }
+    @media #{$xs-layout} {
+      flex-direction: column;
+    }
+
     .how-icon {
       color: $theme-color;
       font-size: 50px;
@@ -22,18 +29,47 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    @media #{$md-layout} {
+      flex-direction: column;
+    }
+    @media #{$xs-layout} {
+      flex-direction: column;
+    }
+
     img {
-      max-width: 800px;
+      max-width: 50vw;
       height: auto;
+
+      @media #{$md-layout} {
+        max-width: 80vw;
+      }
+      @media #{$xs-layout} {
+        max-width: 80vw;
+      }
     }
   }
   .how-2 {
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    @media #{$md-layout} {
+      flex-direction: column-reverse;
+    }
+    @media #{$xs-layout} {
+      flex-direction: column-reverse;
+    }
     img {
-      max-width: 800px;
+      max-width: 50vw;
       height: auto;
+
+      @media #{$md-layout} {
+        max-width: 80vw;
+      }
+      @media #{$xs-layout} {
+        max-width: 80vw;
+      }
     }
 
     .how-content-2 {
@@ -47,20 +83,38 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    @media #{$md-layout} {
+      flex-direction: column;
+    }
+    @media #{$xs-layout} {
+      flex-direction: column;
+    }
     img {
-      max-width: 800px;
+      max-width: 50vw;
       height: auto;
+
+      @media #{$md-layout} {
+        max-width: 80vw;
+      }
+      @media #{$xs-layout} {
+        max-width: 80vw;
+      }
     }
   }
 
   .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     .benefit {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
+  }
+
+  .grid-container > * {
+    flex: 1 1 33%;
   }
 }

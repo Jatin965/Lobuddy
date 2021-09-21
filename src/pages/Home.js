@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import Iphone from "../assets/images/home/ip.png";
 import Customer from "../assets/images/home/cus.png";
 
@@ -24,6 +25,7 @@ import ProductWidth from "../components/Cards/ProductWidth";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const { products, loading, error } = useSelector(
     (state) => state.productList
@@ -48,7 +50,7 @@ const Home = () => {
             Get the gadgets you need, use it as long as you want. Get discount
             of 90% on your rental plan with code HELLOBUDDY2025
           </h5>
-          <button>Deals</button>
+          <button onClick={() => history.push("/best-deals")}>Deals</button>
         </div>
       </div>
 
