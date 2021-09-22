@@ -24,7 +24,8 @@
 
     &-content {
       h1 {
-        color: $theme-color;
+        // color: $theme-color;
+        font-weight: 600;
       }
 
       button {
@@ -35,6 +36,13 @@
         border-radius: 20px;
         border: none;
         box-shadow: $shadow;
+        font-weight: 600;
+
+        &:hover {
+          background-color: white;
+          border: 1px solid $theme-color;
+          color: $theme-color;
+        }
       }
     }
   }
@@ -78,13 +86,17 @@
       row-gap: 3vh;
 
       button {
-        width: 4vw;
         padding: 10px 15px;
         border-radius: 30px;
         border: none;
         box-shadow: $shadow;
-        background: $theme-color;
-        color: white;
+        background: #f6f6f6;
+        max-width: 10vw;
+        margin: 0 10vw;
+
+        &:hover {
+          background: white;
+        }
       }
     }
 

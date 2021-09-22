@@ -89,7 +89,9 @@ const Home = () => {
               <Product product={product} />
             ))}
 
-          <button>View all</button>
+          <button className="col-xl-3 col-md-6 col-lg-4 col-sm-6">
+            View all
+          </button>
         </div>
       </div>
 

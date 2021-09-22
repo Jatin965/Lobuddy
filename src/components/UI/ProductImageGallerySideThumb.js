@@ -7,7 +7,7 @@ import { Row, Col } from "antd";
 
 import { ExpandOutlined } from "@ant-design/icons";
 
-const BASE = "http://127.0.0.1:8000";
+const BASE = "https://backend.lobuddy.in";
 
 const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
   const [gallerySwiper, getGallerySwiper] = useState(null);
@@ -52,11 +52,11 @@ const ProductImageGalleryLeftThumb = ({ product, thumbPosition }) => {
       },
       992: {
         slidesPerView: 3,
-        direction: "vertical",
+        direction: "horizontal",
       },
       768: {
         slidesPerView: 3,
-        direction: "vertical",
+        direction: "horizontal",
       },
       640: {
         slidesPerView: 3,

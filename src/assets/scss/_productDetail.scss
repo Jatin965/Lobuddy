@@ -56,6 +56,12 @@
           background-color: $theme-color;
           border: none;
           box-shadow: $shadow;
+
+          &:hover {
+            background-color: white;
+            border: 1px solid $theme-color;
+            color: $theme-color;
+          }
         }
       }
     }

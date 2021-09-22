@@ -1,5 +1,6 @@
 header {
   box-shadow: $shadow;
+  font-family: "Sitka small";
   .container-fluid {
     padding: 20px 80px;
     @media #{$xl-layout} {
@@ -19,6 +20,7 @@ header {
       a {
         text-decoration: none;
         color: black;
+        font-weight: 600;
 
         img {
           max-width: 200px;
