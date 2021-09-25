@@ -5,8 +5,6 @@ import Customer from "../assets/images/home/cus.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
-import Product from "../components/Cards/Product";
-import Banner from "../components/UI/Banner";
 
 import sam1 from "../assets/images/banner/samsung/1.png";
 import sam2 from "../assets/images/banner/samsung/2.png";
@@ -19,9 +17,12 @@ import app3 from "../assets/images/banner/apple/3.png";
 import appLogo from "../assets/images/banner/apple/logo.png";
 
 import CircleBag from "../components/UI/CircleBag";
+import ProductWidth from "../components/Cards/ProductWidth";
+import Loader from "../components/UI/Loader";
+import Product from "../components/Cards/Product";
+import Banner from "../components/UI/Banner";
 
 import { MobileOutlined, LaptopOutlined } from "@ant-design/icons";
-import ProductWidth from "../components/Cards/ProductWidth";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -31,11 +32,13 @@ const Home = () => {
     (state) => state.productList
   );
 
-  console.log(products.slice(0, 4));
-
   useEffect(() => {
     dispatch(listProducts());
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="home">
@@ -69,6 +72,7 @@ const Home = () => {
         para="Rent smartphones, tablets, watches and the latest samsung gadgets with
           lobuddy"
         but="Explore Samsung"
+        butLink="/explore?q=samsung"
         img1={sam1}
         img2={sam2}
         img3={sam3}
@@ -117,6 +121,7 @@ const Home = () => {
         para="Rent iPhone, MacBook, watches and the latest apple 
         gadgets with lobuddy"
         but="Explore Apple"
+        butLink="/explore?q=apple"
         img1={app1}
         img2={app2}
         img3={app3}

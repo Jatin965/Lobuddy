@@ -1,24 +1,24 @@
 import React from "react";
 
-const Banner = ({head, para, but, img1, img2, img3, logo}) => {
+import { useHistory } from "react-router-dom";
+
+const Banner = ({ head, para, but, butLink, img1, img2, img3, logo }) => {
+  const history = useHistory();
   return (
     <div className="banner">
       <div className="banner-content">
         <h1>{head}</h1>
-        <p>
-          {para}
-        </p>
-        <button>{but}</button>
+        <p>{para}</p>
+        <button onClick={() => history.push(butLink)}>{but}</button>
       </div>
       <div className="banner-images">
-				<img className='left' src={img1} alt='left' />
-				<img className='top' src={img2} alt='top' />
-				<img className='right' src={img3} alt='right' />
-				<div className='logo'>
-					<img src={logo} alt='bottom' />
-				</div>
-				
-			</div>
+        <img className="left" src={img1} alt="left" />
+        <img className="top" src={img2} alt="top" />
+        <img className="right" src={img3} alt="right" />
+        <div className="logo">
+          <img src={logo} alt="bottom" />
+        </div>
+      </div>
     </div>
   );
 };

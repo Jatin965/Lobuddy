@@ -10,6 +10,7 @@ import Product from "./pages/ProductDetail";
 import Search from "./pages/Search";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import Explore from "./pages/Explore";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
 
           <Route path="/search">
             <Search />
+          </Route>
+
+          <Route path="/explore">
+            <Explore />
           </Route>
 
           <Route path="/terms-and-conditions">
