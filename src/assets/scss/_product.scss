@@ -1,8 +1,33 @@
+.product-three {
+  display: flex;
+  align-items: center;
+  margin: 2vh 0;
+
+  &-image {
+    border-radius: 30px;
+    box-shadow: $shadow;
+
+    img {
+      max-width: 35vw;
+      height: auto;
+      padding: 2rem;
+    }
+    &:hover {
+      box-shadow: $shadow-hover;
+    }
+  }
+
+  &-details {
+    margin-left: 3vw;
+  }
+}
+
 .product-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 50px 0;
+  row-gap: 2vh;
 }
 
 .product-grid > * {
@@ -203,16 +228,11 @@
         font-size: 13px;
         font-weight: 500;
         line-height: 1;
-
         position: static;
-
         display: block;
-
         margin-bottom: 10px;
         padding: 3px 11px;
-
         border-radius: 3px;
-
         &:last-child {
           margin-bottom: 0;
         }
@@ -221,12 +241,10 @@
 
     .pro-wishlist-2 {
       line-height: 35px;
-
       position: absolute;
       z-index: 9;
       top: 20px;
       right: 20px;
-
       text-align: center;
 
       a,

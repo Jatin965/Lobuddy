@@ -117,13 +117,13 @@ const Header = () => {
 
         <div className="row pt-4">
           <Link
-            to={process.env.PUBLIC_URL + "how/"}
+            to={process.env.PUBLIC_URL + "/how"}
             className="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-7"
           >
             HOW LOBUDDY WORKS?
           </Link>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-5">
-            <Link to={process.env.PUBLIC_URL + "best-deals/"}>
+          <div /*className="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-5" */>
+            <Link to={process.env.PUBLIC_URL + "/best-deals"}>
               OUR BEST DEALS
             </Link>
           </div>

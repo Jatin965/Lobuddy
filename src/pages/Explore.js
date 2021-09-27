@@ -6,6 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
 
 import Loader from "../components/UI/Loader";
+import ProductList from "../components/Cards/ProductList";
+
+import samsung from "../assets/images/Explore/samsung.png";
+import one from "../assets/images/Explore/one.png";
+import apple from "../assets/images/Explore/apple.png";
 
 const Explore = () => {
   const dispatch = useDispatch();
@@ -26,8 +31,15 @@ const Explore = () => {
   }
 
   return (
-    <div>
-      <h1>Explore</h1>
+    <div className="explore" style={{ maxWidth: "90vw", margin: "auto" }}>
+      <img
+        style={{ maxWidth: "90vw", margin: "2vh auto" }}
+        src={key === "samsung" ? samsung : key === "oneplus" ? one : apple}
+        alt="Banner"
+      />
+      <ProductList
+        products={products.filter((ps) => ps.brand.toLowerCase() === key)}
+      />
     </div>
   );
 };

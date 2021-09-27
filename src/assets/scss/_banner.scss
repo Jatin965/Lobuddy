@@ -2,10 +2,11 @@
   min-height: 40vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background: rgba(255, 153, 0, 0.1);
   margin: 4vh 0;
   border-radius: 20px;
+  padding: 5vh 2vw;
 
   @media #{$md-layout} {
     flex-direction: column-reverse;
@@ -15,23 +16,22 @@
   }
 
   &-content {
-    flex: 0.5;
+    flex: 0.9 1;
 
     h1 {
       color: $text-black;
+      font-weight: 700;
     }
 
     p {
-      color: $text-grey;
+      color: $text-grey-light;
+      width: 80%;
+      font-weight: 600;
     }
 
     button {
-      padding: 10px 30px;
-      border-radius: 30px;
       background-color: $theme-color;
       color: white;
-      box-shadow: $shadow;
-      border: none;
 
       &:hover {
         background-color: white;
@@ -43,18 +43,20 @@
 
   &-images {
     .left {
-      max-height: 250px;
+      max-height: 150px;
       transform: rotate(-15deg);
-      margin-right: -2vw;
+      // padding-right: 1vw;
     }
     .top {
-      max-height: 250px;
+      max-height: 150px;
       transform: rotate(9deg);
+      top: 10;
+      padding: 1vh 0;
     }
     .right {
-      max-height: 325px;
+      max-height: 150px;
       transform: rotate(21deg);
-      margin-left: -2vw;
+      // margin-left: 1vw;
     }
 
     .logo {

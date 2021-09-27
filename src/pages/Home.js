@@ -23,6 +23,7 @@ import Product from "../components/Cards/Product";
 import Banner from "../components/UI/Banner";
 
 import { MobileOutlined, LaptopOutlined } from "@ant-design/icons";
+import ProductThree from "../components/Cards/ProductThree";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -99,6 +100,19 @@ const Home = () => {
         </div>
       </div>
 
+      <Banner
+        head="OnePlus - Pretty much everything
+        you could ask for"
+        para="Rent smartphones, tablets, watches and the latest 
+        OnePlus gadgets with lobuddy"
+        but="Explore OnePlus"
+        butLink="/explore?q=oneplus"
+        img1={app1}
+        img2={app2}
+        img3={app3}
+        logo={appLogo}
+      />
+
       <div className="category-laptop">
         <div className="category-laptop-header">
           <CircleBag child={<LaptopOutlined className="circle-icon" />} />
@@ -127,6 +141,10 @@ const Home = () => {
         img3={app3}
         logo={appLogo}
       />
+
+      {products.slice(10, 14).map((product) => (
+        <ProductThree product={product} />
+      ))}
 
       <div className="home-most">
         <h3>Our best deals</h3>

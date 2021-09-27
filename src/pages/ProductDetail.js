@@ -17,6 +17,7 @@ import Product from "../components/Cards/Product";
 
 import Customer from "../assets/images/home/cus.png";
 import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySideThumb";
+import Loader from "../components/UI/Loader";
 
 const marks = {
   0: "1",
@@ -83,10 +84,10 @@ const ProductDetail = () => {
   useEffect(() => {
     dispatch(detailProduct(match.params.id));
     dispatch(listProducts());
-  }, [dispatch]);
+  }, [dispatch, match.params.id]);
 
   if (loading || loadingDetail) {
-    return <h1> Loading ...</h1>;
+    return <Loader />;
   }
 
   if (error || errorDetail) {
