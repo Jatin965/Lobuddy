@@ -19,21 +19,6 @@ import Customer from "../assets/images/home/cus.png";
 import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySideThumb";
 import Loader from "../components/UI/Loader";
 
-const marks = {
-  0: "1",
-  9: "2",
-  18: "3",
-  27: "4",
-  36: "5",
-  45: "6",
-  54: "7",
-  63: "8",
-  72: "9",
-  81: "10",
-  90: "11",
-  100: "12",
-};
-
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const match = useRouteMatch();
