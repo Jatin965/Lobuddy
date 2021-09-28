@@ -127,6 +127,7 @@ const Header = () => {
               OUR BEST DEALS
             </Link>
           </div>
+          <Link to={process.env.PUBLIC_URL + "/trends"}>PRODUCTS ON TREND</Link>
         </div>
       </div>
       {/* mobile menu */}

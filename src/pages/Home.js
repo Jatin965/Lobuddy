@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Iphone from "../assets/images/home/ip.png";
 import Customer from "../assets/images/home/cus.png";
+import Test from "../assets/images/home/test.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
@@ -28,10 +29,13 @@ import ProductThree from "../components/Cards/ProductThree";
 const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const [flag, setFlag] = useState(5);
 
   const { products, loading, error } = useSelector(
     (state) => state.productList
   );
+
+  console.log(products);
 
   useEffect(() => {
     dispatch(listProducts());
@@ -89,12 +93,15 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Mobiles")
-            .slice(0, 5)
+            .slice(0, flag)
             .map((product) => (
               <Product product={product} />
             ))}
 
-          <button className="col-xl-3 col-md-6 col-lg-4 col-sm-6">
+          <button
+            onClick={() => setFlag((prev) => prev + 4)}
+            className="col-xl-3 col-md-6 col-lg-4 col-sm-6"
+          >
             View all
           </button>
         </div>
@@ -142,7 +149,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(10, 14).map((product) => (
+      {products.slice(12, 14).map((product) => (
         <ProductThree product={product} />
       ))}
 
@@ -154,12 +161,14 @@ const Home = () => {
             <Product product={product} />
           ))}
         </div>
+        <button onClick={() => history.push("/best-deals")}>View all</button>
       </div>
 
       <div className="testimonials">
         <div className="content">
-          <h1>Our happy customers</h1>
-          <p>Check out what our customer saying about us</p>
+          <h1>Our happy customers in Germany</h1>
+          <p>Check out what our customer saying about us...</p>
+          <img src={Test} alt="Happy User" />
         </div>
         <img src={Customer} alt="Customer" />
       </div>

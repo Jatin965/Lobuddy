@@ -48,8 +48,12 @@
   }
 
   .home-most {
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: $shadow;
     h3 {
       margin-top: 4vh;
+      font-weight: 700;
     }
 
     &-products {
@@ -64,6 +68,18 @@
     }
     &-products > * {
       flex: 1 1 25%;
+    }
+
+    button {
+      margin-top: 3vh;
+      color: white;
+      background: $theme-color;
+
+      &:hover {
+        background: white;
+        color: $theme-color;
+        border: 1px solid $theme-color;
+      }
     }
   }
 
@@ -132,12 +148,13 @@
     .content {
       h1 {
         color: $theme-color;
-        font-size: 4rem;
+        font-size: 3rem;
+        font-weight: 600;
       }
 
       p {
         font-size: 1.1rem;
-        color: $text-grey;
+        font-weight: 600;
       }
     }
 

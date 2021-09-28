@@ -8,7 +8,7 @@
     box-shadow: $shadow;
 
     img {
-      max-width: 35vw;
+      max-width: 30vw;
       height: auto;
       padding: 2rem;
     }
@@ -19,6 +19,36 @@
 
   &-details {
     margin-left: 3vw;
+
+    h1 {
+      font-weight: 700;
+    }
+    h4 {
+      color: $text-grey-light;
+      font-weight: 500;
+    }
+    h2 {
+      padding: 1vh 0;
+      color: $text-grey-light;
+      font-weight: 550;
+
+      span {
+        color: $theme-color;
+        font-size: 3rem;
+      }
+    }
+
+    button {
+      margin: 2vh 0;
+      background: $theme-color;
+      color: white;
+
+      &:hover {
+        background: white;
+        color: $theme-color;
+        border: 1px solid $theme-color;
+      }
+    }
   }
 }
 
