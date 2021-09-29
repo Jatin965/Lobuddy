@@ -41,14 +41,18 @@ const Product = ({
                 alt=""
               />
             </Link>
-            {product.discount || product.new ? (
+            {product.tags ? (
               <div className="product-img-badges">
-                {product.discount ? (
-                  <span className="pink">-{product.discount}%</span>
+                {product.tags.includes("trendy") ? (
+                  <span className="blue">Trendy</span>
                 ) : (
                   ""
                 )}
-                {product.new ? <span className="purple">New</span> : ""}
+                {product.tags.includes("deal") ? (
+                  <span className="orange">Deal</span>
+                ) : (
+                  ""
+                )}
               </div>
             ) : (
               ""

@@ -49,6 +49,13 @@ header {
         }
       }
     }
+    .li2 {
+      display: flex;
+
+      a {
+        width: fit-content;
+      }
+    }
   }
   .search__box {
     input {

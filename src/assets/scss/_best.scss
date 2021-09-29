@@ -33,6 +33,12 @@
     .best-header-content-text {
       h1 {
         color: $theme-color;
+        font-weight: 600;
+        font-family: "Arial Rounded MT";
+      }
+      h4 {
+        font-weight: 500;
+        font-family: "Arial Rounded MT";
       }
     }
   }

@@ -115,18 +115,12 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="row pt-4">
-          <Link
-            to={process.env.PUBLIC_URL + "/how"}
-            className="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-7"
-          >
-            HOW LOBUDDY WORKS?
+        <div className="row li2 pt-4">
+          <Link to={process.env.PUBLIC_URL + "/how"}>HOW LOBUDDY WORKS?</Link>
+
+          <Link to={process.env.PUBLIC_URL + "/best-deals"}>
+            OUR BEST DEALS
           </Link>
-          <div /*className="col-xl-3 col-lg-3 col-md-4 col-sm-5 col-xs-5" */>
-            <Link to={process.env.PUBLIC_URL + "/best-deals"}>
-              OUR BEST DEALS
-            </Link>
-          </div>
           <Link to={process.env.PUBLIC_URL + "/trends"}>PRODUCTS ON TREND</Link>
         </div>
       </div>

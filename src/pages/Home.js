@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import Swiper from "react-id-swiper";
+
 import Iphone from "../assets/images/home/ip.png";
 import Customer from "../assets/images/home/cus.png";
 import Test from "../assets/images/home/test.png";
@@ -25,6 +27,25 @@ import Banner from "../components/UI/Banner";
 
 import { MobileOutlined, LaptopOutlined } from "@ant-design/icons";
 import ProductThree from "../components/Cards/ProductThree";
+
+const settings = {
+  loop: true,
+  grabCursor: true,
+  breakpoints: {
+    1024: {
+      slidesPerView: 4,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    320: {
+      slidesPerView: 1,
+    },
+  },
+};
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -62,13 +83,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home-most">
+      <div className="home-most" style={{ boxShadow: "none", margin: "2vh 0" }}>
         <h3>Most Viewed</h3>
 
         <div className="home-most-products">
-          {products.slice(0, 4).map((product) => (
-            <Product product={product} />
-          ))}
+          <Swiper {...settings}>
+            {products.slice(0, 8).map((product) => (
+              <Product product={product} />
+            ))}
+          </Swiper>
         </div>
       </div>
 

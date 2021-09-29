@@ -11,6 +11,7 @@ import Search from "./pages/Search";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Explore from "./pages/Explore";
+import Trends from "./pages/Trends";
 
 function App() {
   return (
@@ -42,6 +43,10 @@ function App() {
 
           <Route path="/how">
             <How />
+          </Route>
+
+          <Route path="/trends">
+            <Trends />
           </Route>
 
           <Route path="/best-deals">

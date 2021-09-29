@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import CircleBag from "../components/UI/CircleBag";
 import Loader from "../components/UI/Loader";
 
-import { GiftOutlined } from "@ant-design/icons";
+import { RiseOutlined } from "@ant-design/icons";
 
-import img1 from "../assets/images/best/1.png";
+import img2 from "../assets/images/best/2.png";
 import ProductList from "../components/Cards/ProductList";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
 
-const Best = () => {
+const Trends = () => {
   const dispatch = useDispatch();
 
   const { products, loading, error } = useSelector(
@@ -29,26 +29,29 @@ const Best = () => {
   return (
     <div className="best">
       <div className="best-header">
-        <CircleBag child={<GiftOutlined className="how-icon" />} />
+        <CircleBag child={<RiseOutlined className="how-icon" />} />
 
-        <h1>Our best deals!</h1>
+        <h1>Products on trend</h1>
       </div>
 
       <div className="best-header-content">
-        <img src={img1} alt="header-img1" />
         <div className="best-header-content-text">
-          <h1>Every tech you need, on a budget</h1>
-          <h4>Lobuddy made your favorite tech gadgets affordable for you.</h4>
+          <h1>Trendy gadgets of October month </h1>
+          <h4>
+            Lobuddy has a availability of your dream gadget with affordable
+            rates..
+          </h4>
         </div>
+        <img style={{ maxWidth: 550 }} src={img2} alt="header-img1" />
       </div>
 
       <div className="best-products">
         <ProductList
-          products={products.filter((ps) => ps.tags.includes("deal"))}
+          products={products.filter((ps) => ps.tags.includes("trendy"))}
         />
       </div>
     </div>
   );
 };
 
-export default Best;
+export default Trends;

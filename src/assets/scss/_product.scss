@@ -173,7 +173,7 @@
   max-width: 350px;
   border-radius: 30px;
   box-shadow: $shadow;
-  margin: 10px 10px;
+  margin: 1vh 1vw;
   padding: 20px;
   &:hover {
     box-shadow: $shadow-hover;
@@ -188,15 +188,33 @@
       height: auto;
       max-height: 250px;
     }
-    span {
-      font-size: 14px;
-      font-weight: 500;
-
-      position: absolute;
-      top: 20px;
-      right: 20px;
-
-      color: $theme-color;
+    &-badges {
+      span.blue {
+        position: static;
+        display: block;
+        margin-bottom: 10px;
+        padding: 3px 11px;
+        font-size: 14px;
+        font-weight: 500;
+        background: $bg-blue;
+        border-radius: 30px;
+        color: white;
+        right: 0;
+        top: -30px;
+      }
+      span.orange {
+        position: static;
+        display: block;
+        margin-bottom: 10px;
+        padding: 3px 11px;
+        font-size: 14px;
+        font-weight: 500;
+        background: $theme-color;
+        border-radius: 30px;
+        color: white;
+        left: 0;
+        top: -30px;
+      }
     }
     & .default-img {
       transition: all 0.5s ease-in-out;
@@ -252,8 +270,8 @@
 
     &-badges {
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: -20px;
+      left: 0px;
       & > span {
         font-size: 13px;
         font-weight: 500;
@@ -263,6 +281,7 @@
         margin-bottom: 10px;
         padding: 3px 11px;
         border-radius: 3px;
+        width: fit-content;
         &:last-child {
           margin-bottom: 0;
         }
