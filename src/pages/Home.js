@@ -3,8 +3,11 @@ import { useHistory } from "react-router-dom";
 import Swiper from "react-id-swiper";
 
 import Iphone from "../assets/images/home/ip.png";
-import Customer from "../assets/images/home/cus.png";
 import Test from "../assets/images/home/test.png";
+
+import Customer from "../assets/images/home/cus.png";
+import Customer2 from "../assets/images/home/cus2.png";
+import Customer3 from "../assets/images/home/cus3.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
@@ -25,7 +28,12 @@ import Loader from "../components/UI/Loader";
 import Product from "../components/Cards/Product";
 import Banner from "../components/UI/Banner";
 
-import { MobileOutlined, LaptopOutlined } from "@ant-design/icons";
+import {
+  MobileOutlined,
+  LaptopOutlined,
+  RightCircleFilled,
+  LeftCircleFilled,
+} from "@ant-design/icons";
 import ProductThree from "../components/Cards/ProductThree";
 
 const settings = {
@@ -51,6 +59,13 @@ const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [flag, setFlag] = useState(5);
+
+  const params = {
+    navigation: {
+      nextEl: <RightCircleFilled />,
+      prevEl: <LeftCircleFilled />,
+    },
+  };
 
   const { products, loading, error } = useSelector(
     (state) => state.productList
@@ -83,11 +98,17 @@ const Home = () => {
         </div>
       </div>
 
+      {/* <ProductThree
+        product={products.filter((ps) =>
+          ps.name.includes("Apple iPhone 13 128 GB")
+        )}
+      /> */}
+
       <div className="home-most" style={{ boxShadow: "none", margin: "2vh 0" }}>
         <h3>Most Viewed</h3>
 
         <div className="home-most-products">
-          <Swiper {...settings}>
+          <Swiper>
             {products.slice(0, 8).map((product) => (
               <Product product={product} />
             ))}
@@ -193,7 +214,11 @@ const Home = () => {
           <p>Check out what our customer saying about us...</p>
           <img src={Test} alt="Happy User" />
         </div>
-        <img src={Customer} alt="Customer" />
+        <Swiper {...params}>
+          <img style={{ right: 0 }} src={Customer} alt="Customer" />
+          <img src={Customer2} alt="Customer" />
+          <img src={Customer3} alt="Customer" />
+        </Swiper>
       </div>
     </div>
   );
