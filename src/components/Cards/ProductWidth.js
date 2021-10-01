@@ -29,13 +29,15 @@ const ProductWidth = ({ product }) => {
             </Link>
           </h4>
           <div className="price-2">
-            {discountedPrice !== null ? (
+            {product.tags.includes("deal") ? (
               <Fragment>
                 <span className="old">{"Rs " + finalProductPrice}</span>{" "}
-                <span>{"Rs " + finalDiscountedPrice}</span>
+                <span style={{ color: "#f68a1e" }}>
+                  {"Rs " + (finalDiscountedPrice * 0.05).toFixed(2)}
+                </span>
               </Fragment>
             ) : (
-              <span>{"Rs " + finalProductPrice} </span>
+              <span>{"Rs " + (finalDiscountedPrice * 0.05).toFixed(2)} </span>
             )}
           </div>
         </div>

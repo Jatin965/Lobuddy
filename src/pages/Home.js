@@ -37,22 +37,22 @@ import {
 import ProductThree from "../components/Cards/ProductThree";
 
 const settings = {
-  loop: true,
+  loop: false,
   grabCursor: true,
-  breakpoints: {
-    1024: {
-      slidesPerView: 4,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    640: {
-      slidesPerView: 2,
-    },
-    320: {
-      slidesPerView: 1,
-    },
-  },
+  // breakpoints: {
+  //   1024: {
+  //     slidesPerView: 4,
+  //   },
+  //   768: {
+  //     slidesPerView: 3,
+  //   },
+  //   640: {
+  //     slidesPerView: 2,
+  //   },
+  //   320: {
+  //     slidesPerView: 1,
+  //   },
+  // },
 };
 
 const Home = () => {
@@ -81,9 +81,11 @@ const Home = () => {
     return <Loader />;
   }
 
+  // console.log(products.filter((ps) => ps.name === "Apple iPhone 13 128 GB"));
+
   return (
     <div className="home">
-      <div className="home-header">
+      {/* <div className="home-header">
         <div className="home-header-image">
           <img src={Iphone} alt="I-Phone" />
         </div>
@@ -96,23 +98,23 @@ const Home = () => {
           </h5>
           <button onClick={() => history.push("/best-deals")}>Deals</button>
         </div>
-      </div>
+      </div> */}
 
-      {/* <ProductThree
-        product={products.filter((ps) =>
-          ps.name.includes("Apple iPhone 13 128 GB")
-        )}
-      /> */}
+      {products
+        .filter((ps) => ps.name === "Apple iPhone 13 128 GB")
+        .map((product) => (
+          <ProductThree product={product} />
+        ))}
 
       <div className="home-most" style={{ boxShadow: "none", margin: "2vh 0" }}>
         <h3>Most Viewed</h3>
 
         <div className="home-most-products">
-          <Swiper>
-            {products.slice(0, 8).map((product) => (
-              <Product product={product} />
-            ))}
-          </Swiper>
+          {/* <Swiper> */}
+          {products.slice(0, 4).map((product) => (
+            <Product product={product} />
+          ))}
+          {/* </Swiper> */}
         </div>
       </div>
 
