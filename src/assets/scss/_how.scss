@@ -49,6 +49,12 @@
         max-width: 80vw;
       }
     }
+
+    div {
+      h1 {
+        font-family: "Arial Rounded MT";
+      }
+    }
   }
   .how-2 {
     display: flex;
@@ -78,6 +84,10 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+
+      h1 {
+        font-family: "Arial Rounded MT";
+      }
     }
   }
   .how-3 {
@@ -101,6 +111,12 @@
         max-width: 80vw;
       }
     }
+
+    div {
+      h1 {
+        font-family: "Arial Rounded MT";
+      }
+    }
   }
 
   .grid-container {
@@ -112,6 +128,39 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+
+      &:hover {
+        .img-container {
+          box-shadow: $shadow-hover;
+        }
+        .ben-content {
+          h1 {
+            color: $theme-color;
+          }
+        }
+      }
+
+      .img-container {
+        padding: 2rem 4rem;
+        display: flex;
+        box-shadow: $shadow;
+        min-height: 35vh;
+        border-radius: 50%;
+        align-items: center;
+
+        img {
+          max-height: 20vh;
+        }
+      }
+
+      .ben-content {
+        h1 {
+          font-family: "Arial Rounded Mt";
+        }
+        p {
+          font-family: "Arial Rounded Mt";
+        }
+      }
     }
   }
 
