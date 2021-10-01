@@ -154,11 +154,15 @@
       }
 
       .ben-content {
+        padding: 2vh 0;
         h1 {
           font-family: "Arial Rounded Mt";
+          font-weight: 500;
+          font-size: 1.8rem;
         }
         p {
           font-family: "Arial Rounded Mt";
+          color: $text-grey-light;
         }
       }
     }

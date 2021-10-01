@@ -20,7 +20,7 @@ import Up from "../assets/images/how/up.png";
 import Buddy from "../assets/images/how/buddy.png";
 import Eco from "../assets/images/how/eco.png";
 import Mini from "../assets/images/how/mini.png";
-// import Up from '../assets/images/how/up.png'
+import Flexible from "../assets/images/how/flexible.png";
 
 const How = () => {
   return (
@@ -59,7 +59,7 @@ const How = () => {
       </div>
       <div className="grid-container">
         <div className="benefit ben-1">
-          <div className="img-container" style={{ padding: "2rem 5rem" }}>
+          <div className="img-container" style={{ padding: "2rem 5.5rem" }}>
             <img src={Up} alt="Upgrade" />
           </div>
           <div className="ben-content">
@@ -77,8 +77,8 @@ const How = () => {
           </div>
         </div>
         <div className="benefit ben-3">
-          <div className="img-container" style={{ padding: "2rem 5rem" }}>
-            <img src={Up} alt="Upgrade" />
+          <div className="img-container">
+            <img src={Flexible} alt="Flexible" />
           </div>
           <div className="ben-content">
             <h1>Stay flexible</h1>
