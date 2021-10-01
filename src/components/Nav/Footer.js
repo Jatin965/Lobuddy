@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { animateScroll } from "react-scroll";
-import { DoubleLeftOutlined } from "@ant-design/icons";
+import {
+  InstagramOutlined,
+  LinkedinFilled,
+  TwitterOutlined,
+  YoutubeFilled,
+  FacebookFilled,
+} from "@ant-design/icons";
+
+import logo from "../../assets/images/logo2.png";
 
 const Footer = () => {
   const [scroll, setScroll] = useState(0);
@@ -25,10 +33,62 @@ const Footer = () => {
 
   return (
     <footer className="footer-area bg-gray pt-100 pb-70">
-      <div className="container">
+      <hr />
+      <div className="upper">
+        <div className="company">
+          <h4>COMPANY</h4>
+          <Link to="/how">How it works</Link>
+          <Link>FAQ</Link>
+          <Link to="/best-deals">Deals</Link>
+        </div>
+        <div className="contact">
+          <h4>CONTACT US</h4>
+          <p>1800-720-6260</p>
+          <p>8595641828 (9am-6pm)</p>
+          <p>contact@lobuddy.com</p>
+        </div>
+        <img src={logo} alt="Brand logo" />
+      </div>
+
+      <hr />
+
+      <div className="lower">
+        <p>&copy; Lobuddy Pvt. Ltd</p>
+
+        <div className="social">
+          <a>
+            <FacebookFilled style={{ fontSize: 20, padding: "0 1vw" }} />
+          </a>
+          <a>
+            <YoutubeFilled style={{ fontSize: 20, padding: "0 1vw" }} />
+          </a>
+          <a>
+            <TwitterOutlined style={{ fontSize: 20, padding: "0 1vw" }} />
+          </a>
+          <a>
+            <LinkedinFilled style={{ fontSize: 20, padding: "0 1vw" }} />
+          </a>
+          <a>
+            <InstagramOutlined style={{ fontSize: 20, padding: "0 1vw" }} />
+          </a>
+        </div>
+        <div className="others">
+          <Link to="/terms-and-conditions">Terms and Conditions</Link>
+          <Link to="/privacy-policy">Privacy policy</Link>
+          <Link>Cookie settings</Link>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+{
+  /*<div className="container">
         <div className="row">
           <div className={`col-lg-3 col-sm-4`}>
-            {/* footer copyright */}
+            
 
             <div className="copyright mb-30">
               <div className="footer-logo">
@@ -149,9 +209,5 @@ const Footer = () => {
         style={{ background: "#ff9f00" }}
       >
         <DoubleLeftOutlined rotate={90} />
-      </button>
-    </footer>
-  );
-};
-
-export default Footer;
+      </button> */
+}
