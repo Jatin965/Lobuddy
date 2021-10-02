@@ -9,18 +9,24 @@ import {
   addUser,
 } from "../redux/actions/productActions";
 
-import { Slider, Modal, Input, Button } from "antd";
+import { Slider, Modal, Input, Button, Carousel } from "antd";
 import {
   TagFilled,
   UserOutlined,
   MailOutlined,
   PhoneOutlined,
+  RightOutlined,
+  LeftOutlined,
 } from "@ant-design/icons";
 
 import Faq from "../components/UI/Faq";
 import Product from "../components/Cards/Product";
 
+import Test from "../assets/images/home/test.png";
 import Customer from "../assets/images/home/cus.png";
+import Customer2 from "../assets/images/home/cus2.png";
+import Customer3 from "../assets/images/home/cus3.png";
+
 import img1 from "../assets/images/detail/1.png";
 import img2 from "../assets/images/detail/2.png";
 import img3 from "../assets/images/detail/3.png";
@@ -28,6 +34,65 @@ import logo from "../assets/images/logo.png";
 
 import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySideThumb";
 import Loader from "../components/UI/Loader";
+
+const SampleNextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        color: "black",
+        background: "white",
+        fontSize: "25px",
+        lineHeight: "1.5715",
+        borderRadius: "50%",
+        boxShadow: "0 3px 6px rgb(0 0 0 / 0.2)",
+        padding: 25,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        right: -5,
+        zIndex: 10,
+      }}
+      onClick={onClick}
+    >
+      <RightOutlined />
+    </div>
+  );
+};
+
+const SamplePrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        color: "black",
+        background: "white",
+        fontSize: "25px",
+        lineHeight: "1.5715",
+        borderRadius: "50%",
+        boxShadow: "0 3px 6px rgb(0 0 0 / 0.2)",
+        padding: 25,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        left: -5,
+        zIndex: 10,
+      }}
+      onClick={onClick}
+    >
+      <LeftOutlined />
+    </div>
+  );
+};
+
+const settings = {
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+};
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -106,7 +171,7 @@ const ProductDetail = () => {
           <div className="detail-show-content-left">
             <h2>{product.name}</h2>
             <h5>{product.details}</h5>
-            {/* <Slider step={9} /> */}
+            <Slider style={{ height: 30 }} step={33} tipFormatter={null} />
           </div>
           <div className="detail-show-content-right">
             <h3>{product.price}</h3>
@@ -217,10 +282,15 @@ const ProductDetail = () => {
 
       <div className="testimonials">
         <div className="content">
-          <h1>Our happy customers</h1>
-          <p>Check out what our customer saying about us</p>
+          <h1>Our happy customers in Germany</h1>
+          <p>Check out what our customer saying about us...</p>
+          <img src={Test} alt="Happy User" />
         </div>
-        <img src={Customer} alt="Customer" />
+        <Carousel style={{ maxWidth: "50vw" }} arrows {...settings}>
+          <img style={{ right: 0 }} src={Customer} alt="Customer" />
+          <img src={Customer2} alt="Customer" />
+          <img src={Customer3} alt="Customer" />
+        </Carousel>
       </div>
 
       <div className="detail-most">

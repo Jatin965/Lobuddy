@@ -103,21 +103,29 @@
     justify-content: space-between;
     margin: 4vh 0;
 
+    @media #{$md-layout} {
+      flex-direction: column;
+    }
+    @media #{$xs-layout} {
+      flex-direction: column;
+    }
+
     .content {
       h1 {
         color: $theme-color;
-        font-size: 4rem;
+        font-size: 3rem;
+        font-weight: 600;
       }
 
       p {
         font-size: 1.1rem;
-        color: $text-grey;
+        font-weight: 600;
       }
     }
 
     img {
-      max-height: 450px;
-      width: auto;
+      height: auto;
+      max-width: 50vw;
     }
   }
 }
@@ -211,4 +219,56 @@
 .ant-modal-close {
   box-shadow: none;
   border-radius: none;
+}
+
+.ant-slider {
+  &:hover {
+    .ant-slider-track {
+      background: transparent;
+    }
+
+    .ant-slider-handle:not(.ant-tooltip-open) {
+      border-color: black;
+    }
+  }
+  .ant-slider-rail {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    border: 1px solid black;
+    border-radius: 30px;
+  }
+
+  .ant-slider-track {
+    position: absolute;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .ant-slider-handle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-top: -6px;
+    background-color: $theme-color;
+    border: solid 2px black;
+    border-radius: 50%;
+    box-shadow: 0;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.6s,
+      transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+    &:focus {
+      outline: none;
+      border-color: $theme-color;
+    }
+  }
 }

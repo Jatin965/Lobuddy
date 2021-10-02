@@ -7,6 +7,10 @@ $shadow: 0 3px 6px rgb(0 0 0 / 0.2);
 $shadow-hover: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
   0 4px 15px 0 rgba(0, 0, 0, 0.15);
 
+* {
+  --swiper-theme-color: $theme-color;
+}
+
 // Responsive Variables
 $xx-layout: "only screen and (min-width: 1366px) and (max-width: 1600px)";
 $xl-layout: "only screen and (min-width: 1200px) and (max-width: 1365px)";
