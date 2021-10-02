@@ -18,7 +18,7 @@ const ProductThree = ({ product }) => {
         <h1>{product.name}</h1>
         <h4>{product.description.slice(0, 100)}...</h4>
         <h2>
-          from <span>RS {(product.price * 0.05).toFixed(2)}</span> per month
+          from <span>₹{(product.price * 0.05).toFixed(2)}</span> per month
         </h2>
         <button onClick={() => history.push("/product/" + product.id)}>
           View Product

@@ -22,50 +22,91 @@ import app2 from "../assets/images/banner/apple/2.png";
 import app3 from "../assets/images/banner/apple/3.png";
 import appLogo from "../assets/images/banner/apple/logo.png";
 
+import one1 from "../assets/images/banner/oneplus/one1.png";
+import one2 from "../assets/images/banner/oneplus/one2.png";
+import one3 from "../assets/images/banner/oneplus/one3.png";
+import oneLogo from "../assets/images/banner/oneplus/onelogo.png";
+
 import CircleBag from "../components/UI/CircleBag";
-import ProductWidth from "../components/Cards/ProductWidth";
 import Loader from "../components/UI/Loader";
-import Product from "../components/Cards/Product";
 import Banner from "../components/UI/Banner";
+
+import ProductThree from "../components/Cards/ProductThree";
+import ProductWidth from "../components/Cards/ProductWidth";
+import Product from "../components/Cards/Product";
 
 import {
   MobileOutlined,
   LaptopOutlined,
-  RightCircleFilled,
-  LeftCircleFilled,
+  RightOutlined,
+  LeftOutlined,
 } from "@ant-design/icons";
-import ProductThree from "../components/Cards/ProductThree";
+
+import { Carousel } from "antd";
+
+const SampleNextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        color: "black",
+        background: "white",
+        fontSize: "25px",
+        lineHeight: "1.5715",
+        borderRadius: "50%",
+        boxShadow: "0 3px 6px rgb(0 0 0 / 0.2)",
+        padding: 25,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        right: -5,
+        zIndex: 10,
+      }}
+      onClick={onClick}
+    >
+      <RightOutlined />
+    </div>
+  );
+};
+
+const SamplePrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        color: "black",
+        background: "white",
+        fontSize: "25px",
+        lineHeight: "1.5715",
+        borderRadius: "50%",
+        boxShadow: "0 3px 6px rgb(0 0 0 / 0.2)",
+        padding: 25,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        left: -5,
+        zIndex: 10,
+      }}
+      onClick={onClick}
+    >
+      <LeftOutlined />
+    </div>
+  );
+};
 
 const settings = {
-  loop: false,
-  grabCursor: true,
-  // breakpoints: {
-  //   1024: {
-  //     slidesPerView: 4,
-  //   },
-  //   768: {
-  //     slidesPerView: 3,
-  //   },
-  //   640: {
-  //     slidesPerView: 2,
-  //   },
-  //   320: {
-  //     slidesPerView: 1,
-  //   },
-  // },
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
 };
 
 const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [flag, setFlag] = useState(5);
-
-  const params = {
-    navigation: {
-      nextEl: <RightCircleFilled />,
-      prevEl: <LeftCircleFilled />,
-    },
-  };
 
   const { products, loading, error } = useSelector(
     (state) => state.productList
@@ -133,7 +174,9 @@ const Home = () => {
       <div className="category-phone">
         <div className="category-phone-header">
           <CircleBag child={<MobileOutlined className="circle-icon" />} />
-          <h1>Phones</h1>
+          <h1 style={{ fontFamily: "Arial Rounded MT", fontWeight: 600 }}>
+            Phones
+          </h1>
         </div>
 
         <div className="category-phone-products">
@@ -160,16 +203,18 @@ const Home = () => {
         OnePlus gadgets with lobuddy"
         but="Explore OnePlus"
         butLink="/explore?q=oneplus"
-        img1={app1}
-        img2={app2}
-        img3={app3}
-        logo={appLogo}
+        img1={one1}
+        img2={one2}
+        img3={one3}
+        logo={oneLogo}
       />
 
       <div className="category-laptop">
         <div className="category-laptop-header">
           <CircleBag child={<LaptopOutlined className="circle-icon" />} />
-          <h1>Laptops</h1>
+          <h1 style={{ fontFamily: "Arial Rounded MT", fontWeight: 600 }}>
+            Computers
+          </h1>
         </div>
 
         <div className="category-laptop-products">
@@ -200,7 +245,7 @@ const Home = () => {
       ))}
 
       <div className="home-most">
-        <h3>Our best deals</h3>
+        <h1>Our best deals</h1>
 
         <div className="home-most-products">
           {products.slice(10, 14).map((product) => (
@@ -216,11 +261,11 @@ const Home = () => {
           <p>Check out what our customer saying about us...</p>
           <img src={Test} alt="Happy User" />
         </div>
-        <Swiper {...params}>
+        <Carousel style={{ maxWidth: "50vw" }} arrows {...settings}>
           <img style={{ right: 0 }} src={Customer} alt="Customer" />
           <img src={Customer2} alt="Customer" />
           <img src={Customer3} alt="Customer" />
-        </Swiper>
+        </Carousel>
       </div>
     </div>
   );

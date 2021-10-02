@@ -84,17 +84,33 @@ const Product = ({
                   {product.name}
                 </Link>
               </h3>
+
+              <h6>
+                <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
+                  {product.description.slice(0, 80)}
+                </Link>
+              </h6>
               <div className="price-2">
                 {product.tags.includes("deal") ? (
                   <Fragment>
-                    <span className="old">{"Rs " + finalProductPrice}</span>{" "}
-                    <span style={{ color: "#f68a1e" }}>
-                      {"Rs " + (finalDiscountedPrice * 0.05).toFixed(2)}
+                    <span style={{ color: "#878787" }}>
+                      from{" "}
+                      <span style={{ fontSize: 20 }} className="old">
+                        {"₹" + finalProductPrice}
+                      </span>{" "}
+                      <span style={{ color: "#f68a1e", fontSize: 20 }}>
+                        {"₹" + (finalDiscountedPrice * 0.05).toFixed(2)}
+                      </span>
+                      per month
                     </span>
                   </Fragment>
                 ) : (
-                  <span>
-                    {"Rs " + (finalDiscountedPrice * 0.05).toFixed(2)}{" "}
+                  <span style={{ color: "#878787" }}>
+                    from{" "}
+                    <span style={{ fontSize: 20 }}>
+                      {"₹" + (finalDiscountedPrice * 0.05).toFixed(2)}{" "}
+                    </span>
+                    per month
                   </span>
                 )}
               </div>

@@ -96,12 +96,13 @@
 
     margin: 20px 0 0;
     .title-price-wrap-2 {
-      h3 {
+      margin-left: 2vw;
+      h2 {
         line-height: 1;
-
+        font-family: "Arial Rounded MT";
         margin: 0 0 6px;
         a {
-          font-size: 22px;
+          font-size: 2rem;
           font-weight: 500;
           text-decoration: none;
           text-align: inherit;
@@ -116,15 +117,17 @@
       h4 {
         line-height: 1;
         margin: 0 0 6px;
+        font-family: "Arial Rounded MT";
         a {
           font-size: 19px;
           font-weight: 500;
           text-decoration: none;
           text-align: inherit;
-          color: $text-grey;
+          color: $text-grey-light;
         }
       }
       .price-2 {
+        font-family: "Arial Rounded MT";
         span {
           font-size: 15px;
 
@@ -141,18 +144,7 @@
               color: #ff3d2a;
             }
           }
-          &::before {
-            position: absolute;
-            top: 10px;
-            right: -13px;
 
-            width: 6px;
-            height: 2px;
-
-            content: "";
-
-            background-color: #a5a5a5;
-          }
           &:last-child:before {
             display: none;
           }
@@ -175,7 +167,7 @@
   border-radius: 30px;
   box-shadow: $shadow;
   margin: 1vh 1vw;
-  padding: 20px;
+  padding: 4vh 1vw;
   &:hover {
     box-shadow: $shadow-hover;
   }
@@ -330,10 +322,10 @@
     .title-price-wrap-2 {
       h3 {
         line-height: 1;
-
         margin: 0 0 6px;
+        font-family: "Arial Rounded MT";
         a {
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 500;
           text-decoration: none;
           text-align: inherit;
@@ -344,14 +336,23 @@
           }
         }
       }
+
+      h6 {
+        line-height: 1;
+        margin: 0 0 6px;
+        font-family: "Arial Rounded MT";
+
+        a {
+          text-decoration: none;
+          color: $text-grey-light;
+        }
+      }
       .price-2 {
         span {
           font-size: 15px;
-
           position: relative;
-
           margin-right: 17px;
-
+          font-family: "Arial Rounded MT";
           color: #444;
           &.old {
             text-decoration: line-through;
@@ -360,21 +361,6 @@
             &.red {
               color: #ff3d2a;
             }
-          }
-          &::before {
-            position: absolute;
-            top: 10px;
-            right: -13px;
-
-            width: 6px;
-            height: 2px;
-
-            content: "";
-
-            background-color: #a5a5a5;
-          }
-          &:last-child:before {
-            display: none;
           }
         }
       }
