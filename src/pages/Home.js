@@ -199,7 +199,7 @@ const Home = () => {
       <Banner
         head="OnePlus - Pretty much everything
         you could ask for"
-        para="Rent smartphones, tablets, watches and the latest 
+        para="Rent smartphones, tablets, watches and the latest
         OnePlus gadgets with lobuddy"
         but="Explore OnePlus"
         butLink="/explore?q=oneplus"
@@ -230,7 +230,7 @@ const Home = () => {
       <Banner
         head="Apple - Think different
         Everything is here"
-        para="Rent iPhone, MacBook, watches and the latest apple 
+        para="Rent iPhone, MacBook, watches and the latest apple
         gadgets with lobuddy"
         but="Explore Apple"
         butLink="/explore?q=apple"

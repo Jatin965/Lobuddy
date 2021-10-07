@@ -204,8 +204,8 @@ const Header = () => {
   return (
     <header>
       <div className={"container-fluid"}>
-        <div className="row">
-          <div className="col-xl-2 col-lg-2 col-md-6 col-4">
+        <div className=" row ">
+          <div className=" col-lg-2">
             {/* header logo */}
             <div className={`logo`}>
               <Link to={process.env.PUBLIC_URL + "/"}>
@@ -213,60 +213,27 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+          <div className="col-lg-2 col-sm-3  col-2 ">
             <Dropdown overlay={menu} placement="bottomCenter">
               <button className="btn bg-transparent">
-                <AppstoreOutlined /> Categories
+                <AppstoreOutlined />
               </button>
             </Dropdown>
           </div>
-          <div className="col-xl-6 col-lg-6 col-sm-12 search__box">
+          <div className="  col-lg-6 col-sm-7 col-8 search__box">
             <input
               type="text"
               placeholder="Search for product, brands and more..."
               onChange={handleChange}
               value={key}
             />
-            {filterProducts.length != 0 && (
-              <div className="dataResult">
-                {products
-                  .filter((ps) =>
-                    ps.name.toLowerCase().includes(key.toLowerCase())
-                  )
-                  .slice(0, 15)
-                  .map((value, key) => {
-                    return (
-                      <Link
-                        to={`/search?q=${value.name}`}
-                        onClick={() => {
-                          setKey("");
-                          setFilterProducts([]);
-                        }}
-                        className="dataItem"
-                      >
-                        <img
-                          style={{ height: 30 }}
-                          src={"https://backend.lobuddy.in" + value.image[0]}
-                          alt=""
-                        />
-                        <p>{value.name.slice(0, 30)}... </p> <br />
-                        {/* <p>{value.description.slice(0, 30)}</p> */}
-                      </Link>
-                    );
-                  })}
-              </div>
-            )}
           </div>
 
-          <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+          <div className="col-xl-2 col-lg-2 col-md-2 col-2 ">
             {/* Icon group */}
             {/* <IconGroup /> */}
             {/* <ShoppingOutlined /> <UserOutlined /> */}
-            <img
-              style={{ maxWidth: "18vw", marginLeft: "-4vw" }}
-              src={head}
-              alt="Header-group"
-            />
+            <button className="coming"></button>
           </div>
         </div>
 
@@ -280,6 +247,27 @@ const Header = () => {
           <button>Subscribe</button>
         </div>
       </div>
+      {filterProducts.length != 0 && (
+        <div className="dataResult">
+          {products
+            .filter((ps) => ps.name.toLowerCase().includes(key.toLowerCase()))
+            .slice(0, 15)
+            .map((value, key) => {
+              return (
+                <Link
+                  to={`/search?q=${value.name}`}
+                  onClick={() => {
+                    setKey("");
+                    setFilterProducts([]);
+                  }}
+                  className="dataItem"
+                >
+                  <p>{value.name.slice(0, 30)}... </p>
+                </Link>
+              );
+            })}
+        </div>
+      )}
       {/* mobile menu */}
       {/* <MobileMenu /> */}
     </header>

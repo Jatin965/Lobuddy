@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   margin: 2vh 0;
+  width: auto;
 
   &-image {
     border-radius: 30px;
     box-shadow: $shadow;
+    width: auto;
 
     img {
       max-width: 30vw;
