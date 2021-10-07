@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { useRouteMatch } from "react-router-dom";
+import ImageGallery from "react-image-gallery";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -34,6 +35,8 @@ import logo from "../assets/images/logo.png";
 
 import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySideThumb";
 import Loader from "../components/UI/Loader";
+
+const BASE = "https://backend.lobuddy.in";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -124,10 +127,6 @@ const ProductDetail = () => {
     error: errorUser,
   } = useSelector((state) => state.userAdd);
 
-  console.log(loadingUser);
-  console.log(success);
-  console.log(errorUser);
-
   const {
     product,
     loading: loadingDetail,
@@ -138,8 +137,8 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  // console.log(product);
-  // console.log(products);
+  console.log(product.image);
+  console.log(loadingDetail);
 
   useEffect(() => {
     dispatch(detailProduct(match.params.id));
@@ -149,6 +148,31 @@ const ProductDetail = () => {
   if (loading || loadingDetail) {
     return <Loader />;
   }
+  const images = [
+    {
+      original: "https://picsum.photos/id/1018/1000/600/",
+      thumbnail: "https://picsum.photos/id/1018/250/150/",
+    },
+    {
+      original: "https://picsum.photos/id/1015/1000/600/",
+      thumbnail: "https://picsum.photos/id/1015/250/150/",
+    },
+    {
+      original: "https://picsum.photos/id/1019/1000/600/",
+      thumbnail: "https://picsum.photos/id/1019/250/150/",
+    },
+  ];
+  console.log(
+    product.image &&
+      product.image.map((img) => [
+        {
+          original: BASE + img,
+          thumbnail: BASE + img,
+        },
+      ])[0]
+  );
+
+  console.log(images);
 
   if (error || errorDetail) {
     return <h1>Error</h1>;
@@ -262,7 +286,23 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        <ProductImageGalleryLeftThumb product={product} />
+        {/* <ProductImageGalleryLeftThumb product={product} /> */}
+        <ImageGallery
+          // items={
+          //   product.image &&
+          //   product.image !== undefined &&
+          //   product.image.map((img) => [
+          //     {
+          //       original: BASE + img,
+          //       thumbnail: BASE + img,
+          //     },
+          //   ])[0]
+          // }
+          items={images}
+          thumbnailPosition="right"
+          showPlayButton={false}
+          showNav={false}
+        />
       </div>
 
       <div className="detail-product">

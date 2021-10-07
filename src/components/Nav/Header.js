@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../redux/actions/productActions";
 
 import logo from "../../assets/images/logo.png";
+import head from "../../assets/images/hpik.png";
+
+import { IoMdWatch } from "react-icons/io";
 
 import { Menu, Dropdown } from "antd";
 
@@ -13,23 +16,165 @@ import {
   AppstoreOutlined,
   ShoppingOutlined,
   UserOutlined,
+  MobileOutlined,
+  LaptopOutlined,
 } from "@ant-design/icons";
 
 const menu = (
   <Menu>
     <Menu.Item>
-      <Link style={{ textDecoration: "none" }} to="/search">
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?category=phone"
+      >
+        <MobileOutlined
+          style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+        />{" "}
         Phone
       </Link>
     </Menu.Item>
     <Menu.Item>
-      <Link style={{ textDecoration: "none" }} to="/search">
-        Laptop
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?sub=tablets"
+      >
+        Tablets
       </Link>
     </Menu.Item>
     <Menu.Item>
-      <Link style={{ textDecoration: "none" }} to="/search">
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?sub=smartphones"
+      >
+        Smartphones
+      </Link>
+    </Menu.Item>
+
+    <Menu.Item>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?category=computers"
+      >
+        <LaptopOutlined
+          style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+        />{" "}
+        Computers
+      </Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?sub=gaming"
+      >
+        Gaming
+      </Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?sub=laptop"
+      >
+        Laptops
+      </Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?sub=convertible"
+      >
+        Convertibles
+      </Link>
+    </Menu.Item>
+
+    <Menu.Item>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+          fontWeight: 200,
+        }}
+        to="/search?category=wearables"
+      >
+        <IoMdWatch
+          style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+        />{" "}
         Wearables
+      </Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?sub=smartwatch"
+      >
+        Smartwatches
+      </Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?sub=music"
+      >
+        Music
+      </Link>
+    </Menu.Item>
+    <Menu.Item>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        to="/search?sub=activity"
+      >
+        Activity Trackers
       </Link>
     </Menu.Item>
   </Menu>
@@ -101,6 +246,7 @@ const Header = () => {
             OUR BEST DEALS
           </Link>
           <Link to={process.env.PUBLIC_URL + "/trends"}>PRODUCTS ON TREND</Link>
+          <button>Subscribe</button>
         </div>
       </div>
       {filterProducts.length != 0 && (

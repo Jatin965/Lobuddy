@@ -272,3 +272,20 @@
     }
   }
 }
+
+.image-gallery {
+  button {
+    box-shadow: none;
+    border-radius: 2px;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $theme-color;
+    }
+  }
+}
+// .image-gallery-content.left .image-gallery-slide .image-gallery-image,
+// .image-gallery-content.right .image-gallery-slide .image-gallery-image {
+//   max-height: 50vh;
+// }

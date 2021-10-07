@@ -2,15 +2,7 @@ import React from "react";
 
 import CircleBag from "../components/UI/CircleBag";
 
-import Lottie from "react-lottie";
-
 import { QuestionOutlined, StarOutlined } from "@ant-design/icons";
-
-import ani5 from "../assets/animations/lf30_editor_4lvs77hl";
-import ani2 from "../assets/animations/lf30_editor_ailx5yx7.json";
-import ani1 from "../assets/animations/lf30_editor_kgyathvt.json";
-import ani4 from "../assets/animations/lf30_editor_lhizrndq.json";
-import ani3 from "../assets/animations/lf30_editor_yerpk26o.json";
 
 import im1 from "../assets/images/how/1.png";
 import im2 from "../assets/images/how/2.png";
