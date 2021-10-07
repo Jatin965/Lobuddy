@@ -58,9 +58,10 @@ const Header = () => {
   );
   return (
     <header>
+
       <div className={"container-fluid"}>
-        <div className="row">
-          <div className="col-xl-2 col-lg-2 col-md-6 col-4">
+        <div className= " row " >
+          <div className=" col-lg-2">
             {/* header logo */}
             <div className={`logo`}>
               <Link to={process.env.PUBLIC_URL + "/"}>
@@ -68,50 +69,28 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+          <div className="col-lg-2 col-sm-3  col-2 ">
             <Dropdown overlay={menu} placement="bottomCenter">
               <button className="btn bg-transparent">
-                <AppstoreOutlined /> Categories
+                <AppstoreOutlined />
               </button>
             </Dropdown>
           </div>
-          <div className="col-xl-6 col-lg-6 col-sm-12 search__box">
+          <div className="  col-lg-6 col-sm-7 col-8 search__box">
             <input
               type="text"
               placeholder="Search for product, brands and more..."
               onChange={handleChange}
               value={key}
             />
-            {filterProducts.length != 0 && (
-              <div className="dataResult">
-                {products
-                  .filter((ps) =>
-                    ps.name.toLowerCase().includes(key.toLowerCase())
-                  )
-                  .slice(0, 15)
-                  .map((value, key) => {
-                    return (
-                      <Link
-                        to={`/search?q=${value.name}`}
-                        onClick={() => {
-                          setKey("");
-                          setFilterProducts([]);
-                        }}
-                        className="dataItem"
-                      >
-                        <p>{value.name.slice(0, 30)}... </p>
-                      </Link>
-                    );
-                  })}
-              </div>
-            )}
+
           </div>
 
-          <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+          <div className="col-xl-2 col-lg-2 col-md-2 col-2 ">
             {/* Icon group */}
             {/* <IconGroup /> */}
             {/* <ShoppingOutlined /> <UserOutlined /> */}
-            <button className="coming">Coming Soon</button>
+            <button className="coming"></button>
           </div>
         </div>
 
@@ -124,6 +103,29 @@ const Header = () => {
           <Link to={process.env.PUBLIC_URL + "/trends"}>PRODUCTS ON TREND</Link>
         </div>
       </div>
+      {filterProducts.length != 0 && (
+        <div className="dataResult">
+          {products
+            .filter((ps) =>
+              ps.name.toLowerCase().includes(key.toLowerCase())
+            )
+            .slice(0, 15)
+            .map((value, key) => {
+              return (
+                <Link
+                  to={`/search?q=${value.name}`}
+                  onClick={() => {
+                    setKey("");
+                    setFilterProducts([]);
+                  }}
+                  className="dataItem"
+                >
+                  <p>{value.name.slice(0, 30)}... </p>
+                </Link>
+              );
+            })}
+        </div>
+      )}
       {/* mobile menu */}
       {/* <MobileMenu /> */}
     </header>
