@@ -201,6 +201,9 @@ const Header = () => {
   const { products, loading, error } = useSelector(
     (state) => state.productList
   );
+
+
+
   return (
     <header>
       <div className={"container-fluid"}>
@@ -220,7 +223,7 @@ const Header = () => {
               </button>
             </Dropdown>
           </div>
-          <div className="col-xl-6 col-lg-6 col-sm-8 col-6 search__box">
+          <div className="col-xl-6 col-lg-6 col-sm-8 col-6 search__box  card">
             <input
               type="text"
               placeholder="Search for "
@@ -243,7 +246,7 @@ const Header = () => {
         </div>
 
         {filterProducts.length != 0 && (
-          <div className="dataResult">
+          <div className="dataResult"  >
             {products
               .filter((ps) =>
                 ps.name.toLowerCase().includes(key.toLowerCase())

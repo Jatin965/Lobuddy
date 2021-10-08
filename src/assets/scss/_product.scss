@@ -15,22 +15,25 @@
 
   &-details {
 
-
     h1 {
-      font-weight: 300;
+      font-weight: 200;
+      padding-left: 30px;
     }
     h4 {
       color: $text-grey-light;
-      font-weight: 300;
+      font-weight: 200;
+      padding-left: 30px;
     }
     h2 {
       padding: 1vh 0;
       color: $text-grey-light;
       font-weight: 250;
+      padding-left: 30px;
 
       span {
         color: $theme-color;
         font-size: 2rem;
+        padding-left: 30px;
       }
     }
 
@@ -38,6 +41,7 @@
       margin: 2vh 0;
       background: $theme-color;
       color: white;
+        padding-left: 30px;
 
       &:hover {
         background: white;
@@ -390,12 +394,14 @@
         width:70%;
         height:40%;
 
+
       }
 
     }
 
     &-details {
-       box-shadow: 4px 5px 4px 4px #888888;
+       box-shadow: 1px 1px 1px 1px #888888;
+       margin-top: 20px;
        padding:15px;
       h4 {
         color: $text-grey-light;
