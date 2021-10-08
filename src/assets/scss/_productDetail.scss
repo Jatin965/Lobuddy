@@ -78,15 +78,10 @@
     margin: 4vh 0;
   }
 
-  .sec3 {
-    display: flex;
-    justify-content: space-between;
-
-    .what {
-      box-shadow: $shadow;
-      border-radius: 26px;
-      padding: 30px;
-    }
+  .what {
+    box-shadow: $shadow;
+    border-radius: 26px;
+    padding: 30px;
   }
 
   &-most {
