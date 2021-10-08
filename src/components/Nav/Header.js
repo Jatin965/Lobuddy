@@ -205,7 +205,7 @@ const Header = () => {
     <header>
       <div className={"container-fluid"}>
         <div className="row">
-          <div className="col-xl-2 col-lg-2 col-md-6 col-4">
+          <div className="col-xl-2 col-lg-2 col-md-12 col-12">
             {/* header logo */}
             <div className={`logo`}>
               <Link to={process.env.PUBLIC_URL + "/"}>
@@ -213,52 +213,24 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+          <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
             <Dropdown overlay={menu} placement="bottomCenter">
               <button className="btn bg-transparent">
-                <AppstoreOutlined /> Categories
+                <AppstoreOutlined />
               </button>
             </Dropdown>
           </div>
-          <div className="col-xl-6 col-lg-6 col-sm-12 search__box">
+          <div className="col-xl-6 col-lg-6 col-sm-8 col-6 search__box">
             <input
               type="text"
-              placeholder="Search for product, brands and more..."
+              placeholder="Search for "
               onChange={handleChange}
               value={key}
             />
-            {filterProducts.length != 0 && (
-              <div className="dataResult">
-                {products
-                  .filter((ps) =>
-                    ps.name.toLowerCase().includes(key.toLowerCase())
-                  )
-                  .slice(0, 15)
-                  .map((value, key) => {
-                    return (
-                      <Link
-                        to={`/search?q=${value.name}`}
-                        onClick={() => {
-                          setKey("");
-                          setFilterProducts([]);
-                        }}
-                        className="dataItem"
-                      >
-                        <img
-                          style={{ height: 30 }}
-                          src={"https://backend.lobuddy.in" + value.image[0]}
-                          alt=""
-                        />
-                        <p>{value.name.slice(0, 30)}... </p> <br />
-                        {/* <p>{value.description.slice(0, 30)}</p> */}
-                      </Link>
-                    );
-                  })}
-              </div>
-            )}
+
           </div>
 
-          <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+          <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
             {/* Icon group */}
             {/* <IconGroup /> */}
             {/* <ShoppingOutlined /> <UserOutlined /> */}
@@ -269,6 +241,36 @@ const Header = () => {
             />
           </div>
         </div>
+
+        {filterProducts.length != 0 && (
+          <div className="dataResult">
+            {products
+              .filter((ps) =>
+                ps.name.toLowerCase().includes(key.toLowerCase())
+              )
+              .slice(0, 15)
+              .map((value, key) => {
+                return (
+                  <Link
+                    to={`/search?q=${value.name}`}
+                    onClick={() => {
+                      setKey("");
+                      setFilterProducts([]);
+                    }}
+                    className="dataItem"
+                  >
+                    <img
+                      style={{paddingRight:20},{ height: 30 }}
+                      src={"https://backend.lobuddy.in" + value.image[0]}
+                      alt=""
+                    />
+                    <p>{value.name.slice(0, 30)}... </p> <br />
+                    {/* <p>{value.description.slice(0, 30)}</p> */}
+                  </Link>
+                );
+              })}
+          </div>
+        )}
 
         <div className="row li2 pt-4">
           <Link to={process.env.PUBLIC_URL + "/how"}>HOW LOBUDDY WORKS?</Link>

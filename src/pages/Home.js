@@ -125,6 +125,7 @@ const Home = () => {
   // console.log(products.filter((ps) => ps.name === "Apple iPhone 13 128 GB"));
 
   return (
+
     <div className="home">
       {/* <div className="home-header">
         <div className="home-header-image">
@@ -140,6 +141,17 @@ const Home = () => {
           <button onClick={() => history.push("/best-deals")}>Deals</button>
         </div>
       </div> */}
+      <div class="scrolling-wrapper">
+    <div class="card"><h2></h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+    <div class="card"><h2>Card</h2></div>
+  </div>
 
       {products
         .filter((ps) => ps.name === "Apple iPhone 13 128 GB")
@@ -199,7 +211,7 @@ const Home = () => {
       <Banner
         head="OnePlus - Pretty much everything
         you could ask for"
-        para="Rent smartphones, tablets, watches and the latest 
+        para="Rent smartphones, tablets, watches and the latest
         OnePlus gadgets with lobuddy"
         but="Explore OnePlus"
         butLink="/explore?q=oneplus"
@@ -230,7 +242,7 @@ const Home = () => {
       <Banner
         head="Apple - Think different
         Everything is here"
-        para="Rent iPhone, MacBook, watches and the latest apple 
+        para="Rent iPhone, MacBook, watches and the latest apple
         gadgets with lobuddy"
         but="Explore Apple"
         butLink="/explore?q=apple"
