@@ -161,8 +161,11 @@ const ProductDetail = () => {
           style={{ transform: "scale(-1,1)", fontSize: 50, color: "white" }}
         />
         <p>
-          Welcome Buddy. Use discount coupon <span>Hellobuddy007</span> and get
-          70% off in your first rental plan - It's valid till 31.11.21.
+          Welcome Buddy. Use discount coupon{" "}
+          <span style={{ cursor: "pointer" }} onClick={showModal}>
+            Hellobuddy007
+          </span>{" "}
+          and get 70% off in your first rental plan - It's valid till 31.11.21.
         </p>
       </div>
 
@@ -182,7 +185,7 @@ const ProductDetail = () => {
         </div>
 
         <ProductImageGalleryLeftThumb product={product} />
-        {/* <ImageGallery
+        <ImageGallery
           // items={
           //   product.image &&
           //   product.image !== undefined &&
@@ -197,7 +200,7 @@ const ProductDetail = () => {
           thumbnailPosition="right"
           showPlayButton={false}
           showNav={false}
-        /> */}
+        />
       </div>
 
       <div className="detail-product">

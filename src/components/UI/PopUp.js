@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+
+import { useHistory } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../redux/actions/productActions";
@@ -16,18 +18,22 @@ import img1 from "../../assets/images/detail/1.png";
 import img2 from "../../assets/images/detail/2.png";
 import img3 from "../../assets/images/detail/3.png";
 import logo from "../../assets/images/logo.png";
+import Loader from "./Loader";
 
 const PopUp = ({ view }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [visible, setVisible] = useState(false);
 
   const handleOk = () => {
     if (name !== "" && phone !== "" && email !== "") {
       dispatch(addUser(name, email, phone));
     }
     view(false);
+    setVisible(true);
   };
 
   const handleCancel = () => {
@@ -35,6 +41,15 @@ const PopUp = ({ view }) => {
   };
 
   const { loading, success, error } = useSelector((state) => state.userAdd);
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
+  }
+
   return (
     <div>
       <Modal
@@ -50,8 +65,8 @@ const PopUp = ({ view }) => {
         <div className="upper">
           <div className="left">
             <img src={logo} alt="Logo" />
-            <h3>Hello buddy,</h3>
-            <h4>We are coming to India...</h4>
+            <h4>Hello buddy,</h4>
+            <h5>We are coming to India...</h5>
           </div>
           <img src={img1} alt="link-diag" />
         </div>
@@ -80,7 +95,7 @@ const PopUp = ({ view }) => {
               placeholder="Name"
               required
               bordered={false}
-              style={{ left: "20%" }}
+              style={{ left: "10%" }}
             />
             <Input
               onChange={(e) => setEmail(e.target.value)}
@@ -90,7 +105,7 @@ const PopUp = ({ view }) => {
               placeholder="E-mail"
               required
               bordered={false}
-              style={{ left: "20%" }}
+              style={{ left: "10%" }}
             />
             <Input
               onChange={(e) => setPhone(e.target.value)}
@@ -100,24 +115,53 @@ const PopUp = ({ view }) => {
               placeholder="Phone No."
               required
               bordered={false}
-              style={{ left: "20%" }}
+              style={{ left: "10%" }}
             />
           </div>
         </div>
       </Modal>
       <Modal
-        visible={success}
+        visible={visible}
+        onOk={() => {
+          setVisible(false);
+          history.push("/");
+        }}
+        onCancel={() => setVisible(false)}
         footer={[<Button type="primary">Explore</Button>]}
       >
-        <img style={{ maxWidth: "15vw" }} src={logo} alt="Logo" />
-        <h2 style={{ textAlign: "center", color: "#f68a1e" }}>
+        <img style={{ maxWidth: "125px" }} src={logo} alt="Logo" />
+        <h4
+          style={{
+            textAlign: "center",
+            color: "#f68a1e",
+            fontFamily: "Sitka Small",
+            fontWeight: 600,
+            margin: "3vh 0",
+            // padding: "0 200px",
+          }}
+        >
           Thank you for your subscription
-        </h2>
-        <h3 style={{ textAlign: "center" }}>
+        </h4>
+        <h5
+          style={{
+            textAlign: "center",
+            fontFamily: "Sitka Small",
+            fontWeight: 600,
+            marginBottom: "-70px",
+          }}
+        >
           Welcome to best technology world, we will be in touch with you soon
           with your dream gadget
-        </h3>
-        <img style={{ maxWidth: "30vw" }} src={img3} alt="celebrate" />
+        </h5>
+        <img
+          style={{
+            maxWidth: "30vw",
+            display: "block",
+            margin: "auto",
+          }}
+          src={img3}
+          alt="celebrate"
+        />
       </Modal>
     </div>
   );
