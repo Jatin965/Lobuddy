@@ -20,6 +20,8 @@ import {
   LaptopOutlined,
 } from "@ant-design/icons";
 
+import PopUp from "../UI/PopUp";
+
 const menu = (
   <Menu>
     <Menu.Item>
@@ -183,7 +185,7 @@ const menu = (
 const Header = () => {
   const dispatch = useDispatch();
   const [filterProducts, setFilterProducts] = useState([]);
-
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [key, setKey] = useState("");
 
   const handleChange = (e) => {
@@ -230,7 +232,6 @@ const Header = () => {
               onChange={handleChange}
               value={key}
             />
-
           </div>
 
           <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
@@ -248,9 +249,7 @@ const Header = () => {
         {filterProducts.length != 0 && (
           <div className="dataResult"  >
             {products
-              .filter((ps) =>
-                ps.name.toLowerCase().includes(key.toLowerCase())
-              )
+              .filter((ps) => ps.name.toLowerCase().includes(key.toLowerCase()))
               .slice(0, 15)
               .map((value, key) => {
                 return (
@@ -263,7 +262,7 @@ const Header = () => {
                     className="dataItem"
                   >
                     <img
-                      style={{paddingRight:20},{ height: 30 }}
+                      style={({ paddingRight: 20 }, { height: 30 })}
                       src={"https://backend.lobuddy.in" + value.image[0]}
                       alt=""
                     />
@@ -282,7 +281,8 @@ const Header = () => {
             OUR BEST DEALS
           </Link>
           <Link to={process.env.PUBLIC_URL + "/trends"}>PRODUCTS ON TREND</Link>
-          <button>Subscribe</button>
+          <button onClick={() => setIsModalVisible(true)}>Subscribe</button>
+          {isModalVisible && <PopUp view={setIsModalVisible} />}
         </div>
       </div>
       {/* mobile menu */}

@@ -125,7 +125,6 @@ const Home = () => {
   // console.log(products.filter((ps) => ps.name === "Apple iPhone 13 128 GB"));
 
   return (
-
     <div className="home">
       {/* <div className="home-header">
         <div className="home-header-image">
@@ -142,16 +141,34 @@ const Home = () => {
         </div>
       </div> */}
       <div class="scrolling-wrapper">
-    <div class="card"><h2></h2></div>
-    <div class="card"><h2>Card</h2></div>
-    <div class="card"><h2>Card</h2></div>
-    <div class="card"><h2>Card</h2></div>
-    <div class="card"><h2>Card</h2></div>
-    <div class="card"><h2>Card</h2></div>
-    <div class="card"><h2>Card</h2></div>
-    <div class="card"><h2>Card</h2></div>
-    <div class="card"><h2>Card</h2></div>
-  </div>
+        <div class="card">
+          <h2></h2>
+        </div>
+        <div class="card">
+          <h2>Card</h2>
+        </div>
+        <div class="card">
+          <h2>Card</h2>
+        </div>
+        <div class="card">
+          <h2>Card</h2>
+        </div>
+        <div class="card">
+          <h2>Card</h2>
+        </div>
+        <div class="card">
+          <h2>Card</h2>
+        </div>
+        <div class="card">
+          <h2>Card</h2>
+        </div>
+        <div class="card">
+          <h2>Card</h2>
+        </div>
+        <div class="card">
+          <h2>Card</h2>
+        </div>
+      </div>
 
       {products
         .filter((ps) => ps.name === "Apple iPhone 13 128 GB")
@@ -164,9 +181,11 @@ const Home = () => {
 
         <div className="home-most-products">
           {/* <Swiper> */}
+          {/* <div className="scrolling-wrapper"> */}
           {products.slice(0, 4).map((product) => (
             <Product product={product} />
           ))}
+          {/* </div> */}
           {/* </Swiper> */}
         </div>
       </div>
