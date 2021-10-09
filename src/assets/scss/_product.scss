@@ -136,7 +136,7 @@
 
           color: #444;
           &.old {
-            text-decoration: line-through;
+            text-decoration: 3px solid line-through;
 
             color: #444;
             &.red {
@@ -354,7 +354,7 @@
           font-family: "Arial Rounded MT";
           color: #444;
           &.old {
-            text-decoration: line-through;
+            text-decoration: 2px solid line-through;
 
             color: #444;
             &.red {
