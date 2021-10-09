@@ -245,7 +245,14 @@ const Header = () => {
             />
           </div>
         </div>
+<div className="Header-group">
+<img
 
+  src={head}
+  alt="Header-group"
+/>
+<button onClick={() => setIsModalVisible(true)}>Subscribe</button>
+</div>
         {filterProducts.length != 0 && (
           <div className="dataResult"  >
             {products

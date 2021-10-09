@@ -156,7 +156,7 @@ const ProductDetail = () => {
 
   return (
     <div className="detail">
-      <div className="tag">
+       <div className="tag">
         <TagFilled
           style={{ transform: "scale(-1,1)", fontSize: 50, color: "white" }}
         />
@@ -168,6 +168,7 @@ const ProductDetail = () => {
           and get 70% off in your first rental plan - It's valid till 31.11.21.
         </p>
       </div>
+
 
       <div className="detail-show">
         <div className="detail-show-content">
@@ -218,17 +219,25 @@ const ProductDetail = () => {
       <Faq />
       {/* </div> */}
 
-      <div className="testimonials">
-        <div className="content">
+      <div className="testimonials row">
+        <div className="content col-lg-6">
           <h1>Our happy customers in Germany</h1>
+          <div className="row">
+          <div class="col-6">
           <p>Check out what our customer saying about us...</p>
+          </div>
+          <div className="col-6">
           <img src={Test} alt="Happy User" />
+          </div>
+          </div>
         </div>
-        <Carousel style={{ maxWidth: "50vw" }} arrows {...settings}>
-          <img style={{ right: 0 }} src={Customer} alt="Customer" />
+        <div className="col-lg-6">
+        <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
+          <img  src={Customer} alt="Customer" />
           <img src={Customer2} alt="Customer" />
           <img src={Customer3} alt="Customer" />
         </Carousel>
+        </div>
       </div>
 
       <div className="detail-most">

@@ -3,7 +3,7 @@
   overflow-y: hidden;
   white-space: nowrap;
 
-  .card {
+  .card1 {
     display: inline-block;
   }
 }
@@ -12,7 +12,7 @@
   flex-wrap: nowrap;
   overflow-x: auto;
 
-  .card {
+  .card1 {
     flex: 0 0 auto;
   }
 }
@@ -163,10 +163,10 @@
   }
 
   .testimonials {
-    display: flex;
+
     align-items: center;
     justify-content: space-between;
-    margin: 4vh 0;
+
 
     @media #{$md-layout} {
       flex-direction: column;
@@ -189,8 +189,31 @@
     }
 
     img {
-      height: auto;
-      max-width: 50vw;
+      height: 100%;
+      width: 250px;
+
+    }
+  }
+}
+
+@media screen and (max-device-width: 995px), screen and (max-width: 995px) {
+  .content {
+    h1 {
+      color: $theme-color;
+      font-size: 25px!important;
+
+    }
+
+    p {
+      font-size: 0.8rem!important;
+
+
+    }
+      img {
+
+      height: 100%!important;
+      width:100%!important;
+
     }
   }
 }

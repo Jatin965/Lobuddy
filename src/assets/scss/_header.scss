@@ -105,6 +105,10 @@ header {
 
       }
     }
+    .Header-group
+    {
+      display: none;
+    }
 .dataResult {
   position: absolute;
   width: 598px;
@@ -297,6 +301,30 @@ border-top-right-radius: 0px;
 
 
         }
+      }
+      .Header-group
+      {
+        display: block;
+        text-align: center;
+        img{
+        width:100%;
+      }
+      button {
+        margin-top: 30px;
+        width: auto;
+        padding: 2px 30px;
+        margin-right: 4vw;
+
+        margin-left: auto;
+        background: $theme-color;
+        color: white;
+
+        &:hover {
+          background-color: white;
+          color: $theme-color;
+          border: 1px solid $theme-color;
+        }
+      }
       }
       .li2 {
         display: none;

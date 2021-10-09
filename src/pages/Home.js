@@ -140,32 +140,33 @@ const Home = () => {
           <button onClick={() => history.push("/best-deals")}>Deals</button>
         </div>
       </div> */}
+      
       <div class="scrolling-wrapper">
-        <div class="card">
+        <div class="card1">
           <h2></h2>
         </div>
-        <div class="card">
+        <div class="card1">
           <h2>Card</h2>
         </div>
-        <div class="card">
+        <div class="card1">
           <h2>Card</h2>
         </div>
-        <div class="card">
+        <div class="card1">
           <h2>Card</h2>
         </div>
-        <div class="card">
+        <div class="card1">
           <h2>Card</h2>
         </div>
-        <div class="card">
+        <div class="card1">
           <h2>Card</h2>
         </div>
-        <div class="card">
+        <div class="card1">
           <h2>Card</h2>
         </div>
-        <div class="card">
+        <div class="card1">
           <h2>Card</h2>
         </div>
-        <div class="card">
+        <div class="card1">
           <h2>Card</h2>
         </div>
       </div>
@@ -286,17 +287,25 @@ const Home = () => {
         <button onClick={() => history.push("/best-deals")}>View all</button>
       </div>
 
-      <div className="testimonials">
-        <div className="content">
+      <div className="testimonials row">
+        <div className="content col-lg-6">
           <h1>Our happy customers in Germany</h1>
+          <div className="row">
+          <div class="col-6">
           <p>Check out what our customer saying about us...</p>
+          </div>
+          <div className="col-6">
           <img src={Test} alt="Happy User" />
+          </div>
+          </div>
         </div>
-        <Carousel style={{ maxWidth: "50vw" }} arrows {...settings}>
-          <img style={{ right: 0 }} src={Customer} alt="Customer" />
+        <div className="col-lg-6">
+        <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
+          <img  src={Customer} alt="Customer" />
           <img src={Customer2} alt="Customer" />
           <img src={Customer3} alt="Customer" />
         </Carousel>
+        </div>
       </div>
     </div>
   );

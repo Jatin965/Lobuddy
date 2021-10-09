@@ -8,12 +8,6 @@
   border-radius: 20px;
   padding: 5vh 2vw;
 
-  @media #{$md-layout} {
-    flex-direction: column-reverse;
-  }
-  @media #{$xs-layout} {
-    flex-direction: column-reverse;
-  }
 
   &-content {
     flex: 0.9 1;
@@ -68,4 +62,78 @@
       }
     }
   }
+}
+
+
+@media screen and (max-device-width: 995px), screen and (max-width: 995px) {
+  .banner {
+    min-height: 20px!important;
+
+    h1 {
+      color: $text-black;
+      font-size: 15px!important;
+    }
+
+
+    &-content {
+
+      p {
+        color: $text-grey-light;
+         font-size: 10px!important;
+         width: 150px!important;
+      }
+
+      button {
+        background-color: $theme-color;
+        color: white;
+          font-size: 12px!important;
+          padding: 3px!important;
+          width: 150px!important;
+
+        &:hover {
+          background-color: white;
+          border: 1px solid $theme-color;
+          color: $theme-color;
+        }
+      }
+    }
+
+    &-images {
+      .left {
+        position: relative;
+      top: -30px;
+        height: 40px;
+        left:30px;
+        transform: rotate(-10deg);
+        // padding-right: 1vw;
+      }
+      .top {
+
+        max-height: 80px;
+        transform: rotate(9deg);
+          left:30px;
+          position: relative;
+
+      }
+      .right {
+        max-height: 50px;
+        transform: rotate(21deg);
+        position: relative;
+           left:20px;
+        top: -40px!important;
+        // margin-left: 1vw;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 80px;
+          position: relative;
+        }
+      }
+    }
+  }
+
 }
