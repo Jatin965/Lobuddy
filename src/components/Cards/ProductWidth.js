@@ -32,21 +32,21 @@ const ProductWidth = ({ product }) => {
             {product.tags.includes("deal") ? (
               <Fragment>
                 <span style={{ color: "#878787" }}>
-                  from{" "}
+                  from{"  "}
                   <span style={{ fontSize: 30 }} className="old">
-                    {"₹" + finalProductPrice}
-                  </span>{" "}
+                    {"₹" + (finalDiscountedPrice * 0.045).toFixed(0)}
+                  </span>
                   <span style={{ color: "#f68a1e", fontSize: 30 }}>
-                    {"₹" + (finalDiscountedPrice * 0.05).toFixed(2)}
+                    {"₹" + (finalDiscountedPrice * 0.04).toFixed(0)}
                   </span>
                   per month
                 </span>
               </Fragment>
             ) : (
               <span style={{ color: "#878787" }}>
-                from{" "}
+                from{"  "}
                 <span style={{ fontSize: 30 }}>
-                  {"₹" + (finalDiscountedPrice * 0.05).toFixed(2)}{" "}
+                  {"₹" + (finalDiscountedPrice * 0.045).toFixed(0)}
                 </span>
                 per month
               </span>

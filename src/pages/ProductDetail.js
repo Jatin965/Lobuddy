@@ -4,13 +4,11 @@ import { useRouteMatch } from "react-router-dom";
 import ImageGallery from "react-image-gallery";
 
 import { useDispatch, useSelector } from "react-redux";
-import {
-  detailProduct,
-  listProducts,
-  addUser,
-} from "../redux/actions/productActions";
+import { detailProduct, listProducts } from "../redux/actions/productActions";
 
-import { Slider, Modal, Input, Button, Carousel } from "antd";
+import { computers, smartPhones, tab, activity, music } from "../utils/box.js";
+
+import { Slider, Carousel } from "antd";
 import {
   TagFilled,
   UserOutlined,
@@ -31,6 +29,7 @@ import Customer3 from "../assets/images/home/cus3.png";
 import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySideThumb";
 import Loader from "../components/UI/Loader";
 import PopUp from "../components/UI/PopUp";
+import BoxImg from "../components/UI/BoxImg";
 
 const BASE = "https://backend.lobuddy.in";
 
@@ -113,8 +112,8 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  console.log(product.image);
-  console.log(loadingDetail);
+  console.log(product.sub === "Tab");
+  console.log(tab);
 
   useEffect(() => {
     dispatch(detailProduct(match.params.id));
@@ -172,9 +171,9 @@ const ProductDetail = () => {
       <div className="detail-show">
         <div className="detail-show-content">
           <div className="detail-show-content-left">
-            <h2>{product.name}</h2>
-            <h5>{product.details}</h5>
-            <Slider style={{ height: 30 }} step={33} tipFormatter={null} />
+            <h3>{product.name}</h3>
+            <h6>{product.details}</h6>
+            {/* <Slider style={{ height: 30 }} step={33} tipFormatter={null} /> */}
           </div>
           <div className="detail-show-content-right">
             <h3>{product.price}</h3>
@@ -200,6 +199,7 @@ const ProductDetail = () => {
           thumbnailPosition="right"
           showPlayButton={false}
           showNav={false}
+          lazyLoad={true}
         />
       </div>
 
@@ -213,7 +213,32 @@ const ProductDetail = () => {
       {/* <div className="sec3"> */}
       <div className="what">
         <h2>What you'll get in the box</h2>
-        <div className="what-content"></div>
+        <div className="what-content">
+          {product.sub == "Tab" &&
+            tab.map((ts) => {
+              return <BoxImg image={ts.image} name={ts.name} />;
+            })}
+
+          {product.sub == "Activity" &&
+            activity.map((ts) => {
+              return <BoxImg image={ts.image} name={ts.name} />;
+            })}
+
+          {product.sub == "Music" &&
+            music.map((ts) => {
+              return <BoxImg image={ts.image} name={ts.name} />;
+            })}
+
+          {product.sub == "Laptop" &&
+            computers.map((ts) => {
+              return <BoxImg image={ts.image} name={ts.name} />;
+            })}
+
+          {product.sub == "Smartphone" &&
+            smartPhones.map((ts) => {
+              return <BoxImg image={ts.image} name={ts.name} />;
+            })}
+        </div>
       </div>
       <Faq />
       {/* </div> */}

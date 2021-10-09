@@ -53,6 +53,8 @@ button {
   flex: 0.9;
   padding: 20px;
   border-radius: 26px;
+  font-family: "Arial Rounded MT";
+  width: 80%;
 
   .site-collapse-custom-collapse {
     .ant-collapse-header {
@@ -64,7 +66,7 @@ button {
       }
     }
     p {
-      color: $text-grey;
+      color: $text-grey-light;
       font-size: 18px;
       margin-top: -1vh;
     }
