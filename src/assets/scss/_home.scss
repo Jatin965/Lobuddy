@@ -1,20 +1,15 @@
 .scrolling-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap;
+
 
   .card1 {
-    display: inline-block;
+    display: flex;
   }
 }
 .scrolling-wrapper-flexbox {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
 
-  .card1 {
-    flex: 0 0 auto;
-  }
 }
 .ant-carousel {
   .slick-next {

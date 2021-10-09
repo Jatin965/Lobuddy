@@ -1,20 +1,19 @@
 .product-three {
-    align-items: center;
+  align-items: center;
   margin: 2vh 0;
 
   &-image {
     border-radius: 30px;
+    box-shadow: $shadow;
 
     img {
-      width:100%;
+      width: 100%;
       height: 50%;
       padding: 2rem;
     }
-
   }
 
   &-details {
-
     h1 {
       font-weight: 200;
       padding-left: 30px;
@@ -32,16 +31,17 @@
 
       span {
         color: $theme-color;
-        font-size: 2rem;
+        font-size: 3rem;
         padding-left: 30px;
       }
     }
 
     button {
-      margin: 2vh 0;
+      margin: 2vh inherit;
       background: $theme-color;
       color: white;
-        padding-left: 30px;
+      padding-left: 30px;
+      border: none;
 
       &:hover {
         background: white;
@@ -381,7 +381,6 @@
   }
 }
 
-
 @media screen and (max-device-width: 995px), screen and (max-width: 995px) {
   .product-three {
 
@@ -397,7 +396,6 @@
 
 
       }
-
     }
 
     &-details {

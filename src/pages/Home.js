@@ -140,36 +140,7 @@ const Home = () => {
           <button onClick={() => history.push("/best-deals")}>Deals</button>
         </div>
       </div> */}
-      
-      <div class="scrolling-wrapper">
-        <div class="card1">
-          <h2></h2>
-        </div>
-        <div class="card1">
-          <h2>Card</h2>
-        </div>
-        <div class="card1">
-          <h2>Card</h2>
-        </div>
-        <div class="card1">
-          <h2>Card</h2>
-        </div>
-        <div class="card1">
-          <h2>Card</h2>
-        </div>
-        <div class="card1">
-          <h2>Card</h2>
-        </div>
-        <div class="card1">
-          <h2>Card</h2>
-        </div>
-        <div class="card1">
-          <h2>Card</h2>
-        </div>
-        <div class="card1">
-          <h2>Card</h2>
-        </div>
-      </div>
+  
 
       {products
         .filter((ps) => ps.name === "Apple iPhone 13 128 GB")
