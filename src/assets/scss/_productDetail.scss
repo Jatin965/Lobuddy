@@ -145,6 +145,41 @@
     }
   }
 }
+.price-stick
+{
+ display: none;
+position: fixed;
+bottom: 0;
+    box-shadow: $shadow;
+    height: 80px;
+    width: 400px;
+    background: white;
+ h3
+ {
+ color: $theme-color;
+ font-size: 20px;
+ }
+ .sticky-but{
+   margin-top: 20px;
+
+ button {
+   font-size: 10px;
+   border-radius: 26px;
+   color: white;
+   background-color: $theme-color;
+   border: none;
+   box-shadow: $shadow;
+
+   &:hover {
+     background-color: white;
+     border: 1px solid $theme-color;
+     color: $theme-color;
+   }
+ }
+}
+
+}
+
 
 .ant-modal {
   min-width: 50vw;
@@ -317,6 +352,18 @@
       border-color: $theme-color;
     }
   }
+}
+@media screen and (max-device-width: 995px), screen and (max-width: 995px) {
+  .price-stick
+  {
+  display: block;
+  position: sticky;
+  bottom: 0;
+  }
+
+
+
+
 }
 // .image-gallery-content.left .image-gallery-slide .image-gallery-image,
 // .image-gallery-content.right .image-gallery-slide .image-gallery-image {

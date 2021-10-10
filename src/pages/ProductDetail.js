@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import $ from "jquery";
 
 import { useRouteMatch } from "react-router-dom";
 import ImageGallery from "react-image-gallery";
@@ -178,6 +179,17 @@ const ProductDetail = () => {
     return <h1>Error</h1>;
   }
 
+  $(window).scroll(function(e){
+  var $el = $('.price-stick');
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 100 && !isPositionFixed){
+    $el.css({'position': 'fixed', 'bottom': '0px'});
+  }
+  if ($(this).scrollTop() < 100 && isPositionFixed){
+    $el.css({'position': 'fixed', 'bottom': '0px'});
+  }
+});
+
   return (
     <div className="detail">
       <div className="tag">
@@ -200,7 +212,7 @@ const ProductDetail = () => {
             <h6>{product.details}</h6>
             {/* <Slider style={{ height: 30 }} step={33} tipFormatter={null} /> */}
           </div>
-          <div className="detail-show-content-right">
+          <div className="detail-show-content-right ">
             <h3>{product.price}</h3>
             <h5>per month, thereafter cancel anytime With Lobuddy </h5>
             <button onClick={showModal}>Rent it</button>
@@ -298,7 +310,18 @@ const ProductDetail = () => {
           ))}
         </div>
       </div>
+          <div className="row price-stick"  >
+          <div className="col-7 ">
+          <h3>{product.price}</h3>
+          <p>per month, thereafter cancel anytime With Lobuddy </p>
+          </div>
+          <div className="col-5  sticky-but">
+          <button >Read it</button>
+            </div>
     </div>
+    </div>
+
+
   );
 };
 
