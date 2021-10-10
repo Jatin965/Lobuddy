@@ -1,8 +1,9 @@
 footer {
+   text-align: center;
   .upper {
-    display: flex;
-    justify-content: space-evenly;
 
+    justify-content: space-evenly;
+    margin-bottom: 20px;
     .company {
       a {
         display: block;
@@ -15,7 +16,7 @@ footer {
       }
     }
     img {
-      max-width: 10vw;
+      max-width: 15vw;
     }
   }
 

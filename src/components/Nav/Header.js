@@ -204,6 +204,8 @@ const Header = () => {
     (state) => state.productList
   );
 
+
+
   return (
     <header>
       <div className={"container-fluid"}>
@@ -219,7 +221,7 @@ const Header = () => {
           <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
             <Dropdown overlay={menu} placement="bottomCenter">
               <button className="btn bg-transparent">
-                <AppstoreOutlined /> Categories
+                <AppstoreOutlined />
               </button>
             </Dropdown>
           </div>
@@ -250,9 +252,10 @@ const Header = () => {
   alt="Header-group"
 />
 <button onClick={() => setIsModalVisible(true)}>Subscribe</button>
+    {isModalVisible && <PopUp view={setIsModalVisible} />}
 </div>
         {filterProducts.length != 0 && (
-          <div className="dataResult">
+          <div className="dataResult"  >
             {products
               .filter((ps) => ps.name.toLowerCase().includes(key.toLowerCase()))
               .slice(0, 15)

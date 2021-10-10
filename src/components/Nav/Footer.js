@@ -34,28 +34,32 @@ const Footer = () => {
   return (
     <footer className="footer-area bg-gray pt-100 pb-70">
       <hr />
-      <div className="upper">
-        <div className="company">
-          <h4>COMPANY</h4>
-          <Link to="/how">How it works</Link>
-          <Link>FAQ</Link>
-          <Link to="/best-deals">Deals</Link>
-        </div>
-        <div className="contact">
+      <div className="upper row">
+      <div className="col-lg-4">
+      <img src={logo} alt="Brand logo" />
+    </div>
+
+        <div className="contact col-lg-4 mr-4">
           <h4>CONTACT US</h4>
           <p>1800-720-6260</p>
           <p>8595641828 (9am-6pm)</p>
           <p>contact@lobuddy.com</p>
         </div>
-        <img src={logo} alt="Brand logo" />
+        <div className="company col-lg-4">
+          <h4>COMPANY</h4>
+          <Link to="/how">How it works</Link>
+          <Link>FAQ</Link>
+          <Link to="/best-deals">Deals</Link>
+        </div>
       </div>
 
       <hr />
 
-      <div className="lower">
+      <div className="lower row">
+      <div className="col-lg-4">
         <p>&copy; Lobuddy Pvt. Ltd</p>
-
-        <div className="social">
+      </div>
+        <div className="social col-lg-4">
           <a>
             <FacebookFilled style={{ fontSize: 20, padding: "0 1vw" }} />
           </a>
@@ -72,9 +76,9 @@ const Footer = () => {
             <InstagramOutlined style={{ fontSize: 20, padding: "0 1vw" }} />
           </a>
         </div>
-        <div className="others">
-          <Link to="/terms-and-conditions">Terms and Conditions</Link>
-          <Link to="/privacy-policy">Privacy policy</Link>
+        <div className="others col-lg-4">
+          <Link to="/terms-and-conditions">Terms and Conditions |</Link>
+          <Link to="/privacy-policy">Privacy policy |</Link>
           <Link>Cookie settings</Link>
         </div>
       </div>
@@ -88,7 +92,7 @@ export default Footer;
   /*<div className="container">
         <div className="row">
           <div className={`col-lg-3 col-sm-4`}>
-            
+
 
             <div className="copyright mb-30">
               <div className="footer-logo">
