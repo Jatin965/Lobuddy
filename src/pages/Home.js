@@ -140,7 +140,6 @@ const Home = () => {
           <button onClick={() => history.push("/best-deals")}>Deals</button>
         </div>
       </div> */}
-  
 
       {products
         .filter((ps) => ps.name === "Apple iPhone 13 128 GB")
@@ -222,7 +221,7 @@ const Home = () => {
 
         <div className="category-laptop-products">
           {products
-            .filter((ps) => ps.category === "Laptop")
+            .filter((ps) => ps.category === "Computer")
             .slice(0, 5)
             .map((product) => (
               <ProductWidth product={product} />
@@ -262,20 +261,20 @@ const Home = () => {
         <div className="content col-lg-6">
           <h1>Our happy customers in Germany</h1>
           <div className="row">
-          <div class="col-6">
-          <p>Check out what our customer saying about us...</p>
-          </div>
-          <div className="col-6">
-          <img src={Test} alt="Happy User" />
-          </div>
+            <div class="col-6">
+              <p>Check out what our customer saying about us...</p>
+            </div>
+            <div className="col-6">
+              <img src={Test} alt="Happy User" />
+            </div>
           </div>
         </div>
         <div className="col-lg-6">
-        <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
-          <img  src={Customer} alt="Customer" />
-          <img src={Customer2} alt="Customer" />
-          <img src={Customer3} alt="Customer" />
-        </Carousel>
+          <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
+            <img src={Customer} alt="Customer" />
+            <img src={Customer2} alt="Customer" />
+            <img src={Customer3} alt="Customer" />
+          </Carousel>
         </div>
       </div>
     </div>

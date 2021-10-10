@@ -137,6 +137,33 @@ const ProductDetail = () => {
       thumbnail: "https://picsum.photos/id/1019/250/150/",
     },
   ];
+
+  const fun = () => {
+    if (product.image && product.image.length === 0) return [];
+
+    return (
+      product.image &&
+      product.image.map((img) => {
+        return {
+          original: BASE + img,
+          thumbnail: BASE + img,
+        };
+      })
+    );
+    // product.image &&
+    // product.image !== undefined &&
+    // product.image.map((img) => {
+    //   return {
+    //     original: BASE + img,
+    //     thumbnail: BASE + img,
+    //   };
+    // })
+  };
+
+  console.log(fun());
+
+  console.log();
+
   console.log(
     product.image &&
       product.image.map((img) => [
@@ -147,15 +174,13 @@ const ProductDetail = () => {
       ])[0]
   );
 
-  console.log(images);
-
   if (error || errorDetail) {
     return <h1>Error</h1>;
   }
 
   return (
     <div className="detail">
-       <div className="tag">
+      <div className="tag">
         <TagFilled
           style={{ transform: "scale(-1,1)", fontSize: 50, color: "white" }}
         />
@@ -167,7 +192,6 @@ const ProductDetail = () => {
           and get 70% off in your first rental plan - It's valid till 31.11.21.
         </p>
       </div>
-
 
       <div className="detail-show">
         <div className="detail-show-content">
@@ -186,17 +210,17 @@ const ProductDetail = () => {
 
         <ProductImageGalleryLeftThumb product={product} />
         <ImageGallery
-          // items={
+          // items={() => {
           //   product.image &&
-          //   product.image !== undefined &&
-          //   product.image.map((img) => [
-          //     {
-          //       original: BASE + img,
-          //       thumbnail: BASE + img,
-          //     },
-          //   ])[0]
-          // }
-          items={images}
+          //     product.image !== undefined &&
+          //     product.image.map((img) => {
+          //       return {
+          //         original: BASE + img,
+          //         thumbnail: BASE + img,
+          //       };
+          //     });
+          // }}
+          items={fun()}
           thumbnailPosition="right"
           showPlayButton={false}
           showNav={false}
@@ -248,20 +272,20 @@ const ProductDetail = () => {
         <div className="content col-lg-6">
           <h1>Our happy customers in Germany</h1>
           <div className="row">
-          <div class="col-6">
-          <p>Check out what our customer saying about us...</p>
-          </div>
-          <div className="col-6">
-          <img src={Test} alt="Happy User" />
-          </div>
+            <div class="col-6">
+              <p>Check out what our customer saying about us...</p>
+            </div>
+            <div className="col-6">
+              <img src={Test} alt="Happy User" />
+            </div>
           </div>
         </div>
         <div className="col-lg-6">
-        <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
-          <img  src={Customer} alt="Customer" />
-          <img src={Customer2} alt="Customer" />
-          <img src={Customer3} alt="Customer" />
-        </Carousel>
+          <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
+            <img src={Customer} alt="Customer" />
+            <img src={Customer2} alt="Customer" />
+            <img src={Customer3} alt="Customer" />
+          </Carousel>
         </div>
       </div>
 

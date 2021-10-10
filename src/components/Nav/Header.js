@@ -132,7 +132,7 @@ const menu = (
           fontFamily: "Arial Rounded MT",
           fontWeight: 200,
         }}
-        to="/search?category=wearables"
+        to="/search?category=Wearables"
       >
         <IoMdWatch
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
@@ -161,7 +161,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=music"
+        to="/search?sub=Music"
       >
         Music
       </Link>
@@ -243,14 +243,10 @@ const Header = () => {
             />
           </div>
         </div>
-<div className="Header-group">
-<img
-
-  src={head}
-  alt="Header-group"
-/>
-<button onClick={() => setIsModalVisible(true)}>Subscribe</button>
-</div>
+        <div className="Header-group">
+          <img src={head} alt="Header-group" />
+          <button onClick={() => setIsModalVisible(true)}>Subscribe</button>
+        </div>
         {filterProducts.length != 0 && (
           <div className="dataResult">
             {products
