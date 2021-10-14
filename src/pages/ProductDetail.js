@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import $ from "jquery";
+import $ from "jquery";
 
 import { useRouteMatch } from "react-router-dom";
 import ImageGallery from "react-image-gallery";
@@ -9,7 +9,7 @@ import { detailProduct, listProducts } from "../redux/actions/productActions";
 
 import { computers, smartPhones, tab, activity, music } from "../utils/box.js";
 
-import { Slider, Carousel } from "antd";
+import { Carousel } from "antd";
 import {
   TagFilled,
   UserOutlined,
@@ -18,6 +18,9 @@ import {
   RightOutlined,
   LeftOutlined,
 } from "@ant-design/icons";
+
+import { AiFillTag } from "react-icons/ai";
+import { FaTruckMoving } from "react-icons/fa";
 
 import Faq from "../components/UI/Faq";
 import Product from "../components/Cards/Product";
@@ -31,6 +34,7 @@ import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySi
 import Loader from "../components/UI/Loader";
 import PopUp from "../components/UI/PopUp";
 import BoxImg from "../components/UI/BoxImg";
+import Slider from "../components/UI/Slider";
 
 const BASE = "https://backend.lobuddy.in";
 
@@ -113,7 +117,7 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  console.log(product.sub === "Tab");
+  console.log(product.sub);
   console.log(tab);
 
   useEffect(() => {
@@ -161,19 +165,19 @@ const ProductDetail = () => {
     // })
   };
 
-  console.log(fun());
+  // console.log(fun());
 
-  console.log();
+  // console.log();
 
-  console.log(
-    product.image &&
-      product.image.map((img) => [
-        {
-          original: BASE + img,
-          thumbnail: BASE + img,
-        },
-      ])[0]
-  );
+  // console.log(
+  //   product.image &&
+  //     product.image.map((img) => [
+  //       {
+  //         original: BASE + img,
+  //         thumbnail: BASE + img,
+  //       },
+  //     ])[0]
+  // );
 
   if (error || errorDetail) {
     return <h1>Error</h1>;
@@ -189,6 +193,14 @@ const ProductDetail = () => {
   //     $el.css({ position: "fixed", bottom: "0px" });
   //   }
   // });
+
+  $(document).on("scroll resize", function () {
+    if ($(this).scrollTop() > 50 && $(window).width < 400) {
+      $(".price-stick").addClass(".stick");
+    } else {
+      $(".price-stick").addClass(".stick");
+    }
+  });
 
   return (
     <div className="detail">
@@ -211,10 +223,20 @@ const ProductDetail = () => {
             <h3>{product.name}</h3>
             <h6>{product.details}</h6>
             {/* <Slider style={{ height: 30 }} step={33} tipFormatter={null} /> */}
+
+            <Slider />
           </div>
           <div className="detail-show-content-right ">
             <h3>{product.price}</h3>
-            <h5>per month, thereafter cancel anytime With Lobuddy </h5>
+            <h6>per month, thereafter cancel anytime With Lobuddy </h6>
+            <div style={{ display: "flex" }}>
+              <FaTruckMoving style={{ color: "#f68a1e", fontSize: 24 }} />
+              <p>Delivery in 1-3 business days</p>
+            </div>
+            <div style={{ display: "flex" }}>
+              <AiFillTag style={{ color: "#f68a1e", fontSize: 24 }} />
+              <p>Free delivery</p>
+            </div>
             <button onClick={showModal}>Rent it</button>
             {isModalVisible && <PopUp view={setIsModalVisible} />}
           </div>
