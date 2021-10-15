@@ -9,7 +9,7 @@ import { detailProduct, listProducts } from "../redux/actions/productActions";
 
 import { computers, smartPhones, tab, activity, music } from "../utils/box.js";
 
-import { Slider, Carousel } from "antd";
+import { Carousel } from "antd";
 import {
   TagFilled,
   UserOutlined,
@@ -18,6 +18,9 @@ import {
   RightOutlined,
   LeftOutlined,
 } from "@ant-design/icons";
+
+import { AiFillTag } from "react-icons/ai";
+import { FaTruckMoving } from "react-icons/fa";
 
 import Faq from "../components/UI/Faq";
 import Product from "../components/Cards/Product";
@@ -31,6 +34,7 @@ import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySi
 import Loader from "../components/UI/Loader";
 import PopUp from "../components/UI/PopUp";
 import BoxImg from "../components/UI/BoxImg";
+import Slider from "../components/UI/Slider";
 
 const BASE = "https://backend.lobuddy.in";
 
@@ -113,7 +117,7 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  console.log(product.sub === "Tab");
+  console.log(product.sub);
   console.log(tab);
 
   useEffect(() => {
@@ -138,17 +142,42 @@ const ProductDetail = () => {
       thumbnail: "https://picsum.photos/id/1019/250/150/",
     },
   ];
-  console.log(
-    product.image &&
-      product.image.map((img) => [
-        {
+
+  const fun = () => {
+    if (product.image && product.image.length === 0) return [];
+
+    return (
+      product.image &&
+      product.image.map((img) => {
+        return {
           original: BASE + img,
           thumbnail: BASE + img,
-        },
-      ])[0]
-  );
+        };
+      })
+    );
+    // product.image &&
+    // product.image !== undefined &&
+    // product.image.map((img) => {
+    //   return {
+    //     original: BASE + img,
+    //     thumbnail: BASE + img,
+    //   };
+    // })
+  };
 
-  console.log(images);
+  // console.log(fun());
+
+  // console.log();
+
+  // console.log(
+  //   product.image &&
+  //     product.image.map((img) => [
+  //       {
+  //         original: BASE + img,
+  //         thumbnail: BASE + img,
+  //       },
+  //     ])[0]
+  // );
 
   if (error || errorDetail) {
     return <h1>Error</h1>;
@@ -207,7 +236,7 @@ $(document).ready(function(){
 
   return (
     <div className="detail">
-       <div className="tag">
+      <div className="tag">
         <TagFilled
           style={{ transform: "scale(-1,1)", fontSize: 50, color: "white" }}
         />
@@ -220,17 +249,26 @@ $(document).ready(function(){
         </p>
       </div>
 
-
       <div className="detail-show">
         <div className="detail-show-content">
           <div className="detail-show-content-left">
             <h3>{product.name}</h3>
             <h6>{product.details}</h6>
             {/* <Slider style={{ height: 30 }} step={33} tipFormatter={null} /> */}
+
+            <Slider />
           </div>
           <div className="detail-show-content-right ">
             <h3>{product.price}</h3>
-            <h5>per month, thereafter cancel anytime With Lobuddy </h5>
+            <h6>per month, thereafter cancel anytime With Lobuddy </h6>
+            <div style={{ display: "flex" }}>
+              <FaTruckMoving style={{ color: "#f68a1e", fontSize: 24 }} />
+              <p>Delivery in 1-3 business days</p>
+            </div>
+            <div style={{ display: "flex" }}>
+              <AiFillTag style={{ color: "#f68a1e", fontSize: 24 }} />
+              <p>Free delivery</p>
+            </div>
             <button onClick={showModal}>Rent it</button>
             {isModalVisible && <PopUp view={setIsModalVisible} />}
           </div>
@@ -239,17 +277,17 @@ $(document).ready(function(){
 
         <ProductImageGalleryLeftThumb product={product} />
         <ImageGallery
-          // items={
+          // items={() => {
           //   product.image &&
-          //   product.image !== undefined &&
-          //   product.image.map((img) => [
-          //     {
-          //       original: BASE + img,
-          //       thumbnail: BASE + img,
-          //     },
-          //   ])[0]
-          // }
-          items={images}
+          //     product.image !== undefined &&
+          //     product.image.map((img) => {
+          //       return {
+          //         original: BASE + img,
+          //         thumbnail: BASE + img,
+          //       };
+          //     });
+          // }}
+          items={[]}
           thumbnailPosition="right"
           showPlayButton={false}
           showNav={false}
@@ -347,20 +385,20 @@ $(document).ready(function(){
         <div className="content col-lg-6">
           <h1>Our happy customers in Germany</h1>
           <div className="row">
-          <div class="col-6">
-          <p>Check out what our customer saying about us...</p>
-          </div>
-          <div className="col-6">
-          <img src={Test} alt="Happy User" />
-          </div>
+            <div class="col-6">
+              <p>Check out what our customer saying about us...</p>
+            </div>
+            <div className="col-6">
+              <img src={Test} alt="Happy User" />
+            </div>
           </div>
         </div>
         <div className="col-lg-6">
-        <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
-          <img  src={Customer} alt="Customer" />
-          <img src={Customer2} alt="Customer" />
-          <img src={Customer3} alt="Customer" />
-        </Carousel>
+          <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
+            <img src={Customer} alt="Customer" />
+            <img src={Customer2} alt="Customer" />
+            <img src={Customer3} alt="Customer" />
+          </Carousel>
         </div>
       </div>
 
@@ -385,8 +423,6 @@ $(document).ready(function(){
     </div>
     </div>
     </div>
-
-
   );
 };
 

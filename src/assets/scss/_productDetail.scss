@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 70%;
     border-radius: 26px;
     padding: 10px;
     box-shadow: $shadow;
@@ -187,10 +187,9 @@ display: flex;
 
 
   .testimonials {
-
     align-items: center;
     justify-content: space-between;
-
+    margin: 5vh 0;
 
     @media #{$md-layout} {
       flex-direction: column;
@@ -214,20 +213,41 @@ display: flex;
 
     img {
       height: 100%;
-      width: 250px;
-
+      width: 330px;
     }
   }
 }
-.price-stick
-{
- display: none;
+.price-stick {
+  display: none;
+  position: sticky;
+  bottom: 0;
+  box-shadow: $shadow;
+  height: 80px;
+  width: 400px;
+  background: white;
+  h3 {
+    color: $theme-color;
+    font-size: 20px;
+  }
+  .sticky-but {
+    margin-top: 20px;
 
+    button {
+      font-size: 10px;
+      border-radius: 26px;
+      color: white;
+      background-color: $theme-color;
+      border: none;
+      box-shadow: $shadow;
 
-
-
+      &:hover {
+        background-color: white;
+        border: 1px solid $theme-color;
+        color: $theme-color;
+      }
+    }
+  }
 }
-
 
 .ant-modal {
   min-width: 50vw;

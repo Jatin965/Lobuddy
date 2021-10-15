@@ -132,7 +132,7 @@ const menu = (
           fontFamily: "Arial Rounded MT",
           fontWeight: 200,
         }}
-        to="/search?category=wearables"
+        to="/search?category=Wearables"
       >
         <IoMdWatch
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
@@ -161,7 +161,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=music"
+        to="/search?sub=Music"
       >
         Music
       </Link>
@@ -204,8 +204,6 @@ const Header = () => {
     (state) => state.productList
   );
 
-
-
   return (
     <header>
       <div className={"container-fluid"}>
@@ -221,7 +219,7 @@ const Header = () => {
           <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
             <Dropdown overlay={menu} placement="bottomCenter">
               <button className="btn bg-transparent">
-                <AppstoreOutlined />
+                <AppstoreOutlined /> <p> Categories </p>
               </button>
             </Dropdown>
           </div>
@@ -232,10 +230,13 @@ const Header = () => {
               onChange={handleChange}
               value={key}
             />
+
             {filterProducts.length != 0 && (
-              <div className="dataResult"  >
+              <div className="dataResult">
                 {products
-                  .filter((ps) => ps.name.toLowerCase().includes(key.toLowerCase()))
+                  .filter((ps) =>
+                    ps.name.toLowerCase().includes(key.toLowerCase())
+                  )
                   .slice(0, 15)
                   .map((value, key) => {
                     return (
@@ -272,16 +273,11 @@ const Header = () => {
             />
           </div>
         </div>
-<div className="Header-group">
-<img
-
-  src={head}
-  alt="Header-group"
-/>
-<button onClick={() => setIsModalVisible(true)}>Subscribe</button>
-    {isModalVisible && <PopUp view={setIsModalVisible} />}
-</div>
-
+        <div className="Header-group">
+          <img src={head} alt="Header-group" />
+          <button onClick={() => setIsModalVisible(true)}>Subscribe</button>
+          {isModalVisible && <PopUp view={setIsModalVisible} />}
+        </div>
 
         <div className="row li2 pt-4">
           <Link to={process.env.PUBLIC_URL + "/how"}>HOW LOBUDDY WORKS?</Link>

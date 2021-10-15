@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useHistory } from "react-router-dom";
 
@@ -12,6 +12,8 @@ const Search = ({ keyss }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const [pro, setPro] = useState([]);
+
   let keyword = history.location.search;
 
   const [keys, word] = keyword.split("=");
@@ -24,6 +26,14 @@ const Search = ({ keyss }) => {
     (state) => state.productList
   );
 
+  // if (key === "category") {
+  //   setPro(products.filter((ps) => ps.category.toLowerCase() === word));
+  // }
+
+  // if (key === "sub") {
+  //   setPro(products.filter((ps) => ps.sub.toLowerCase() == word));
+  // }
+
   useEffect(() => {
     dispatch(listProducts(keyword));
   }, [keyword, dispatch, history.location.search]);
@@ -35,20 +45,11 @@ const Search = ({ keyss }) => {
   console.log(products);
   return (
     <div className="search">
-      {products
-        .filter((ps) =>
-          key === "category" ? (
-            ps.category.toLowerCase() === word
-          ) : key === "sub" ? (
-            ps.sub.toLowerCase() === word
-          ) : (
-            <h1>Error</h1>
-          )
-        )
-        .slice(0, 5)
-        .map((product) => (
-          <Product product={product} />
-        ))}
+      {pro
+        .filter((ps) => ps.category === word)
+        .map((product) => {
+          return <Product product={product} />;
+        })}
     </div>
   );
 };
