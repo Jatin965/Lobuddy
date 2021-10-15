@@ -69,9 +69,8 @@ header {
         }
 
         &:focus-within {
-          border-bottom-right-radius: 0px;
-          border-bottom-left-radius:0px;
-          z-index: -1;
+
+
           box-shadow: 1px 1px 8px 1px #dcdcdc;
           box-shadow: inset 0 -2px 0 0 grey;
 
@@ -100,6 +99,37 @@ header {
 
           }
         }
+        .dataResult {
+
+          border-radius: 30px;
+          img{
+            height: 40px;
+            width: 40px;
+
+
+          }
+          p
+          {
+
+            margin-left: 20px;
+          }
+          a {
+
+            padding-bottom:5px;
+
+            border-radius: 8px;
+            text-decoration: none;
+
+          }
+          a:hover{
+            background: lightgrey;
+          }
+        }
+        .dataResult .dataItem {
+              display: flex;
+          align-items: center;
+
+        }
 
 
 
@@ -109,59 +139,7 @@ header {
     {
       display: none;
     }
-.dataResult {
-  position: absolute;
-  width: 598px;
-  top: 41px;
-  left:374px;
-  height: auto;
-  background-color: white;
-  box-shadow: $shadow;
- z-index: 1;
-  border-radius: 30px;
-  overflow: hidden;
-border-top-left-radius: 0px;
-border-top-right-radius: 0px;
 
-
-  padding: 0 20px;
-
-  img{
-    height: 40px;
-    width: 40px;
-
-
-  }
-  p
-  {
-    font-size: 20px;
-    margin-left: 20px;
-  }
-  a {
-    color: black;
-
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 15px;
-    padding: 10px;
-    font-size: 17px;
-    border-radius: 8px;
-    text-decoration: none;
-
-  }
-  a:hover{
-    background: lightgrey;
-  }
-}
-.dataResult .dataItem {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  color: black;
-  padding-top: 3vh;
-}
     .li2 {
       display: flex;
 
@@ -264,42 +242,21 @@ border-top-right-radius: 0px;
           button {
             width: 30px;
             height: 30px;
-            border-radius: 0px;
-            text-overflow: clip;
+            text-align: center!important;
+            border-radius: 20px;
+            padding-left: 15px!important;
+
           }
         }
 
         .search__box {
-          margin: 0 auto;
-          width: 60%;
-          border-radius: 20px;
-          height: 30px;
-          border-bottom-right-radius: 20px;
-          border-bottom-left-radius:20px;
-
-
-          &:focus-within {
-            border-bottom-right-radius: 20px;
-            border-bottom-left-radius:20px;
-
+          width:60%!important;
+            margin: 0 0 0 4px;
+          input
+          {
+            width:60%!important;
 
           }
-
-
-          input {
-
-           height: 30px;
-
-            width:80%;
-            background: transparent;
-            font-size: 15px;
-
-
-
-
-          }
-
-
         }
       }
       .Header-group
@@ -330,25 +287,6 @@ border-top-right-radius: 0px;
         display: none;
       }
     }
-    .dataResult {
-      position: absolute !important;
 
-      margin-top: 35px;
-      left: 10px !important;
-      width: 340px !important;
-      border-top-right-radius: 20px!important;
-      border-top-left-radius:20px!important;
-
-      img{
-        height: 20px!important;
-        width: 20px!important;
-      }
-      p
-      {
-       font-size: 13px!important;
-        margin-left: 10px;
-      }
-
-    }
   }
 }

@@ -232,6 +232,33 @@ const Header = () => {
               onChange={handleChange}
               value={key}
             />
+            {filterProducts.length != 0 && (
+              <div className="dataResult"  >
+                {products
+                  .filter((ps) => ps.name.toLowerCase().includes(key.toLowerCase()))
+                  .slice(0, 15)
+                  .map((value, key) => {
+                    return (
+                      <Link
+                        to={`/search?q=${value.name}`}
+                        onClick={() => {
+                          setKey("");
+                          setFilterProducts([]);
+                        }}
+                        className="dataItem"
+                      >
+                        <img
+                          style={({ paddingRight: 20 }, { height: 30 })}
+                          src={"https://backend.lobuddy.in" + value.image[0]}
+                          alt=""
+                        />
+                        <p>{value.name.slice(0, 30)}... </p> <br />
+                        {/* <p>{value.description.slice(0, 30)}</p> */}
+                      </Link>
+                    );
+                  })}
+              </div>
+            )}
           </div>
 
           <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
@@ -254,33 +281,7 @@ const Header = () => {
 <button onClick={() => setIsModalVisible(true)}>Subscribe</button>
     {isModalVisible && <PopUp view={setIsModalVisible} />}
 </div>
-        {filterProducts.length != 0 && (
-          <div className="dataResult"  >
-            {products
-              .filter((ps) => ps.name.toLowerCase().includes(key.toLowerCase()))
-              .slice(0, 15)
-              .map((value, key) => {
-                return (
-                  <Link
-                    to={`/search?q=${value.name}`}
-                    onClick={() => {
-                      setKey("");
-                      setFilterProducts([]);
-                    }}
-                    className="dataItem"
-                  >
-                    <img
-                      style={({ paddingRight: 20 }, { height: 30 })}
-                      src={"https://backend.lobuddy.in" + value.image[0]}
-                      alt=""
-                    />
-                    <p>{value.name.slice(0, 30)}... </p> <br />
-                    {/* <p>{value.description.slice(0, 30)}</p> */}
-                  </Link>
-                );
-              })}
-          </div>
-        )}
+
 
         <div className="row li2 pt-4">
           <Link to={process.env.PUBLIC_URL + "/how"}>HOW LOBUDDY WORKS?</Link>

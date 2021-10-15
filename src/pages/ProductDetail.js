@@ -154,16 +154,56 @@ const ProductDetail = () => {
     return <h1>Error</h1>;
   }
 
-  $(window).scroll(function(e){
+
+  $(document).scroll(function(){
   var $el = $('.price-stick');
   var isPositionFixed = ($el.css('position') == 'fixed');
-  if ($(this).scrollTop() > 100 && !isPositionFixed){
-    $el.css({'position': 'fixed', 'bottom': '0px'});
+
+  if ($(this).scrollTop() >100 && !isPositionFixed ){
+    $el.css({'position': 'fixed', 'bottom': '0'});
   }
+
   if ($(this).scrollTop() < 100 && isPositionFixed){
-    $el.css({'position': 'fixed', 'bottom': '0px'});
+    $el.css({'position': 'sticky', 'bottom': '0'});
   }
+
+
 });
+$(document).ready(function(){
+  $(".num1").click(function(){
+  $(".1").css("display","inline-block");
+    $(".2").css("display","none");
+      $(".3").css("display","none");
+        $(".4").css("display","none");
+
+  });
+});
+$(document).ready(function(){
+  $(".num2").click(function(){
+  $(".2").css("display","inline-block");
+  $(".1").css("display","none");
+    $(".3").css("display","none");
+      $(".4").css("display","none");
+  });
+});
+$(document).ready(function(){
+  $(".num3").click(function(){
+  $(".3").css("display","inline-block");
+  $(".2").css("display","none");
+    $(".1").css("display","none");
+      $(".4").css("display","none");
+  });
+});
+
+$(document).ready(function(){
+  $(".num4").click(function(){
+  $(".4").css("display","inline-block");
+  $(".2").css("display","none");
+    $(".3").css("display","none");
+      $(".1").css("display","none");
+  });
+});
+
 
   return (
     <div className="detail">
@@ -196,6 +236,7 @@ const ProductDetail = () => {
           </div>
         </div>
 
+
         <ProductImageGalleryLeftThumb product={product} />
         <ImageGallery
           // items={
@@ -222,6 +263,8 @@ const ProductDetail = () => {
         <br />
         {product.details}
       </div>
+
+
 
       {/* <div className="sec3"> */}
       <div className="what">
@@ -255,6 +298,50 @@ const ProductDetail = () => {
       </div>
       <Faq />
       {/* </div> */}
+      <div class="flex-container">
+
+        <div class="dropdown ">
+        <div class="num num1">1+</div>
+            <div class="dropdown-content  1">
+              <div class="n-num">
+                <p class="digit">1+</p>
+                <p class="month">month</p>
+             </div>
+
+      </div>
+</div>
+<div class="dropdown">
+        <div class="num num2">3+</div>
+        <div class="dropdown-content 2">
+          <div class="n-num">
+            <p class="digit">3+</p>
+            <p class="month">month</p>
+         </div>
+</div>
+
+
+</div>
+<div class="dropdown">
+        <div class="num num3">6+</div>
+            <div class="dropdown-content 3">
+              <div class="n-num">
+                <p class="digit">6+</p>
+                <p class="month">month</p>
+             </div>
+
+      </div>
+</div>
+   <div class="dropdown">
+        <div class="num num4">12+</div>
+            <div class="dropdown-content 4">
+              <div class="n-num">
+                <p class="digit">12+</p>
+                <p class="month">month</p>
+             </div>
+
+      </div>
+</div>
+</div>
 
       <div className="testimonials row">
         <div className="content col-lg-6">
@@ -286,14 +373,16 @@ const ProductDetail = () => {
           ))}
         </div>
       </div>
-          <div className="row price-stick"  >
-          <div className="col-7 ">
-          <h3>{product.price}</h3>
-          <p>per month, thereafter cancel anytime With Lobuddy </p>
-          </div>
-          <div className="col-5  sticky-but">
+          <div className=" price-stick " >
+          <div className="row">
+          <div className="col-lg-7 col-sm-7 col-7 ">
+            <h3>{product.price}</h3>
+           </div>
+          <div className="col-lg-5 col-sm-5 col-5  sticky-but">
           <button >Read it</button>
             </div>
+            <p>per month, thereafter cancel anytime With Lobuddy </p>
+    </div>
     </div>
     </div>
 
