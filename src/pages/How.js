@@ -51,7 +51,7 @@ const How = () => {
       </div>
       <div className="grid-container">
         <div className="benefit ben-1">
-          <div className="img-container" style={{ padding: "2rem 5.5rem" }}>
+          <div className="img-container">
             <img src={Up} alt="Upgrade" />
           </div>
           <div className="ben-content">

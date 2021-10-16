@@ -8,34 +8,40 @@
     align-items: center;
     row-gap: 2vh;
 
-    @media #{$md-layout} {
-      flex-direction: column;
-    }
-    @media #{$xs-layout} {
-      flex-direction: column;
-    }
-
     .how-icon {
       color: $theme-color;
       font-size: 50px;
-      // padding: 5px;
+
+      @media #{$md-layout} {
+        font-size: 20px;
+      }
+      @media #{$xs-layout} {
+        font-size: 20px;
+      }
     }
 
     h1 {
       padding-left: 10px;
+
+      @media #{$md-layout} {
+        font-size: 20px;
+      }
+      @media #{$xs-layout} {
+        font-size: 20px;
+      }
     }
   }
 
   .how-1 {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
     @media #{$md-layout} {
-      flex-direction: column;
+      justify-content: space-between;
     }
     @media #{$xs-layout} {
-      flex-direction: column;
+      justify-content: space-between;
     }
 
     img {
@@ -43,16 +49,23 @@
       height: auto;
 
       @media #{$md-layout} {
-        max-width: 80vw;
+        max-width: 60vw;
       }
       @media #{$xs-layout} {
-        max-width: 80vw;
+        max-width: 60vw;
       }
     }
 
     div {
       h1 {
         font-family: "Arial Rounded MT";
+
+        @media #{$md-layout} {
+          font-size: 0.8rem;
+        }
+        @media #{$xs-layout} {
+          font-size: 0.8rem;
+        }
       }
     }
   }
@@ -62,20 +75,20 @@
     justify-content: space-around;
 
     @media #{$md-layout} {
-      flex-direction: column-reverse;
+      justify-content: space-between;
     }
     @media #{$xs-layout} {
-      flex-direction: column-reverse;
+      justify-content: space-between;
     }
     img {
       max-width: 50vw;
       height: auto;
 
       @media #{$md-layout} {
-        max-width: 80vw;
+        max-width: 60vw;
       }
       @media #{$xs-layout} {
-        max-width: 80vw;
+        max-width: 60vw;
       }
     }
 
@@ -87,6 +100,13 @@
 
       h1 {
         font-family: "Arial Rounded MT";
+
+        @media #{$md-layout} {
+          font-size: 0.8rem;
+        }
+        @media #{$xs-layout} {
+          font-size: 0.8rem;
+        }
       }
     }
   }
@@ -95,26 +115,33 @@
     align-items: center;
     justify-content: space-around;
     @media #{$md-layout} {
-      flex-direction: column;
+      justify-content: space-between;
     }
     @media #{$xs-layout} {
-      flex-direction: column;
+      justify-content: space-between;
     }
     img {
       max-width: 50vw;
       height: auto;
 
       @media #{$md-layout} {
-        max-width: 80vw;
+        max-width: 60vw;
       }
       @media #{$xs-layout} {
-        max-width: 80vw;
+        max-width: 60vw;
       }
     }
 
     div {
       h1 {
         font-family: "Arial Rounded MT";
+
+        @media #{$md-layout} {
+          font-size: 0.8rem;
+        }
+        @media #{$xs-layout} {
+          font-size: 0.8rem;
+        }
       }
     }
   }
@@ -141,15 +168,33 @@
       }
 
       .img-container {
-        padding: 2rem 4rem;
         display: flex;
         box-shadow: $shadow;
-        min-height: 35vh;
+        height: 35vh;
+        width: 35vh;
         border-radius: 50%;
         align-items: center;
 
+        @media #{$md-layout} {
+          height: 22vh;
+          width: 22vh;
+        }
+        @media #{$xs-layout} {
+          height: 22vh;
+          width: 22vh;
+        }
+
         img {
           max-height: 20vh;
+          display: block;
+          margin: auto;
+
+          @media #{$md-layout} {
+            max-height: 10vh;
+          }
+          @media #{$xs-layout} {
+            max-height: 10vh;
+          }
         }
       }
 

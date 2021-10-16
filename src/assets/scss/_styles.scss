@@ -14,11 +14,27 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media #{$md-layout} {
+    height: 30px;
+    width: 30px;
+  }
+  @media #{$xs-layout} {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 .circle-icon {
   color: $theme-color;
   font-size: 40px;
+
+  @media #{$md-layout} {
+    font-size: 20px;
+  }
+  @media #{$xs-layout} {
+    font-size: 20px;
+  }
 }
 
 .spinner {

@@ -35,11 +35,7 @@ const Product = ({
         >
           <div className="product-img">
             <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
-              <img
-                className="default-img"
-                src={"https://backend.lobuddy.in" + product.image[0]}
-                alt=""
-              />
+              <img className="default-img" src={product.image[0]} alt="" />
             </Link>
             {product.tags ? (
               <div className="product-img-badges">
@@ -87,7 +83,7 @@ const Product = ({
 
               <h6>
                 <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
-                  {product.description.slice(0, 80)}
+                  {product.details.slice(0, 80)}
                 </Link>
               </h6>
               <div className="price-2">

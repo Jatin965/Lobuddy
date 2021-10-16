@@ -117,8 +117,7 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  console.log(product.sub);
-  console.log(tab);
+  console.log(product);
 
   useEffect(() => {
     dispatch(detailProduct(match.params.id));
@@ -183,56 +182,51 @@ const ProductDetail = () => {
     return <h1>Error</h1>;
   }
 
+  $(document).scroll(function () {
+    var $el = $(".price-stick");
+    var isPositionFixed = $el.css("position") == "fixed";
 
-  $(document).scroll(function(){
-  var $el = $('.price-stick');
-  var isPositionFixed = ($el.css('position') == 'fixed');
+    if ($(this).scrollTop() > 100 && !isPositionFixed) {
+      $el.css({ position: "fixed", bottom: "0" });
+    }
 
-  if ($(this).scrollTop() >100 && !isPositionFixed ){
-    $el.css({'position': 'fixed', 'bottom': '0'});
-  }
-
-  if ($(this).scrollTop() < 100 && isPositionFixed){
-    $el.css({'position': 'sticky', 'bottom': '0'});
-  }
-
-
-});
-$(document).ready(function(){
-  $(".num1").click(function(){
-  $(".1").css("display","inline-block");
-    $(".2").css("display","none");
-      $(".3").css("display","none");
-        $(".4").css("display","none");
-
+    if ($(this).scrollTop() < 100 && isPositionFixed) {
+      $el.css({ position: "sticky", bottom: "0" });
+    }
   });
-});
-$(document).ready(function(){
-  $(".num2").click(function(){
-  $(".2").css("display","inline-block");
-  $(".1").css("display","none");
-    $(".3").css("display","none");
-      $(".4").css("display","none");
+  $(document).ready(function () {
+    $(".num1").click(function () {
+      $(".1").css("display", "inline-block");
+      $(".2").css("display", "none");
+      $(".3").css("display", "none");
+      $(".4").css("display", "none");
+    });
   });
-});
-$(document).ready(function(){
-  $(".num3").click(function(){
-  $(".3").css("display","inline-block");
-  $(".2").css("display","none");
-    $(".1").css("display","none");
-      $(".4").css("display","none");
+  $(document).ready(function () {
+    $(".num2").click(function () {
+      $(".2").css("display", "inline-block");
+      $(".1").css("display", "none");
+      $(".3").css("display", "none");
+      $(".4").css("display", "none");
+    });
   });
-});
+  $(document).ready(function () {
+    $(".num3").click(function () {
+      $(".3").css("display", "inline-block");
+      $(".2").css("display", "none");
+      $(".1").css("display", "none");
+      $(".4").css("display", "none");
+    });
+  });
 
-$(document).ready(function(){
-  $(".num4").click(function(){
-  $(".4").css("display","inline-block");
-  $(".2").css("display","none");
-    $(".3").css("display","none");
-      $(".1").css("display","none");
+  $(document).ready(function () {
+    $(".num4").click(function () {
+      $(".4").css("display", "inline-block");
+      $(".2").css("display", "none");
+      $(".3").css("display", "none");
+      $(".1").css("display", "none");
+    });
   });
-});
-
 
   return (
     <div className="detail">
@@ -274,7 +268,6 @@ $(document).ready(function(){
           </div>
         </div>
 
-
         <ProductImageGalleryLeftThumb product={product} />
         <ImageGallery
           // items={() => {
@@ -302,8 +295,6 @@ $(document).ready(function(){
         {product.details}
       </div>
 
-
-
       {/* <div className="sec3"> */}
       <div className="what">
         <h2>What you'll get in the box</h2>
@@ -323,12 +314,12 @@ $(document).ready(function(){
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
 
-          {product.sub == "Laptop" &&
+          {product.sub == "Laptops" &&
             computers.map((ts) => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
 
-          {product.sub == "Smartphone" &&
+          {product.sub == "Smartphones" &&
             smartPhones.map((ts) => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
@@ -337,49 +328,43 @@ $(document).ready(function(){
       <Faq />
       {/* </div> */}
       <div class="flex-container">
-
         <div class="dropdown ">
-        <div class="num num1">1+</div>
-            <div class="dropdown-content  1">
-              <div class="n-num">
-                <p class="digit">1+</p>
-                <p class="month">month</p>
-             </div>
-
+          <div class="num num1">1+</div>
+          <div class="dropdown-content  1">
+            <div class="n-num">
+              <p class="digit">1+</p>
+              <p class="month">month</p>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="num num2">3+</div>
+          <div class="dropdown-content 2">
+            <div class="n-num">
+              <p class="digit">3+</p>
+              <p class="month">month</p>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="num num3">6+</div>
+          <div class="dropdown-content 3">
+            <div class="n-num">
+              <p class="digit">6+</p>
+              <p class="month">month</p>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="num num4">12+</div>
+          <div class="dropdown-content 4">
+            <div class="n-num">
+              <p class="digit">12+</p>
+              <p class="month">month</p>
+            </div>
+          </div>
+        </div>
       </div>
-</div>
-<div class="dropdown">
-        <div class="num num2">3+</div>
-        <div class="dropdown-content 2">
-          <div class="n-num">
-            <p class="digit">3+</p>
-            <p class="month">month</p>
-         </div>
-</div>
-
-
-</div>
-<div class="dropdown">
-        <div class="num num3">6+</div>
-            <div class="dropdown-content 3">
-              <div class="n-num">
-                <p class="digit">6+</p>
-                <p class="month">month</p>
-             </div>
-
-      </div>
-</div>
-   <div class="dropdown">
-        <div class="num num4">12+</div>
-            <div class="dropdown-content 4">
-              <div class="n-num">
-                <p class="digit">12+</p>
-                <p class="month">month</p>
-             </div>
-
-      </div>
-</div>
-</div>
 
       <div className="testimonials row">
         <div className="content col-lg-6">
@@ -411,17 +396,17 @@ $(document).ready(function(){
           ))}
         </div>
       </div>
-          <div className=" price-stick " >
-          <div className="row">
+      <div className=" price-stick ">
+        <div className="row">
           <div className="col-lg-7 col-sm-7 col-7 ">
             <h3>{product.price}</h3>
-           </div>
+          </div>
           <div className="col-lg-5 col-sm-5 col-5  sticky-but">
-          <button >Read it</button>
-            </div>
-            <p>per month, thereafter cancel anytime With Lobuddy </p>
-    </div>
-    </div>
+            <button>Read it</button>
+          </div>
+          <p>per month, thereafter cancel anytime With Lobuddy </p>
+        </div>
+      </div>
     </div>
   );
 };
