@@ -142,7 +142,7 @@ const Home = () => {
       </div> */}
 
       {products
-        .filter((ps) => ps.name === "Apple iPhone 13 128 GB")
+        .filter((ps) => ps.name === "Apple iPhone 13 Mini (256GB) - Blue")
         .map((product) => (
           <ProductThree product={product} />
         ))}
@@ -183,7 +183,7 @@ const Home = () => {
 
         <div className="category-phone-products">
           {products
-            .filter((ps) => ps.category === "Mobiles")
+            .filter((ps) => ps.category === "Phones")
             .slice(0, flag)
             .map((product) => (
               <Product product={product} />
@@ -221,8 +221,8 @@ const Home = () => {
 
         <div className="category-laptop-products">
           {products
-            .filter((ps) => ps.category === "Computer")
-            .slice(0, 5)
+            .filter((ps) => ps.category === "Computers")
+            .slice(0, 4)
             .map((product) => (
               <ProductWidth product={product} />
             ))}

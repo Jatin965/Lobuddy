@@ -15,6 +15,7 @@ const Faq = () => {
         }
         expandIconPosition="right"
         bordered={false}
+        accordion
         className="site-collapse-custom-collapse"
       >
         <Panel header="In what condition are products in?" key={1}>

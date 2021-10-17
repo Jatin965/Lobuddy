@@ -27,10 +27,11 @@
     display: flex;
     flex-wrap: wrap;
     margin: 2vh 0;
+    justify-content: space-between;
 
-    & > * {
-      flex-basis: 50%;
-    }
+    // & > * {
+    //   flex-basis: 50%;
+    // }
 
     &-content {
       display: flex;
@@ -38,6 +39,7 @@
       box-shadow: $shadow;
       border-radius: 26px;
       padding: 30px;
+      width: 55%;
 
       &-left {
         font-family: "Arial Rounded MT";
@@ -58,6 +60,25 @@
       }
 
       &-right {
+        h1 {
+          font-family: "Arial Rounded MT";
+          text-align: center;
+        }
+        h6 {
+          font-family: "Arial Rounded MT";
+        }
+        .cb {
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          box-shadow: $shadow;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        p {
+          font-family: "Arial Rounded MT";
+        }
         button {
           padding: 10px 35px;
           border-radius: 26px;
@@ -111,80 +132,6 @@
       display: flex;
     }
   }
-
-  .flex-container {
-
-display: flex;
-
-  margin:0 auto;
-  width:310px;
-  border-radius:30px;
-  border:1px solid #dcdcdc;
-   padding:0 15px 0 15px;
-
-
-}
-.digit
-{
-  font-weight:bold;
-
-  font-size:18px;
-  margin-bottom:1px;
-}
-
-
-.flex-container .num {
-
-  padding:10px;
-  text-align:center;
-  font-size: 15px;
-   width:20px;
-   border-radius:80px;
-   margin:10px 40px 10px 10px;
-
-}
-.flex-container:focus {
-
-   margin-bottom:7px;
-  outline: none;
-  box-shadow: inset 0 -1px 0 0 grey;
-}
-.flex-container:hover{
-  box-shadow: 1px 1px 8px 1px #dcdcdc;
-}
-.flex-container:focus-within{
-  box-shadow: 1px 1px 8px 1px #dcdcdc;
-  outline:none;
-}
-
-
-
-
-
-.dropdown {
-  position: relative;
-
-  display: inline-block;
-}
-
-.dropdown-content {
-   text-align:center;
-   width:70px;
-  height:70px;
-  display: none;
-  position: absolute;
-  top:-10px;
-  left:-14px;
-  background-color: #fff;
-  border-radius:60%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-
- .dropdown-content1 {display: inline-block;}
-
-
 
   .testimonials {
     align-items: center;
@@ -357,109 +304,51 @@ display: flex;
   border-radius: none;
 }
 
-.ant-slider {
-  &:hover {
-    .ant-slider-track {
-      background: transparent;
-    }
-
-    .ant-slider-handle:not(.ant-tooltip-open) {
-      border-color: black;
-    }
-  }
-  .ant-slider-rail {
-    position: absolute;
-    width: 100%;
-    height: 30px;
-    background-color: transparent;
-    transition: background-color 0.3s;
-    border: 1px solid black;
-    border-radius: 30px;
-  }
-
-  .ant-slider-track {
-    position: absolute;
-    height: 30px;
-    background-color: transparent;
-    border-radius: 30px;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background: transparent;
-    }
-  }
-
-
-  .ant-slider-handle {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    margin-top: -6px;
-    background-color: $theme-color;
-    border: solid 2px black;
-    border-radius: 50%;
-    box-shadow: 0;
-    cursor: pointer;
-    transition: border-color 0.3s, box-shadow 0.6s,
-      transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-
-    &:focus {
-      outline: none;
-      border-color: $theme-color;
-    }
-  }
-}
-
 .image-gallery {
+  width: 40%;
   button {
     box-shadow: none;
     border-radius: 2px;
 
     &:hover,
     &:active,
-    &:focus {
+    &:focus,
+    &:focus-within {
       border-color: $theme-color;
     }
   }
 }
 @media screen and (max-device-width: 995px), screen and (max-width: 995px) {
-  .price-stick
-  {
-   display: block;
-  width:100%;
-  padding-left: 20px;
-  padding-top: 20px;
-      box-shadow: $shadow;
-          background: white;
-   h3
-   {
-   color: $theme-color;
-   font-size: 20px;
+  .price-stick {
+    display: block;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 20px;
+    box-shadow: $shadow;
+    background: white;
+    h3 {
+      color: $theme-color;
+      font-size: 20px;
+    }
+    .sticky-but {
+      display: flex;
 
-   }
-   .sticky-but{
-    display: flex;
+      button {
+        font-size: 10px;
+        border-radius: 26px;
+        color: white;
+        background-color: $theme-color;
+        border: none;
+        box-shadow: $shadow;
 
-   button {
-     font-size: 10px;
-     border-radius: 26px;
-     color: white;
-     background-color: $theme-color;
-     border: none;
-     box-shadow: $shadow;
-
-     &:hover {
-       background-color: white;
-       border: 1px solid $theme-color;
-       color: $theme-color;
-     }
-   }
+        &:hover {
+          background-color: white;
+          border: 1px solid $theme-color;
+          color: $theme-color;
+        }
+      }
+    }
   }
-
-  }
-
-
-
 }
 // .image-gallery-content.left .image-gallery-slide .image-gallery-image,
 // .image-gallery-content.right .image-gallery-slide .image-gallery-image {

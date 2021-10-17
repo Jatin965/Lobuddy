@@ -9,11 +9,7 @@ const ProductWidth = ({ product }) => {
     <div className="product-wrap">
       <div className="product-img">
         <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
-          <img
-            className="default-img"
-            src={"https://backend.lobuddy.in" + product.image[0]}
-            alt=""
-          />
+          <img className="default-img" src={product.image[0]} alt="" />
         </Link>
       </div>
       <div className="product-content-2">
@@ -25,7 +21,7 @@ const ProductWidth = ({ product }) => {
           </h2>
           <h4 className="desc">
             <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
-              {product.description.slice(0, 100)}...
+              {product.details.slice(0, 100)}...
             </Link>
           </h4>
           <div className="price-2">

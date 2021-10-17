@@ -102,6 +102,7 @@ const ProductDetail = () => {
   const match = useRouteMatch();
 
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [multi, setMulti] = useState(0.045);
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -142,42 +143,6 @@ const ProductDetail = () => {
     },
   ];
 
-  const fun = () => {
-    if (product.image && product.image.length === 0) return [];
-
-    return (
-      product.image &&
-      product.image.map((img) => {
-        return {
-          original: BASE + img,
-          thumbnail: BASE + img,
-        };
-      })
-    );
-    // product.image &&
-    // product.image !== undefined &&
-    // product.image.map((img) => {
-    //   return {
-    //     original: BASE + img,
-    //     thumbnail: BASE + img,
-    //   };
-    // })
-  };
-
-  // console.log(fun());
-
-  // console.log();
-
-  // console.log(
-  //   product.image &&
-  //     product.image.map((img) => [
-  //       {
-  //         original: BASE + img,
-  //         thumbnail: BASE + img,
-  //       },
-  //     ])[0]
-  // );
-
   if (error || errorDetail) {
     return <h1>Error</h1>;
   }
@@ -193,39 +158,6 @@ const ProductDetail = () => {
     if ($(this).scrollTop() < 100 && isPositionFixed) {
       $el.css({ position: "sticky", bottom: "0" });
     }
-  });
-  $(document).ready(function () {
-    $(".num1").click(function () {
-      $(".1").css("display", "inline-block");
-      $(".2").css("display", "none");
-      $(".3").css("display", "none");
-      $(".4").css("display", "none");
-    });
-  });
-  $(document).ready(function () {
-    $(".num2").click(function () {
-      $(".2").css("display", "inline-block");
-      $(".1").css("display", "none");
-      $(".3").css("display", "none");
-      $(".4").css("display", "none");
-    });
-  });
-  $(document).ready(function () {
-    $(".num3").click(function () {
-      $(".3").css("display", "inline-block");
-      $(".2").css("display", "none");
-      $(".1").css("display", "none");
-      $(".4").css("display", "none");
-    });
-  });
-
-  $(document).ready(function () {
-    $(".num4").click(function () {
-      $(".4").css("display", "inline-block");
-      $(".2").css("display", "none");
-      $(".3").css("display", "none");
-      $(".1").css("display", "none");
-    });
   });
 
   return (
@@ -250,17 +182,49 @@ const ProductDetail = () => {
             <h6>{product.details}</h6>
             {/* <Slider style={{ height: 30 }} step={33} tipFormatter={null} /> */}
 
-            <Slider />
+            <Slider set={setMulti} />
           </div>
           <div className="detail-show-content-right ">
-            <h3>{product.price}</h3>
+            {/* <h1 style={{ textAlign: "center" }}>
+              {"₹" + (product.price * multi).toFixed(0)}
+            </h1> */}
+            <h1>
+              {product.tags && product.tags.includes("deal") ? (
+                <>
+                  <span style={{ color: "#f68a1e" }}>
+                    {"₹" + (product.price * (multi - 0.005)).toFixed(0)}
+                  </span>
+                  <br />
+                  <span
+                    style={{
+                      fontSize: 24,
+                      textDecoration: "3px solid line-through",
+                    }}
+                    className="old"
+                  >
+                    {"₹" + (product.price * multi).toFixed(0)}
+                  </span>
+                </>
+              ) : (
+                <span>{"₹" + (product.price * multi).toFixed(0)}</span>
+              )}
+            </h1>
             <h6>per month, thereafter cancel anytime With Lobuddy </h6>
             <div style={{ display: "flex" }}>
-              <FaTruckMoving style={{ color: "#f68a1e", fontSize: 24 }} />
+              <div className="cb">
+                <FaTruckMoving
+                  style={{
+                    color: "#f68a1e",
+                    fontSize: 20,
+                  }}
+                />
+              </div>
               <p>Delivery in 1-3 business days</p>
             </div>
             <div style={{ display: "flex" }}>
-              <AiFillTag style={{ color: "#f68a1e", fontSize: 24 }} />
+              <div className="cb">
+                <AiFillTag style={{ color: "#f68a1e", fontSize: 20 }} />
+              </div>
               <p>Free delivery</p>
             </div>
             <button onClick={showModal}>Rent it</button>
@@ -268,19 +232,18 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        <ProductImageGalleryLeftThumb product={product} />
+        {/* <ProductImageGalleryLeftThumb product={product} /> */}
         <ImageGallery
           // items={() => {
           //   product.image &&
-          //     product.image !== undefined &&
           //     product.image.map((img) => {
           //       return {
-          //         original: BASE + img,
-          //         thumbnail: BASE + img,
+          //         original: img,
+          //         thumbnail: img,
           //       };
           //     });
           // }}
-          items={[]}
+          items={images}
           thumbnailPosition="right"
           showPlayButton={false}
           showNav={false}
@@ -290,9 +253,12 @@ const ProductDetail = () => {
 
       <div className="detail-product">
         <h2>Product Details</h2>
-        {product.description}
-        <br />
-        {product.details}
+        {product.description &&
+          product.description.map((desc) => (
+            <p style={{ fontFamily: "Arial Rounded MT", color: "#878787" }}>
+              ⚫ {desc}
+            </p>
+          ))}
       </div>
 
       {/* <div className="sec3"> */}
@@ -327,44 +293,6 @@ const ProductDetail = () => {
       </div>
       <Faq />
       {/* </div> */}
-      <div class="flex-container">
-        <div class="dropdown ">
-          <div class="num num1">1+</div>
-          <div class="dropdown-content  1">
-            <div class="n-num">
-              <p class="digit">1+</p>
-              <p class="month">month</p>
-            </div>
-          </div>
-        </div>
-        <div class="dropdown">
-          <div class="num num2">3+</div>
-          <div class="dropdown-content 2">
-            <div class="n-num">
-              <p class="digit">3+</p>
-              <p class="month">month</p>
-            </div>
-          </div>
-        </div>
-        <div class="dropdown">
-          <div class="num num3">6+</div>
-          <div class="dropdown-content 3">
-            <div class="n-num">
-              <p class="digit">6+</p>
-              <p class="month">month</p>
-            </div>
-          </div>
-        </div>
-        <div class="dropdown">
-          <div class="num num4">12+</div>
-          <div class="dropdown-content 4">
-            <div class="n-num">
-              <p class="digit">12+</p>
-              <p class="month">month</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="testimonials row">
         <div className="content col-lg-6">

@@ -9,6 +9,7 @@ import logo from "../../assets/images/logo.png";
 import head from "../../assets/images/hpik.png";
 
 import { IoMdWatch } from "react-icons/io";
+import { BiDotsVertical } from "react-icons/bi";
 
 import { Menu, Dropdown } from "antd";
 
@@ -217,9 +218,20 @@ const Header = () => {
             </div>
           </div>
           <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
-            <Dropdown overlay={menu} placement="bottomCenter">
-              <button className="btn bg-transparent">
-                <AppstoreOutlined /> <p> Categories </p>
+            <Dropdown
+              trigger={["click"]}
+              overlay={menu}
+              placement="bottomCenter"
+            >
+              <button
+                style={{ display: "flex" }}
+                className="btn bg-transparent"
+              >
+                {/* <AppstoreOutlined /> */}{" "}
+                <BiDotsVertical style={{ margin: "-5px" }} />
+                <BiDotsVertical style={{ margin: "-5px", padding: 0 }} />
+                <BiDotsVertical style={{ margin: "-6px", padding: 0 }} />
+                <p> Categories </p>
               </button>
             </Dropdown>
           </div>
@@ -250,7 +262,7 @@ const Header = () => {
                       >
                         <img
                           style={({ paddingRight: 20 }, { height: 30 })}
-                          src={"https://backend.lobuddy.in" + value.image[0]}
+                          src={value.image[0]}
                           alt=""
                         />
                         <p>{value.name.slice(0, 30)}... </p> <br />

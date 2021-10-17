@@ -1,8 +1,8 @@
 .flex-container {
   display: flex;
-
-  margin: 0 auto;
-  width: 310px;
+  // height: 25px;
+  margin: 50px 0;
+  width: 280px;
   border-radius: 30px;
   border: 1px solid #dcdcdc;
   padding: 0 15px 0 15px;
@@ -15,12 +15,13 @@
 }
 
 .flex-container .num {
-  padding: 10px;
+  // padding: 10px;
   text-align: center;
   font-size: 15px;
   width: 20px;
   border-radius: 80px;
-  margin: 10px 40px 10px 10px;
+  margin: 3px 40px 3px 10px;
+  cursor: pointer;
 }
 .flex-container:focus {
   margin-bottom: 7px;
@@ -47,14 +48,29 @@
   height: 70px;
   display: none;
   position: absolute;
-  top: -10px;
+  top: -18px;
   left: -14px;
-  background-color: #fff;
+  background-color: $theme-color;
+  color: #fff;
   border-radius: 60%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-.dropdown-content {
+.dropdown-content1 {
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: -18px;
+  left: -14px;
+  background-color: $theme-color;
+  color: #fff;
+  border-radius: 60%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content1 {
   display: inline-block;
 }

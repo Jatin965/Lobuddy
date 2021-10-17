@@ -1,6 +1,7 @@
 header {
   box-shadow: $shadow;
   font-family: "Sitka small";
+  position: static;
   .container-fluid {
     padding: 20px 80px;
     @media #{$xl-layout} {
@@ -25,7 +26,6 @@ header {
         img {
           max-width: 200px;
           height: auto;
-
         }
       }
       div {
@@ -36,6 +36,11 @@ header {
           box-shadow: $shadow;
           padding: 10px 20px;
           border: none;
+
+          p {
+            margin: 0 !important;
+            font-family: "Arial Rounded MT";
+          }
         }
 
         .coming {
@@ -43,7 +48,7 @@ header {
           align-items: center;
           border-radius: 32px;
           box-shadow: $shadow;
-          padding: 10px 20px;
+          padding: 20px 20px;
           border: none;
           background: $theme-color;
           color: white;
@@ -54,26 +59,22 @@ header {
         margin: 0 auto;
         width: 600px;
         border-radius: 20px;
-        border: 1px solid #dcdcdc;
+        // border: 1px solid #dcdcdc;
         text-align: left;
         height: fit-content;
         margin-left: -3vw;
         box-shadow: $shadow;
         z-index: 1;
 
-
         &:focus {
           box-shadow: 1px 1px 8px 1px #dcdcdc;
-
-
+          border: 1px solid #dcdcdc;
         }
 
         &:focus-within {
-
-
           box-shadow: 1px 1px 8px 1px #dcdcdc;
-          box-shadow: inset 0 -2px 0 0 grey;
-
+          // box-shadow: inset 0 -2px 0 0 grey;
+          border: 1px solid #dcdcdc;
           outline: none;
         }
 
@@ -86,57 +87,42 @@ header {
           border: none;
           background: transparent;
           font-size: 20px;
-
           padding: 10px;
-
-
 
           &:focus {
             text-align: left;
             margin-left: 20px;
 
             outline: none;
-
           }
         }
         .dataResult {
-
           border-radius: 30px;
-          img{
+          position: absolute;
+          img {
             height: 40px;
             width: 40px;
-
-
           }
-          p
-          {
-
+          p {
             margin-left: 20px;
           }
           a {
-
-            padding-bottom:5px;
+            padding-bottom: 5px;
 
             border-radius: 8px;
             text-decoration: none;
-
           }
-          a:hover{
+          a:hover {
             background: lightgrey;
           }
         }
         .dataResult .dataItem {
-              display: flex;
+          display: flex;
           align-items: center;
-
         }
-
-
-
       }
     }
-    .Header-group
-    {
+    .Header-group {
       display: none;
     }
 
@@ -242,51 +228,46 @@ header {
           button {
             width: 30px;
             height: 30px;
-            text-align: center!important;
+            text-align: center !important;
             border-radius: 20px;
-            padding-left: 15px!important;
-
+            padding-left: 15px !important;
           }
         }
 
         .search__box {
-          width:60%!important;
-            margin: 0 0 0 4px;
-          input
-          {
-            width:60%!important;
-
+          width: 60% !important;
+          margin: 0 0 0 4px;
+          input {
+            width: 60% !important;
           }
         }
       }
-      .Header-group
-      {
+      .Header-group {
         display: block;
         text-align: center;
-        img{
-        width:100%;
-      }
-      button {
-        margin-top: 30px;
-        width: auto;
-        padding: 2px 30px;
-        margin-right: 4vw;
-
-        margin-left: auto;
-        background: $theme-color;
-        color: white;
-
-        &:hover {
-          background-color: white;
-          color: $theme-color;
-          border: 1px solid $theme-color;
+        img {
+          width: 100%;
         }
-      }
+        button {
+          margin-top: 30px;
+          width: auto;
+          padding: 2px 30px;
+          margin-right: 4vw;
+
+          margin-left: auto;
+          background: $theme-color;
+          color: white;
+
+          &:hover {
+            background-color: white;
+            color: $theme-color;
+            border: 1px solid $theme-color;
+          }
+        }
       }
       .li2 {
         display: none;
       }
     }
-
   }
 }
