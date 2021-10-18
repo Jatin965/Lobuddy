@@ -276,7 +276,7 @@ const ProductDetail = () => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
 
-          {product.sub == "Activity" &&
+          {product.sub == "ActivityTrackers" &&
             activity.map((ts) => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
@@ -286,7 +286,7 @@ const ProductDetail = () => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
 
-          {product.sub == "Laptops" &&
+          {product.category == "Computers" &&
             computers.map((ts) => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}

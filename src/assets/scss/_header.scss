@@ -67,9 +67,6 @@ header {
         box-shadow: $shadow;
         z-index: 1;
 
-        &:hover {
-        }
-
         &:focus {
           box-shadow: 1px 1px 8px 1px #dcdcdc;
           border: 1px solid #dcdcdc;

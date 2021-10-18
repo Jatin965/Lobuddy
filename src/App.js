@@ -12,6 +12,7 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Explore from "./pages/Explore";
 import Trends from "./pages/Trends";
+import Faq from "./components/UI/Faq";
 
 function App() {
   return (
@@ -51,6 +52,10 @@ function App() {
 
           <Route path="/best-deals">
             <Best />
+          </Route>
+
+          <Route path="/faq">
+            <Faq />
           </Route>
 
           <Route path="/product/:id">
