@@ -35,7 +35,12 @@ const Product = ({
         >
           <div className="product-img">
             <Link to={process.env.PUBLIC_URL + "/product/" + product.id}>
-              <img className="default-img" src={product.image[0]} alt="" />
+              <img
+                className="default-img"
+                referrerPolicy="no-referrer"
+                src={product.image[0]}
+                alt=""
+              />
             </Link>
             {product.tags ? (
               <div className="product-img-badges">

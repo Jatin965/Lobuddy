@@ -118,7 +118,18 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  console.log(product);
+  console.log(product.image);
+
+  const image = product.image
+    ? product.image.map((img) => {
+        return {
+          thumbnail: img,
+          original: img,
+        };
+      })
+    : [];
+
+  console.log(image);
 
   useEffect(() => {
     dispatch(detailProduct(match.params.id));
@@ -233,22 +244,15 @@ const ProductDetail = () => {
         </div>
 
         {/* <ProductImageGalleryLeftThumb product={product} /> */}
-        <ImageGallery
-          // items={() => {
-          //   product.image &&
-          //     product.image.map((img) => {
-          //       return {
-          //         original: img,
-          //         thumbnail: img,
-          //       };
-          //     });
-          // }}
-          items={images}
-          thumbnailPosition="right"
-          showPlayButton={false}
-          showNav={false}
-          lazyLoad={true}
-        />
+        {product.image && (
+          <ImageGallery
+            items={image}
+            thumbnailPosition="right"
+            showPlayButton={false}
+            showNav={false}
+            lazyLoad={true}
+          />
+        )}
       </div>
 
       <div className="detail-product">

@@ -8,7 +8,12 @@ const ProductThree = ({ product }) => {
   return (
     <div className="  product-three row ">
       <div className="product-three-image col-lg-4 col-5 card">
-        <img className="default-img" src={product.image[0]} alt="" />
+        <img
+          className="default-img"
+          referrerPolicy="no-referrer"
+          src={product.image[0]}
+          alt=""
+        />
       </div>
       <div className="product-three-details col-lg-8 col-7 ">
         <h1>{product.name}</h1>
