@@ -6,11 +6,13 @@ import {
   productListReducer,
   productDetailReducer,
   addUserReducer,
+  productSearchReducer,
 } from "./reducers/productReducers";
 
 const reducers = combineReducers({
   productList: productListReducer,
   productDetail: productDetailReducer,
+  productSearch: productSearchReducer,
 
   userAdd: addUserReducer,
 });

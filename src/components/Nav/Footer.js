@@ -95,7 +95,7 @@ const Footer = () => {
         <div className="others col-lg-4">
           <Link to="/terms-and-conditions">Terms and Conditions |</Link>
           <Link to="/privacy-policy">Privacy policy |</Link>
-          <Link>Cookie settings</Link>
+          <Link to="#">Cookie settings</Link>
         </div>
       </div>
     </footer>

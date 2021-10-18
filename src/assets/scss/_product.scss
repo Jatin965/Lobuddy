@@ -5,6 +5,7 @@
   &-image {
     border-radius: 30px;
     box-shadow: $shadow;
+    z-index: -1;
 
     img {
       width: 100%;
@@ -167,6 +168,7 @@
   box-shadow: $shadow;
   margin: 1vh 1vw;
   padding: 4vh 1vw;
+  z-index: -1;
   &:hover {
     box-shadow: $shadow-hover;
   }

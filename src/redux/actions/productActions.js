@@ -9,6 +9,9 @@ import {
   USER_ADD_REQUEST,
   USER_ADD_SUCCESS,
   USER_ADD_FAIL,
+  PRODUCT_SEARCH_REQUEST,
+  PRODUCT_SEARCH_SUCCESS,
+  PRODUCT_SEARCH_FAIL,
 } from "../constants/productConstants";
 
 const BASE_UR = "http://127.0.0.1:8000/api/";
@@ -27,6 +30,27 @@ export const listProducts = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
+      payload:
+        error.response && error.response.data.detail
+          ? error.response.data.detail
+          : error.message,
+    });
+  }
+};
+
+export const searchProducts = (query) => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_SEARCH_REQUEST });
+
+    const { data } = await axios.get(`${BASE_URL}search${query}`);
+
+    dispatch({
+      type: PRODUCT_SEARCH_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: PRODUCT_SEARCH_FAIL,
       payload:
         error.response && error.response.data.detail
           ? error.response.data.detail

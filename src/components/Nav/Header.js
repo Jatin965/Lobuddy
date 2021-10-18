@@ -33,7 +33,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?category=phone"
+        to="/search?category=phones"
       >
         <MobileOutlined
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
@@ -105,7 +105,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=laptop"
+        to="/search?sub=laptops"
       >
         Laptops
       </Link>
@@ -118,7 +118,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=convertible"
+        to="/search?sub=convertibles"
       >
         Convertibles
       </Link>
@@ -133,7 +133,7 @@ const menu = (
           fontFamily: "Arial Rounded MT",
           fontWeight: 200,
         }}
-        to="/search?category=Wearables"
+        to="/search?category=Wareables"
       >
         <IoMdWatch
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
@@ -149,7 +149,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=smartwatch"
+        to="/search?sub=smartwatches"
       >
         Smartwatches
       </Link>
@@ -175,7 +175,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=activity"
+        to="/search?sub=ActivityTrackers"
       >
         Activity Trackers
       </Link>
@@ -253,7 +253,7 @@ const Header = () => {
                   .map((value, key) => {
                     return (
                       <Link
-                        to={`/search?q=${value.name}`}
+                        to={`/search?name=${value.name}`}
                         onClick={() => {
                           setKey("");
                           setFilterProducts([]);

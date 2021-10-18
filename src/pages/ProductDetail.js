@@ -139,20 +139,6 @@ const ProductDetail = () => {
   if (loading || loadingDetail) {
     return <Loader />;
   }
-  const images = [
-    {
-      original: "https://picsum.photos/id/1018/1000/600/",
-      thumbnail: "https://picsum.photos/id/1018/250/150/",
-    },
-    {
-      original: "https://picsum.photos/id/1015/1000/600/",
-      thumbnail: "https://picsum.photos/id/1015/250/150/",
-    },
-    {
-      original: "https://picsum.photos/id/1019/1000/600/",
-      thumbnail: "https://picsum.photos/id/1019/250/150/",
-    },
-  ];
 
   if (error || errorDetail) {
     return <h1>Error</h1>;
@@ -202,10 +188,6 @@ const ProductDetail = () => {
             <h1>
               {product.tags && product.tags.includes("deal") ? (
                 <>
-                  <span style={{ color: "#f68a1e" }}>
-                    {"₹" + (product.price * (multi - 0.005)).toFixed(0)}
-                  </span>
-                  <br />
                   <span
                     style={{
                       fontSize: 24,
@@ -214,6 +196,10 @@ const ProductDetail = () => {
                     className="old"
                   >
                     {"₹" + (product.price * multi).toFixed(0)}
+                  </span>
+                  <br />
+                  <span style={{ color: "#f68a1e" }}>
+                    {"₹" + (product.price * (multi - 0.005)).toFixed(0)}
                   </span>
                 </>
               ) : (
@@ -259,9 +245,25 @@ const ProductDetail = () => {
         <h2>Product Details</h2>
         {product.description &&
           product.description.map((desc) => (
-            <p style={{ fontFamily: "Arial Rounded MT", color: "#878787" }}>
-              ⚫ {desc}
-            </p>
+            <div style={{ display: "flex" }}>
+              <div
+                style={{
+                  height: "1rem",
+                  width: "1rem",
+                  borderRadius: "50%",
+                  background: "#878787",
+                  margin: "4px 10px",
+                }}
+              ></div>
+              <p
+                style={{
+                  fontFamily: "Arial Rounded MT",
+                  color: "#878787",
+                }}
+              >
+                {desc}
+              </p>
+            </div>
           ))}
       </div>
 
@@ -269,7 +271,7 @@ const ProductDetail = () => {
       <div className="what">
         <h2>What you'll get in the box</h2>
         <div className="what-content">
-          {product.sub == "Tab" &&
+          {product.sub == "Tablets" &&
             tab.map((ts) => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
