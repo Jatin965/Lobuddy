@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../../redux/actions/productActions";
@@ -33,7 +33,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?category=phones"
+        to="/search?category=Phones"
       >
         <MobileOutlined
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
@@ -49,7 +49,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=tablets"
+        to="/search?sub=Tablets"
       >
         Tablets
       </Link>
@@ -62,7 +62,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=smartphones"
+        to="/search?sub=SmartPhones"
       >
         Smartphones
       </Link>
@@ -76,7 +76,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?category=computers"
+        to="/search?category=Computers"
       >
         <LaptopOutlined
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
@@ -92,7 +92,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=gaming"
+        to="/search?sub=Gaming"
       >
         Gaming
       </Link>
@@ -105,7 +105,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=laptops"
+        to="/search?sub=Laptops"
       >
         Laptops
       </Link>
@@ -118,7 +118,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=convertibles"
+        to="/search?sub=Convertibles"
       >
         Convertibles
       </Link>
@@ -149,7 +149,7 @@ const menu = (
           alignItems: "center",
           fontFamily: "Arial Rounded MT",
         }}
-        to="/search?sub=smartwatches"
+        to="/search?sub=SmartWatches"
       >
         Smartwatches
       </Link>
@@ -185,6 +185,7 @@ const menu = (
 
 const Header = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [filterProducts, setFilterProducts] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [key, setKey] = useState("");
@@ -241,6 +242,12 @@ const Header = () => {
               placeholder="Search for "
               onChange={handleChange}
               value={key}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  history.push(`/search?name=${e.target.value}`);
+                  setFilterProducts([]);
+                }
+              }}
             />
 
             {filterProducts.length != 0 && (

@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 const ProductThree = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   const history = useHistory();
   return (
     <div className="  product-three row ">

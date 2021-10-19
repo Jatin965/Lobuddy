@@ -10,14 +10,7 @@ import { detailProduct, listProducts } from "../redux/actions/productActions";
 import { computers, smartPhones, tab, activity, music } from "../utils/box.js";
 
 import { Carousel } from "antd";
-import {
-  TagFilled,
-  UserOutlined,
-  MailOutlined,
-  PhoneOutlined,
-  RightOutlined,
-  LeftOutlined,
-} from "@ant-design/icons";
+import { TagFilled, RightOutlined, LeftOutlined } from "@ant-design/icons";
 
 import { AiFillTag } from "react-icons/ai";
 import { FaTruckMoving } from "react-icons/fa";
@@ -118,7 +111,7 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  console.log(product.image);
+  console.log(product);
 
   const image = product.image
     ? product.image.map((img) => {
@@ -144,18 +137,18 @@ const ProductDetail = () => {
     return <h1>Error</h1>;
   }
 
-  $(document).scroll(function () {
-    var $el = $(".price-stick");
-    var isPositionFixed = $el.css("position") == "fixed";
+  // $(document).scroll(function () {
+  //   var $el = $(".price-stick");
+  //   var isPositionFixed = $el.css("position") == "fixed";
 
-    if ($(this).scrollTop() > 100 && !isPositionFixed) {
-      $el.css({ position: "fixed", bottom: "0" });
-    }
+  //   if ($(this).scrollTop() > 100 && !isPositionFixed) {
+  //     $el.css({ position: "fixed", bottom: "0" });
+  //   }
 
-    if ($(this).scrollTop() < 100 && isPositionFixed) {
-      $el.css({ position: "sticky", bottom: "0" });
-    }
-  });
+  //   if ($(this).scrollTop() < 100 && isPositionFixed) {
+  //     $el.css({ position: "sticky", bottom: "0" });
+  //   }
+  // });
 
   return (
     <div className="detail">
@@ -291,7 +284,7 @@ const ProductDetail = () => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
 
-          {product.sub == "Smartphones" &&
+          {product.sub == "SmartPhones" &&
             smartPhones.map((ts) => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
@@ -330,7 +323,7 @@ const ProductDetail = () => {
           ))}
         </div>
       </div>
-      <div className=" price-stick ">
+      <div className="price-stick">
         <div className="row">
           <div className="col-lg-7 col-sm-7 col-7 ">
             <h3>{product.price}</h3>

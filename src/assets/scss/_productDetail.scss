@@ -163,7 +163,7 @@
 }
 .price-stick {
   display: none;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   box-shadow: $shadow;
   height: 80px;
@@ -286,13 +286,6 @@
         border: none;
       }
     }
-  }
-}
-
-.react_lightgallery_item {
-  button {
-    box-shadow: none;
-    border-radius: none;
   }
 }
 

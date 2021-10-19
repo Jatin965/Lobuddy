@@ -6,11 +6,9 @@ const Banner = ({ head, para, but, butLink, img1, img2, img3, logo }) => {
   const history = useHistory();
   return (
     <div className="banner row">
-
-  <h1>{head}</h1>
       <div className="banner-content col-lg-7 col-4">
-
-     <p>{para}</p>
+        <h1>{head}</h1>
+        <p>{para}</p>
 
         <button onClick={() => history.push(butLink)}>{but}</button>
       </div>
@@ -19,7 +17,7 @@ const Banner = ({ head, para, but, butLink, img1, img2, img3, logo }) => {
         <img className="top" src={img2} alt="top" />
         <img className="right" src={img3} alt="right" />
         <div className="logo">
-          <img style={{width:60}} src={logo} alt="bottom" />
+          <img style={{ width: 60 }} src={logo} alt="bottom" />
         </div>
       </div>
     </div>

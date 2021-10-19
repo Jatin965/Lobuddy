@@ -2,6 +2,9 @@ header {
   box-shadow: $shadow;
   font-family: "Sitka small";
   position: sticky;
+  top: 0;
+  background: white;
+  z-index: 2;
   .container-fluid {
     padding: 20px 80px;
     @media #{$xl-layout} {
