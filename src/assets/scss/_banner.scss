@@ -2,7 +2,7 @@
   min-height: 40vh;
 
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background: rgba(255, 153, 0, 0.1);
   margin: 4vh 0;
   border-radius: 20px;
@@ -35,6 +35,8 @@
   }
 
   &-images {
+    margin-right: 0;
+    margin-left: auto;
     .left {
       max-height: 150px;
       transform: rotate(-15deg);
@@ -96,25 +98,18 @@
 
     &-images {
       .left {
-        position: relative;
-        top: -30px;
         height: 40px;
-        left: 30px;
         transform: rotate(-10deg);
         // padding-right: 1vw;
       }
       .top {
-        max-height: 80px;
+        max-height: 50px;
         transform: rotate(9deg);
-        left: 30px;
         position: relative;
       }
       .right {
         max-height: 50px;
         transform: rotate(21deg);
-        position: relative;
-        left: 20px;
-        top: -40px !important;
         // margin-left: 1vw;
       }
 

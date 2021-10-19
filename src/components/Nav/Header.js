@@ -224,14 +224,16 @@ const Header = () => {
               overlay={menu}
               placement="bottomCenter"
             >
-              <button
-                style={{ display: "flex" }}
-                className="btn bg-transparent"
-              >
-                {/* <AppstoreOutlined /> */}{" "}
-                <BiDotsVertical style={{ margin: "-5px" }} />
-                <BiDotsVertical style={{ margin: "-5px", padding: 0 }} />
-                <BiDotsVertical style={{ margin: "-6px", padding: 0 }} />
+              <button className="btn bg-transparent">
+                <BiDotsVertical
+                  style={{ marginLeft: "5px", padding: 0, fontSize: 26 }}
+                />
+                <BiDotsVertical
+                  style={{ margin: "-10px", padding: 0, fontSize: 26 }}
+                />
+                <BiDotsVertical
+                  style={{ marginRight: "2px", padding: 0, fontSize: 26 }}
+                />
                 <p> Categories </p>
               </button>
             </Dropdown>
@@ -251,7 +253,7 @@ const Header = () => {
             />
 
             {filterProducts.length != 0 && (
-              <div className="dataResult">
+              <div className="dataResult col-xl-6 col-lg-6 col-sm-8 col-6">
                 {products
                   .filter((ps) =>
                     ps.name.toLowerCase().includes(key.toLowerCase())

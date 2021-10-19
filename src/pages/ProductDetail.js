@@ -226,6 +226,7 @@ const ProductDetail = () => {
         {product.image && (
           <ImageGallery
             items={image}
+            showThumbnails={window.innerWidth < 500 ? false : true}
             thumbnailPosition="right"
             showPlayButton={false}
             showNav={false}
@@ -326,12 +327,32 @@ const ProductDetail = () => {
       <div className="price-stick">
         <div className="row">
           <div className="col-lg-7 col-sm-7 col-7 ">
-            <h3>{product.price}</h3>
+            <h3>
+              {product.tags && product.tags.includes("deal") ? (
+                <>
+                  <span
+                    style={{
+                      fontSize: 18,
+                      textDecoration: "3px solid line-through",
+                    }}
+                    className="old"
+                  >
+                    {"₹" + (product.price * multi).toFixed(0)}{" "}
+                  </span>
+                  <span style={{ color: "#f68a1e" }}>
+                    {"₹" + (product.price * (multi - 0.005)).toFixed(0)}
+                  </span>
+                </>
+              ) : (
+                <span>{"₹" + (product.price * multi).toFixed(0)}</span>
+              )}
+            </h3>
+            <p>per month</p>
           </div>
           <div className="col-lg-5 col-sm-5 col-5  sticky-but">
-            <button>Read it</button>
+            <button onClick={showModal}>Rent it</button>
+            {isModalVisible && <PopUp view={setIsModalVisible} />}
           </div>
-          <p>per month, thereafter cancel anytime With Lobuddy </p>
         </div>
       </div>
     </div>

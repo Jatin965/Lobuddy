@@ -166,8 +166,8 @@
   max-width: 350px;
   border-radius: 30px;
   box-shadow: $shadow;
-  margin: 1vh 1vw;
-  padding: 4vh 1vw;
+  margin: 10px 10px;
+  padding: 40px 10px;
   &:hover {
     box-shadow: $shadow-hover;
   }
@@ -385,7 +385,7 @@
 @media screen and (max-device-width: 995px), screen and (max-width: 995px) {
   .product-three {
     &-image {
-      height: 220px !important;
+      // height: 220px !important;
 
       img {
         width: 100%;
@@ -400,31 +400,33 @@
       padding: px;
 
       h1 {
-        color: $text-grey-light;
-        font-size: 15px;
+        font-size: 13px;
         padding-left: 5px;
         font-weight: bolder;
+        margin: 0;
       }
       h4 {
-        color: $text-grey-light;
-        font-size: 12px;
+        font-size: 11px;
         padding-left: 5px;
+        margin: 0;
       }
       h2 {
-        font-size: 15px;
+        font-size: 13px;
 
         color: $text-grey-light;
         padding-left: 5px;
+        margin: 0;
 
         span {
           color: $theme-color;
           font-size: 15px;
           padding-left: 0px;
+          margin: 0;
         }
       }
       button {
         width: 120px !important;
-        padding: 0px 5px;
+        padding: 2px 5px;
         font-size: 10px;
       }
     }
