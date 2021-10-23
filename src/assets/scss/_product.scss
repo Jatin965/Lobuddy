@@ -33,7 +33,6 @@
       span {
         color: $theme-color;
         font-size: 3rem;
-        padding-left: 30px;
       }
     }
 
@@ -130,11 +129,7 @@
         font-family: "Arial Rounded MT";
         span {
           font-size: 15px;
-
           position: relative;
-
-          margin-right: 17px;
-
           color: #444;
           &.old {
             text-decoration: 3px solid line-through;
@@ -351,7 +346,6 @@
         span {
           font-size: 15px;
           position: relative;
-          margin-right: 17px;
           font-family: "Arial Rounded MT";
           color: #444;
           &.old {

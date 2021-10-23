@@ -190,7 +190,7 @@ const Home = () => {
             ))}
 
           <button
-            onClick={() => setFlag((prev) => prev + 4)}
+            onClick={() => history.push("/search?category=Phones")}
             className="col-xl-3 col-md-6 col-lg-4 col-sm-6"
           >
             View all
@@ -222,7 +222,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(0, 4)
+            .slice(5, 8)
             .map((product) => (
               <ProductWidth product={product} />
             ))}

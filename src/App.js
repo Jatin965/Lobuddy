@@ -1,6 +1,8 @@
 import "./App.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 
+import ScrollToTop from "./utils/scrollToTop";
+
 import Header from "./components/Nav/Header";
 import Footer from "./components/Nav/Footer";
 import Home from "./pages/Home.js";
@@ -19,6 +21,7 @@ function App() {
     <div className="App">
       {/* <ThemeProvider theme={theme}> */}
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
 
         <main>

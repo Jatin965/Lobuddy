@@ -70,21 +70,35 @@ button {
   padding: 20px;
   border-radius: 26px;
   font-family: "Arial Rounded MT";
-  width: 80%;
+  width: 100%;
 
   .site-collapse-custom-collapse {
     .ant-collapse-header {
-      font-size: 20px;
+      font-size: 1.2rem;
+
+      @media #{$md-layout} {
+        font-size: 1rem;
+      }
+      @media #{$xs-layout} {
+        font-size: 1rem;
+      }
 
       .anticon {
-        font-size: 18px;
+        font-size: 1rem;
         vertical-align: auto !important;
       }
     }
     p {
       color: $text-grey-light;
-      font-size: 18px;
+      font-size: 1rem;
       margin-top: -1vh;
+
+      @media #{$md-layout} {
+        font-size: 0.8rem;
+      }
+      @media #{$xs-layout} {
+        font-size: 0.8rem;
+      }
     }
   }
 }

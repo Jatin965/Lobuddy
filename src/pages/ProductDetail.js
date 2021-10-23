@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import $ from "jquery";
+
+import SubHeader from "../components/Nav/SubHeader";
 
 import { useRouteMatch } from "react-router-dom";
 import ImageGallery from "react-image-gallery";
@@ -23,13 +24,10 @@ import Customer from "../assets/images/home/cus.png";
 import Customer2 from "../assets/images/home/cus2.png";
 import Customer3 from "../assets/images/home/cus3.png";
 
-import ProductImageGalleryLeftThumb from "../components/UI/ProductImageGallerySideThumb";
 import Loader from "../components/UI/Loader";
 import PopUp from "../components/UI/PopUp";
 import BoxImg from "../components/UI/BoxImg";
 import Slider from "../components/UI/Slider";
-
-const BASE = "https://backend.lobuddy.in";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -122,8 +120,6 @@ const ProductDetail = () => {
       })
     : [];
 
-  console.log(image);
-
   useEffect(() => {
     dispatch(detailProduct(match.params.id));
     dispatch(listProducts());
@@ -137,21 +133,9 @@ const ProductDetail = () => {
     return <h1>Error</h1>;
   }
 
-  // $(document).scroll(function () {
-  //   var $el = $(".price-stick");
-  //   var isPositionFixed = $el.css("position") == "fixed";
-
-  //   if ($(this).scrollTop() > 100 && !isPositionFixed) {
-  //     $el.css({ position: "fixed", bottom: "0" });
-  //   }
-
-  //   if ($(this).scrollTop() < 100 && isPositionFixed) {
-  //     $el.css({ position: "sticky", bottom: "0" });
-  //   }
-  // });
-
   return (
     <div className="detail">
+      <SubHeader word={product.sub} cat={product.category} />
       <div className="tag">
         <TagFilled
           style={{ transform: "scale(-1,1)", fontSize: 50, color: "white" }}
@@ -170,14 +154,10 @@ const ProductDetail = () => {
           <div className="detail-show-content-left">
             <h3>{product.name}</h3>
             <h6>{product.details}</h6>
-            {/* <Slider style={{ height: 30 }} step={33} tipFormatter={null} /> */}
 
             <Slider set={setMulti} />
           </div>
           <div className="detail-show-content-right ">
-            {/* <h1 style={{ textAlign: "center" }}>
-              {"₹" + (product.price * multi).toFixed(0)}
-            </h1> */}
             <h1>
               {product.tags && product.tags.includes("deal") ? (
                 <>
@@ -222,15 +202,15 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        {/* <ProductImageGalleryLeftThumb product={product} /> */}
         {product.image && (
           <ImageGallery
             items={image}
             showThumbnails={window.innerWidth < 500 ? false : true}
-            thumbnailPosition="right"
+            thumbnailPosition={window.innerWidth < 500 ? "top" : "right"}
             showPlayButton={false}
             showNav={false}
             lazyLoad={true}
+            showBullets={window.innerWidth < 500 ? true : false}
           />
         )}
       </div>
@@ -239,14 +219,20 @@ const ProductDetail = () => {
         <h2>Product Details</h2>
         {product.description &&
           product.description.map((desc) => (
-            <div style={{ display: "flex" }}>
+            <div
+              style={{
+                display: "flex",
+              }}
+            >
               <div
                 style={{
-                  height: "1rem",
-                  width: "1rem",
-                  borderRadius: "50%",
-                  background: "#878787",
-                  margin: "4px 10px",
+                  color: "#878787",
+                  padding: 0,
+                  marginTop: "-10px",
+                  display: "list-item",
+                  listStylePosition: "inside",
+                  listStyleType: "disc",
+                  fontSize: "170%",
                 }}
               ></div>
               <p
@@ -291,7 +277,9 @@ const ProductDetail = () => {
             })}
         </div>
       </div>
-      <Faq />
+      <div className="faq-container">
+        <Faq />
+      </div>
       {/* </div> */}
 
       <div className="testimonials row">

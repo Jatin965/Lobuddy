@@ -225,20 +225,20 @@ const Header = () => {
               placement="bottomCenter"
             >
               <button className="btn bg-transparent">
-                <BiDotsVertical
-                  style={{ marginLeft: "5px", padding: 0, fontSize: 26 }}
-                />
-                <BiDotsVertical
-                  style={{ margin: "-10px", padding: 0, fontSize: 26 }}
-                />
-                <BiDotsVertical
-                  style={{ marginRight: "2px", padding: 0, fontSize: 26 }}
-                />
+                <BiDotsVertical style={{ margin: "-5px" }} />
+                <BiDotsVertical style={{ margin: "-5px", padding: 0 }} />
+                <BiDotsVertical style={{ margin: "-6px", padding: 0 }} />
                 <p> Categories </p>
               </button>
             </Dropdown>
           </div>
-          <div className="col-xl-6 col-lg-6 col-sm-8 col-6 search__box  card">
+          <div
+            className={
+              filterProducts.length != 0
+                ? "col-xl-6 col-lg-6 col-sm-8 col-6 search__box  card focus"
+                : "col-xl-6 col-lg-6 col-sm-8 col-6 search__box  card"
+            }
+          >
             <input
               type="text"
               placeholder="Search for "
@@ -248,6 +248,7 @@ const Header = () => {
                 if (e.key === "Enter") {
                   history.push(`/search?name=${e.target.value}`);
                   setFilterProducts([]);
+                  setKey("");
                 }
               }}
             />
@@ -262,7 +263,7 @@ const Header = () => {
                   .map((value, key) => {
                     return (
                       <Link
-                        to={`/search?name=${value.name}`}
+                        to={`/product/${value.id}`}
                         onClick={() => {
                           setKey("");
                           setFilterProducts([]);

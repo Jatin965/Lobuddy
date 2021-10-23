@@ -99,9 +99,10 @@ const Product = ({
                       <span style={{ fontSize: 20 }} className="old">
                         {"₹" + (finalProductPrice * 0.045).toFixed(0)}
                       </span>
+                      {"  "}
                       <span style={{ color: "#f68a1e", fontSize: 20 }}>
                         {"₹" + (finalDiscountedPrice * 0.04).toFixed(0)}
-                      </span>
+                      </span>{" "}
                       per month
                     </span>
                   </Fragment>
@@ -110,7 +111,7 @@ const Product = ({
                     from{"  "}
                     <span style={{ fontSize: 20 }}>
                       {"₹" + (finalDiscountedPrice * 0.045).toFixed(0)}
-                    </span>
+                    </span>{" "}
                     per month
                   </span>
                 )}

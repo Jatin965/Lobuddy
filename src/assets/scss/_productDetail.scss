@@ -183,6 +183,17 @@
     }
   }
 
+  .faq-container {
+    width: 80%;
+
+    @media #{$md-layout} {
+      width: 100%;
+    }
+    @media #{$xs-layout} {
+      width: 100%;
+    }
+  }
+
   .testimonials {
     align-items: center;
     justify-content: space-between;

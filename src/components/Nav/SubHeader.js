@@ -9,7 +9,7 @@ import CircleBag from "../UI/CircleBag";
 const SubHeader = ({ word, cat }) => {
   const history = useHistory();
   return (
-    <div style={{ margin: "20px auto", width: "85vw" }}>
+    <div style={{ margin: "20px auto", width: "90vw" }}>
       {cat === "Phones" && (
         <div style={{ display: "flex", alignItems: "center" }}>
           <CircleBag child={<MobileOutlined className="circle-icon" />} />
