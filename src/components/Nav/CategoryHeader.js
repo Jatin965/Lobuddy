@@ -6,7 +6,7 @@ import CircleBag from "../UI/CircleBag";
 
 const CategoryHeader = ({ word }) => {
   return (
-    <div style={{ margin: "20px auto", width: "85vw" }}>
+    <div className="sub-header">
       {word === "Phones" && (
         <div style={{ display: "flex", alignItems: "center" }}>
           <CircleBag child={<MobileOutlined className="circle-icon" />} />

@@ -30,7 +30,7 @@ const Trends = () => {
   return (
     <div className="best">
       <div className="best-header">
-        <CircleBag child={<RiseOutlined className="how-icon" />} />
+        <CircleBag child={<RiseOutlined className="circle-icon" />} />
 
         <h1>Products on trend</h1>
       </div>

@@ -30,7 +30,7 @@ const Best = () => {
   return (
     <div className="best">
       <div className="best-header">
-        <CircleBag child={<GiftOutlined className="how-icon" />} />
+        <CircleBag child={<GiftOutlined className="circle-icon" />} />
 
         <h1>Our best deals!</h1>
       </div>

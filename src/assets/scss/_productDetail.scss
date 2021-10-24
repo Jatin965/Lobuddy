@@ -229,32 +229,11 @@
   display: none;
   position: fixed;
   bottom: 0;
+  left: 0;
   box-shadow: $shadow;
   height: 80px;
-  width: 400px;
+  width: 100vw;
   background: white;
-  h3 {
-    // color: $theme-color;
-    font-size: 20px;
-  }
-  .sticky-but {
-    margin-top: 20px;
-
-    button {
-      font-size: 10px;
-      border-radius: 26px;
-      color: white;
-      background-color: $theme-color;
-      border: none;
-      box-shadow: $shadow;
-
-      &:hover {
-        background-color: white;
-        border: 1px solid $theme-color;
-        color: $theme-color;
-      }
-    }
-  }
 }
 
 .ant-modal {
@@ -423,25 +402,34 @@
 @media screen and (max-device-width: 995px), screen and (max-width: 995px) {
   .price-stick {
     display: block;
-    width: 100%;
+    width: 100vw;
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
     box-shadow: $shadow;
     background: white;
+    font-family: "Arial Rounded MT";
     h3 {
-      // color: $theme-color;
-      font-size: 20px;
+      font-size: 1.4rem;
+      padding: 0;
+      margin: 0;
+    }
+    p {
+      font-size: 0.8rem;
+      line-height: 1;
     }
     .sticky-but {
       display: flex;
 
       button {
-        font-size: 10px;
-        border-radius: 26px;
+        font-size: 0.9rem;
+        font-family: "Sitka Small";
+        font-weight: bold;
+        border-radius: 20px;
         color: white;
         background-color: $theme-color;
-        border: none;
+        padding: 10px 25px;
         box-shadow: $shadow;
+        height: 3rem;
 
         &:hover {
           background-color: white;

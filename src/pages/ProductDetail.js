@@ -247,7 +247,6 @@ const ProductDetail = () => {
           ))}
       </div>
 
-      {/* <div className="sec3"> */}
       <div className="what">
         <h2>What you'll get in the box</h2>
         <div className="what-content">
@@ -280,7 +279,6 @@ const ProductDetail = () => {
       <div className="faq-container">
         <Faq />
       </div>
-      {/* </div> */}
 
       <div className="testimonials row">
         <div className="content col-lg-6">
@@ -335,7 +333,7 @@ const ProductDetail = () => {
                 <span>{"₹" + (product.price * multi).toFixed(0)}</span>
               )}
             </h3>
-            <p>per month</p>
+            <p>per month, thereafter cancel anytime With Lobuddy </p>
           </div>
           <div className="col-lg-5 col-sm-5 col-5  sticky-but">
             <button onClick={showModal}>Rent it</button>

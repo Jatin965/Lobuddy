@@ -7,12 +7,14 @@
     margin: 25px 0;
     align-items: center;
 
-    // @media #{$md-layout} {
-    //   flex-direction: column;
-    // }
-    // @media #{$xs-layout} {
-    //   flex-direction: column;
-    // }
+    h1 {
+      @media #{$md-layout} {
+        font-size: 1.2rem;
+      }
+      @media #{$xs-layout} {
+        font-size: 1.2rem;
+      }
+    }
 
     .how-icon {
       color: $theme-color;
