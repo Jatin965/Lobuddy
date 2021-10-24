@@ -68,7 +68,7 @@ const PopUp = ({ view }) => {
             <h4>Hello buddy,</h4>
             <h5>We are coming to India...</h5>
           </div>
-          <img src={img1} alt="link-diag" />
+          <img className="img-link" src={img1} alt="link-diag" />
         </div>
 
         <div className="lower">
@@ -95,7 +95,7 @@ const PopUp = ({ view }) => {
               placeholder="Name"
               required
               bordered={false}
-              style={{ left: "10%" }}
+              style={{ left: "5%" }}
             />
             <Input
               onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +105,7 @@ const PopUp = ({ view }) => {
               placeholder="E-mail"
               required
               bordered={false}
-              style={{ left: "10%" }}
+              style={{ left: "5%" }}
             />
             <Input
               onChange={(e) => setPhone(e.target.value)}
@@ -115,7 +115,7 @@ const PopUp = ({ view }) => {
               placeholder="Phone No."
               required
               bordered={false}
-              style={{ left: "10%" }}
+              style={{ left: "5%" }}
             />
           </div>
         </div>

@@ -27,9 +27,12 @@ import one2 from "../assets/images/banner/oneplus/one2.png";
 import one3 from "../assets/images/banner/oneplus/one3.png";
 import oneLogo from "../assets/images/banner/oneplus/onelogo.png";
 
+import head from "../assets/images/hpik.png";
+
 import CircleBag from "../components/UI/CircleBag";
 import Loader from "../components/UI/Loader";
 import Banner from "../components/UI/Banner";
+import PopUp from "../components/UI/PopUp";
 
 import ProductThree from "../components/Cards/ProductThree";
 import ProductWidth from "../components/Cards/ProductWidth";
@@ -107,6 +110,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [flag, setFlag] = useState(5);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const { products, loading, error } = useSelector(
     (state) => state.productList
@@ -122,24 +126,13 @@ const Home = () => {
     return <Loader />;
   }
 
-  // console.log(products.filter((ps) => ps.name === "Apple iPhone 13 128 GB"));
-
   return (
     <div className="home">
-      {/* <div className="home-header">
-        <div className="home-header-image">
-          <img src={Iphone} alt="I-Phone" />
-        </div>
-
-        <div className="home-header-content">
-          <h1>Access over ownership on trendy technology world</h1>
-          <h5>
-            Get the gadgets you need, use it as long as you want. Get discount
-            of 90% on your rental plan with code HELLOBUDDY2025
-          </h5>
-          <button onClick={() => history.push("/best-deals")}>Deals</button>
-        </div>
-      </div> */}
+      <div className="home-group">
+        <img src={head} alt="home-group" />
+        <button onClick={() => setIsModalVisible(true)}>Subscribe</button>
+        {isModalVisible && <PopUp view={setIsModalVisible} />}
+      </div>
 
       {products
         .filter((ps) => ps.name === "Apple iPhone 13 Mini (256GB) - Blue")
@@ -191,7 +184,7 @@ const Home = () => {
 
           <button
             onClick={() => history.push("/search?category=Phones")}
-            className="col-xl-3 col-md-6 col-lg-4 col-sm-6"
+            className="col-xl-3 col-md-6 col-lg-4 col-sm-12"
           >
             View all
           </button>

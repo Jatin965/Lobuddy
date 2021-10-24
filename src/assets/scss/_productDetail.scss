@@ -271,6 +271,12 @@
     .ant-modal-body {
       .upper {
         display: flex;
+        @media #{$md-layout} {
+          flex-direction: column;
+        }
+        @media #{$xs-layout} {
+          flex-direction: column;
+        }
 
         .left {
           width: 180%;
@@ -292,17 +298,44 @@
           }
         }
 
-        img {
+        img.img-link {
           max-width: 25vw;
           height: auto;
+
+          @media #{$md-layout} {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            max-width: 40vw;
+          }
+          @media #{$xs-layout} {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            max-width: 40vw;
+          }
         }
       }
 
       .lower {
         display: flex;
 
+        @media #{$md-layout} {
+          flex-direction: column;
+        }
+        @media #{$xs-layout} {
+          flex-direction: column;
+        }
+
         img {
           max-height: 30vh;
+
+          @media #{$md-layout} {
+            max-width: 35vw;
+          }
+          @media #{$xs-layout} {
+            max-width: 35vw;
+          }
         }
         .content {
           .tag {
@@ -330,6 +363,13 @@
           input {
             border-bottom: 1px solid black;
             width: 80%;
+
+            @media #{$md-layout} {
+              left: 0;
+            }
+            @media #{$xs-layout} {
+              left: 0;
+            }
 
             &:focus {
               border-bottom: 1px solid $theme-color;

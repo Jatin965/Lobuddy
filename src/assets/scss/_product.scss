@@ -75,13 +75,6 @@
     box-shadow: $shadow-hover;
   }
 
-  @media #{$md-layout} {
-    flex-direction: column;
-  }
-  @media #{$xs-layout} {
-    flex-direction: column;
-  }
-
   .product-img {
     img {
       max-width: 300px;
@@ -178,30 +171,25 @@
     }
     &-badges {
       span.blue {
-        position: static;
-        display: block;
-        margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
+        margin-right: 10px;
         padding: 3px 11px;
         font-size: 14px;
         font-weight: 500;
         background: $bg-blue;
         border-radius: 30px;
         color: white;
-        right: 0;
-        top: -30px;
       }
       span.orange {
-        position: static;
-        display: block;
-        margin-bottom: 10px;
+        position: relative;
+        display: inline-block;
         padding: 3px 11px;
         font-size: 14px;
         font-weight: 500;
         background: $theme-color;
         border-radius: 30px;
         color: white;
-        left: 0;
-        top: -30px;
       }
     }
     & .default-img {
@@ -258,15 +246,12 @@
 
     &-badges {
       position: absolute;
-      top: -20px;
-      left: 0px;
+      right: 10px;
+      top: -12px;
       & > span {
         font-size: 13px;
         font-weight: 500;
         line-height: 1;
-        position: static;
-        display: block;
-        margin-bottom: 10px;
         padding: 3px 11px;
         border-radius: 3px;
         width: fit-content;
@@ -377,6 +362,110 @@
 }
 
 @media screen and (max-device-width: 995px), screen and (max-width: 995px) {
+  .product-wrap {
+    padding: 0;
+    box-shadow: none;
+    border: 1px solid rgba(#707070, 0.1);
+    border-radius: 10px;
+
+    .product-img {
+      img {
+        max-width: 100px;
+        height: auto;
+      }
+    }
+
+    .product-content-2 {
+      display: flex;
+      justify-content: space-between;
+
+      margin: 5px 1px;
+      .title-price-wrap-2 {
+        margin-left: 2vw;
+        h2 {
+          line-height: 0.5;
+          a {
+            font-size: 0.8rem;
+          }
+        }
+
+        h4 {
+          line-height: 0.5;
+          a {
+            font-size: 0.7rem;
+          }
+        }
+        .price-2 {
+          span {
+            font-size: 0.7rem;
+
+            span {
+              font-size: 1rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .product-wrap-7 {
+    margin: 10px 0;
+    padding: 0;
+    box-shadow: none;
+    border: 1px solid rgba(#707070, 0.1);
+    border-radius: 10px;
+
+    .product-img {
+      padding: 10px;
+      img {
+        max-width: 200px !important;
+        height: auto;
+      }
+
+      &-badges {
+        span.blue {
+          margin: 15px 5px 0 10px;
+          padding: 5px 15px;
+          font-size: 10px;
+
+          color: white;
+        }
+        span.orange {
+          margin-left: 10px;
+          margin-top: 15px;
+          padding: 5px 15px;
+          font-size: 10px;
+        }
+      }
+    }
+
+    .product-content-2 {
+      padding: 10px;
+      margin: 0;
+      .title-price-wrap-2 {
+        h3 {
+          line-height: 1;
+          margin: 0 0 6px;
+          a {
+            font-size: 1rem;
+          }
+        }
+
+        h6 {
+          a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: $text-grey-light;
+          }
+        }
+        .price-2 {
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
   .product-three {
     &-image {
       // height: 220px !important;
@@ -394,26 +483,24 @@
       padding: px;
 
       h1 {
-        font-size: 13px;
+        font-size: 0.8rem;
         padding-left: 5px;
         font-weight: bolder;
         margin: 0;
       }
       h4 {
-        font-size: 11px;
+        font-size: 0.7rem;
         padding-left: 5px;
         margin: 0;
       }
       h2 {
-        font-size: 13px;
-
-        color: $text-grey-light;
-        padding-left: 5px;
-        margin: 0;
+        font-size: 0.8rem;
+        padding-left: 0;
+        padding-bottom: 0;
 
         span {
           color: $theme-color;
-          font-size: 15px;
+          font-size: 0.8rem;
           padding-left: 0px;
           margin: 0;
         }

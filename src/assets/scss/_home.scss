@@ -2,14 +2,12 @@
   overflow-x: scroll;
   overflow-y: hidden;
 
-
   .card1 {
     display: flex;
   }
 }
 .scrolling-wrapper-flexbox {
   display: flex;
-
 }
 .ant-carousel {
   .slick-next {
@@ -27,6 +25,28 @@
 .home {
   width: 90vw;
   margin: 10px auto;
+
+  &-group {
+    display: none;
+
+    @media #{$md-layout} {
+      display: block;
+    }
+    @media #{$xs-layout} {
+      display: block;
+    }
+
+    img {
+      max-width: 95vw;
+    }
+
+    button {
+      background: $theme-color;
+      color: white;
+      padding: 5px 15px;
+      margin: 20px 33%;
+    }
+  }
 
   .home-header {
     display: flex;
@@ -93,6 +113,7 @@
     }
     &-products > * {
       flex: 1 1 25%;
+      margin: 10px 0;
     }
 
     button {
@@ -135,6 +156,13 @@
         max-width: 10vw;
         margin: 0 10vw;
 
+        @media #{$md-layout} {
+          max-width: 50vw;
+        }
+        @media #{$xs-layout} {
+          max-width: 50vw;
+        }
+
         &:hover {
           background: white;
         }
@@ -158,10 +186,8 @@
   }
 
   .testimonials {
-
     align-items: center;
     justify-content: space-between;
-
 
     @media #{$md-layout} {
       flex-direction: column;
@@ -186,7 +212,6 @@
     img {
       height: 100%;
       width: 250px;
-
     }
   }
 }
@@ -195,20 +220,15 @@
   .content {
     h1 {
       color: $theme-color;
-      font-size: 25px!important;
-
+      font-size: 25px !important;
     }
 
     p {
-      font-size: 0.8rem!important;
-
-
+      font-size: 0.8rem !important;
     }
-      img {
-
-      height: 100%!important;
-      width:100%!important;
-
+    img {
+      height: 100% !important;
+      width: 100% !important;
     }
   }
 }

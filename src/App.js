@@ -19,7 +19,6 @@ import Faq from "./components/UI/Faq";
 function App() {
   return (
     <div className="App">
-      {/* <ThemeProvider theme={theme}> */}
       <BrowserRouter>
         <ScrollToTop />
         <Header />
