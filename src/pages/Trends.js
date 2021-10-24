@@ -6,6 +6,7 @@ import { RiseOutlined } from "@ant-design/icons";
 
 import img2 from "../assets/images/best/2.png";
 import ProductList from "../components/Cards/ProductList";
+import ProductWidth from "../components/Cards/ProductWidth";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
@@ -46,9 +47,15 @@ const Trends = () => {
       </div>
 
       <div className="best-products">
-        <ProductList
-          products={products.filter((ps) => ps.tags.includes("trendy"))}
-        />
+        {window.innerWidth > 500 ? (
+          <ProductList
+            products={products.filter((ps) => ps.tags.includes("trendy"))}
+          />
+        ) : (
+          products
+            .filter((ps) => ps.tags.includes("trendy"))
+            .map((product) => <ProductWidth product={product} />)
+        )}
       </div>
     </div>
   );

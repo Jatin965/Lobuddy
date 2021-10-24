@@ -6,6 +6,7 @@ import { GiftOutlined } from "@ant-design/icons";
 
 import img1 from "../assets/images/best/1.png";
 import ProductList from "../components/Cards/ProductList";
+import ProductWidth from "../components/Cards/ProductWidth";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
@@ -43,9 +44,15 @@ const Best = () => {
       </div>
 
       <div className="best-products">
-        <ProductList
-          products={products.filter((ps) => ps.tags.includes("deal"))}
-        />
+        {window.innerWidth > 500 ? (
+          <ProductList
+            products={products.filter((ps) => ps.tags.includes("deal"))}
+          />
+        ) : (
+          products
+            .filter((ps) => ps.tags.includes("deal"))
+            .map((product) => <ProductWidth product={product} />)
+        )}
       </div>
     </div>
   );

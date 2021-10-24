@@ -12,7 +12,7 @@ import SearchHeader from "../components/Nav/SearchHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { searchProducts } from "../redux/actions/productActions";
 
-const Search = ({ keyss }) => {
+const Search = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -32,6 +32,10 @@ const Search = ({ keyss }) => {
 
   if (loading) {
     return <Loader />;
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
   }
 
   console.log(products);

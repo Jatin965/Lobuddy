@@ -31,6 +31,9 @@ header {
           height: auto;
         }
       }
+      a.mob-link {
+        display: none;
+      }
       div {
         button {
           display: flex;
@@ -44,6 +47,10 @@ header {
             margin: 0 !important;
             font-family: "Arial Rounded MT";
           }
+        }
+
+        div.mob {
+          display: none;
         }
 
         .coming {
@@ -101,7 +108,7 @@ header {
 
           &:focus {
             text-align: left;
-            margin-left: 20px;
+            // margin-left: 20px;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             outline: none;
@@ -151,6 +158,10 @@ header {
       }
     }
     .Header-group {
+      display: block;
+    }
+
+    div.best {
       display: none;
     }
 
@@ -178,6 +189,29 @@ header {
         }
       }
     }
+  }
+  .side {
+    position: absolute;
+    height: 100vh;
+    width: 60vw;
+    background: white;
+
+    z-index: 10;
+
+    a {
+      font-size: 0.9rem;
+      color: black;
+      margin-top: 5px;
+      padding: 5px 10px;
+    }
+  }
+
+  .backdrop {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9;
   }
 }
 
@@ -238,41 +272,87 @@ header {
 }
 @media screen and (max-device-width: 995px), screen and (max-width: 995px) {
   header {
-    box-shadow: $shadow;
-    font-family: "Sitka small";
+    box-shadow: none;
     .container-fluid {
-      .Header-group {
-        display: none;
-      }
       .row {
-        a {
-          img {
-            max-width: 150px;
-            height: 40px;
+        .logo {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          a {
+            img {
+              max-width: 100px;
+              height: auto;
+              margin-bottom: 10px;
+            }
+          }
+          a.mob-link {
+            display: block;
+            font-size: 0.7rem;
           }
         }
 
         div {
           button {
-            width: 30px;
-            height: 30px;
-            text-align: center !important;
-            border-radius: 20px;
-            padding: 3px;
+            display: none;
+          }
 
-            p {
-              display: none;
-            }
+          div.mob {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            box-shadow: $shadow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
           }
         }
 
         .search__box {
-          width: 60% !important;
-          margin: 0 0 0 4px;
+          width: 65% !important;
+          margin: 0 0 0 0px;
+
           input {
-            width: 60% !important;
+            width: 90% !important;
+            height: 25px;
+            text-align: left;
+            margin-left: 5px;
+
+            font-size: 0.8rem;
+            padding: 5px;
+          }
+          .dataResult {
+            width: 100% !important;
+            top: -4px;
+
+            .dataItem {
+              img {
+                height: 20px !important;
+                width: 20px;
+              }
+              p {
+                font-size: 0.8rem;
+                line-height: 0.8;
+              }
+            }
           }
         }
+      }
+
+      .Header-group {
+        display: none;
+      }
+
+      div.best {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        box-shadow: $shadow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
       }
 
       .li2 {

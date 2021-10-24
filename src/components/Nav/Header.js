@@ -19,6 +19,8 @@ import {
   UserOutlined,
   MobileOutlined,
   LaptopOutlined,
+  GiftOutlined,
+  RiseOutlined,
 } from "@ant-design/icons";
 
 import PopUp from "../UI/PopUp";
@@ -183,11 +185,189 @@ const menu = (
   </Menu>
 );
 
+const side = (
+  <div className="side">
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to={process.env.PUBLIC_URL + "/best-deals"}
+    >
+      <GiftOutlined
+        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+      />{" "}
+      Our best deals
+    </Link>
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to={process.env.PUBLIC_URL + "/trends"}
+    >
+      <RiseOutlined
+        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+      />{" "}
+      Products on trend
+    </Link>
+
+    <hr />
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?category=Phones"
+    >
+      <MobileOutlined
+        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+      />{" "}
+      Phone
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?sub=Tablets"
+    >
+      Tablets
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?sub=SmartPhones"
+    >
+      Smartphones
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?category=Computers"
+    >
+      <LaptopOutlined
+        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+      />{" "}
+      Computers
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?sub=Gaming"
+    >
+      Gaming
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?sub=Laptops"
+    >
+      Laptops
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?sub=Convertibles"
+    >
+      Convertibles
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+        fontWeight: 200,
+      }}
+      to="/search?category=Wareables"
+    >
+      <IoMdWatch
+        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+      />{" "}
+      Wearables
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?sub=SmartWatches"
+    >
+      Smartwatches
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?sub=Music"
+    >
+      Music
+    </Link>
+
+    <Link
+      style={{
+        textDecoration: "none",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Arial Rounded MT",
+      }}
+      to="/search?sub=ActivityTrackers"
+    >
+      Activity Trackers
+    </Link>
+  </div>
+);
+
 const Header = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [filterProducts, setFilterProducts] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isSideVisible, setIsSideVisible] = useState(false);
   const [key, setKey] = useState("");
 
   const handleChange = (e) => {
@@ -208,6 +388,10 @@ const Header = () => {
 
   return (
     <header>
+      {isSideVisible && (
+        <div className="backdrop" onClick={() => setIsSideVisible(false)}></div>
+      )}
+      {isSideVisible && side}
       <div className={"container-fluid"}>
         <div className="row">
           <div className="col-xl-2 col-lg-2 col-md-12 col-12">
@@ -215,6 +399,9 @@ const Header = () => {
             <div className={`logo`}>
               <Link to={process.env.PUBLIC_URL + "/"}>
                 <img src={logo} alt="lobuddy" />
+              </Link>
+              <Link className="mob-link" to={process.env.PUBLIC_URL + "/how"}>
+                HOW LOBUDDY WORKS?
               </Link>
             </div>
           </div>
@@ -231,6 +418,11 @@ const Header = () => {
                 <p> Categories </p>
               </button>
             </Dropdown>
+            <div className="mob" onClick={() => setIsSideVisible(true)}>
+              <BiDotsVertical style={{ marginRight: -10 }} />
+              <BiDotsVertical style={{ marginRight: -10 }} />
+              <BiDotsVertical style={{ marginLeft: -1 }} />
+            </div>
           </div>
           <div
             className={
@@ -241,7 +433,7 @@ const Header = () => {
           >
             <input
               type="text"
-              placeholder="Search for "
+              placeholder="Search for product, brands and more..."
               onChange={handleChange}
               value={key}
               onKeyDown={(e) => {
@@ -275,8 +467,7 @@ const Header = () => {
                           src={value.image[0]}
                           alt=""
                         />
-                        <p>{value.name.slice(0, 30)}... </p> <br />
-                        {/* <p>{value.description.slice(0, 30)}</p> */}
+                        <p>{value.name.slice(0, 30)}... </p>
                       </Link>
                     );
                   })}
@@ -285,20 +476,16 @@ const Header = () => {
           </div>
 
           <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
-            {/* Icon group */}
-            {/* <IconGroup /> */}
-            {/* <ShoppingOutlined /> <UserOutlined /> */}
             <img
+              className="Header-group"
               style={{ maxWidth: "18vw", marginLeft: "-4vw" }}
               src={head}
               alt="Header-group"
             />
+            <div className="best" onClick={() => history.push("/best-deals")}>
+              <GiftOutlined style={{ color: "#f68a1e" }} />
+            </div>
           </div>
-        </div>
-        <div className="Header-group">
-          <img src={head} alt="Header-group" />
-          <button onClick={() => setIsModalVisible(true)}>Subscribe</button>
-          {isModalVisible && <PopUp view={setIsModalVisible} />}
         </div>
 
         <div className="row li2 pt-4">
@@ -312,8 +499,6 @@ const Header = () => {
           {isModalVisible && <PopUp view={setIsModalVisible} />}
         </div>
       </div>
-      {/* mobile menu */}
-      {/* <MobileMenu /> */}
     </header>
   );
 };

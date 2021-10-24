@@ -7,6 +7,7 @@ import { listProducts } from "../redux/actions/productActions";
 
 import Loader from "../components/UI/Loader";
 import ProductList from "../components/Cards/ProductList";
+import ProductWidth from "../components/Cards/ProductWidth";
 
 import samsung from "../assets/images/Explore/samsung.png";
 import one from "../assets/images/Explore/one.png";
@@ -40,6 +41,15 @@ const Explore = () => {
       <ProductList
         products={products.filter((ps) => ps.brand.toLowerCase() === key)}
       />
+      {window.innerWidth > 500 ? (
+        <ProductList
+          products={products.filter((ps) => ps.brand.toLowerCase() === key)}
+        />
+      ) : (
+        products
+          .filter((ps) => ps.brand.toLowerCase() === key)
+          .map((product) => <ProductWidth product={product} />)
+      )}
     </div>
   );
 };
