@@ -176,12 +176,12 @@
         align-items: center;
 
         @media #{$md-layout} {
-          height: 22vh;
-          width: 22vh;
+          height: 28vh;
+          width: 28vh;
         }
         @media #{$xs-layout} {
-          height: 22vh;
-          width: 22vh;
+          height: 28vh;
+          width: 28vh;
         }
 
         img {
@@ -190,10 +190,10 @@
           margin: auto;
 
           @media #{$md-layout} {
-            max-height: 10vh;
+            max-height: 15vh;
           }
           @media #{$xs-layout} {
-            max-height: 10vh;
+            max-height: 15vh;
           }
         }
       }

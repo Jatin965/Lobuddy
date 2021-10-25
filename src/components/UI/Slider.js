@@ -45,8 +45,8 @@ const Slider = ({ set }) => {
         <div className="num num1">1+</div>
         <div className="dropdown-content  1">
           <div className="n-num">
-            <p className="digit">1+</p>
-            <p className="month">month</p>
+            <h3 className="digit">1+</h3>
+            <p className="month">MONTHS</p>
           </div>
         </div>
       </div>
@@ -54,8 +54,8 @@ const Slider = ({ set }) => {
         <div className="num num2">3+</div>
         <div className="dropdown-content 2">
           <div className="n-num">
-            <p className="digit">3+</p>
-            <p className="month">month</p>
+            <h3 className="digit">3+</h3>
+            <p className="month">MONTHS</p>
           </div>
         </div>
       </div>
@@ -63,8 +63,8 @@ const Slider = ({ set }) => {
         <div className="num num3">6+</div>
         <div className="dropdown-content1 3">
           <div className="n-num">
-            <p className="digit">6+</p>
-            <p className="month">month</p>
+            <h3 className="digit">6+</h3>
+            <p className="month">MONTHS</p>
           </div>
         </div>
       </div>
@@ -72,8 +72,8 @@ const Slider = ({ set }) => {
         <div className="num num4">12+</div>
         <div className="dropdown-content 4">
           <div className="n-num">
-            <p className="digit">12+</p>
-            <p className="month">month</p>
+            <h3 className="digit">12+</h3>
+            <p className="month">MONTHS</p>
           </div>
         </div>
       </div>

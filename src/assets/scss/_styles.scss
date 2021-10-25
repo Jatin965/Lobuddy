@@ -42,6 +42,13 @@ button {
   width: 80px;
   height: 80px;
   margin: 15% 50%;
+
+  @media #{$md-layout} {
+    margin: 50% 40%;
+  }
+  @media #{$xs-layout} {
+    margin: 50% 40%;
+  }
 }
 .spinner:after {
   content: " ";

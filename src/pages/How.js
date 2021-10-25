@@ -2,7 +2,7 @@ import React from "react";
 
 import CircleBag from "../components/UI/CircleBag";
 
-import { QuestionOutlined, StarOutlined } from "@ant-design/icons";
+import { SettingOutlined, StarOutlined } from "@ant-design/icons";
 
 import im1 from "../assets/images/how/1.png";
 import im2 from "../assets/images/how/2.png";
@@ -18,7 +18,7 @@ const How = () => {
   return (
     <div className="how">
       <div className="how-header">
-        <CircleBag child={<QuestionOutlined className="how-icon" />} />
+        <CircleBag child={<SettingOutlined className="how-icon" />} />
 
         <h1 style={{ fontFamily: "Arial Rounded MT" }}>How it works!</h1>
       </div>

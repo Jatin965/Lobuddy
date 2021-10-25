@@ -4,7 +4,7 @@ header {
   position: sticky;
   top: 0;
   background: white;
-  z-index: 2;
+  z-index: 50;
   .container-fluid {
     padding: 20px 80px;
     @media #{$xl-layout} {

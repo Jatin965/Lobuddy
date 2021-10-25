@@ -1,7 +1,7 @@
 .flex-container {
   display: flex;
   // height: 25px;
-  margin: 50px 0;
+  margin: 53px 0;
   width: 280px;
   border-radius: 30px;
   border: 1px solid #dcdcdc;
@@ -20,7 +20,7 @@
   font-size: 15px;
   width: 20px;
   border-radius: 80px;
-  margin: 3px 40px 3px 10px;
+  margin: 0 40px 0 10px;
   cursor: pointer;
 }
 .flex-container:focus {
@@ -38,8 +38,11 @@
 
 .dropdown {
   position: relative;
-
   display: inline-block;
+
+  .num {
+    color: $text-grey-light;
+  }
 }
 
 .dropdown-content {
@@ -48,13 +51,26 @@
   height: 70px;
   display: none;
   position: absolute;
-  top: -18px;
+  top: -23px;
   left: -14px;
   background-color: $theme-color;
   color: #fff;
   border-radius: 60%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+
+  .n-num {
+    h3 {
+      font-size: 2rem;
+      margin: 5px 0 0 0;
+      padding: 0;
+      color: white;
+    }
+
+    p.month {
+      font-size: 0.6rem;
+    }
+  }
 }
 
 .dropdown-content1 {
@@ -62,13 +78,27 @@
   width: 70px;
   height: 70px;
   position: absolute;
-  top: -18px;
+  top: -23px;
   left: -14px;
   background-color: $theme-color;
   color: #fff;
   border-radius: 60%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+
+  .n-num {
+    h3 {
+      font-size: 2rem;
+      margin: 5px 0 0 0;
+      padding: 0;
+      color: white;
+    }
+
+    p.month {
+      font-size: 0.6rem;
+      margin: 0;
+    }
+  }
 }
 
 .dropdown-content1 {

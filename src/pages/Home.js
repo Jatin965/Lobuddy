@@ -254,7 +254,7 @@ const Home = () => {
         <div className="content col-lg-6">
           <h1>Our happy customers in Germany</h1>
           <div className="row">
-            <div class="col-6">
+            <div className="col-6">
               <p>Check out what our customer saying about us...</p>
             </div>
             <div className="col-6">
