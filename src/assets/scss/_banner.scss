@@ -1,6 +1,6 @@
 .banner {
   min-height: 40vh;
-
+  display: flex;
   align-items: center;
   justify-content: space-between;
   background: rgba(255, 153, 0, 0.1);
@@ -9,7 +9,7 @@
   padding: 5vh 2vw;
 
   &-content {
-    flex: 0.9 1;
+    flex: 0.5 1;
 
     h1 {
       color: $text-black;
@@ -35,23 +35,35 @@
   }
 
   &-images {
-    margin-right: 0;
-    margin-left: auto;
+    flex: 0.5 1;
     .left {
-      max-height: 150px;
-      transform: rotate(-15deg);
-      // padding-right: 1vw;
+      display: inline-block;
+      margin-left: 10%;
+      img {
+        max-height: 150px;
+        width: auto;
+        transform: rotate(-15deg);
+        padding-right: 40px;
+      }
     }
     .top {
-      max-height: 150px;
-      transform: rotate(9deg);
-      top: 10;
-      padding: 1vh 0;
+      display: inline-block;
+      img {
+        max-height: 150px;
+        width: auto;
+        transform: rotate(9deg);
+        padding-right: 40px;
+      }
     }
     .right {
-      max-height: 150px;
-      transform: rotate(21deg);
-      // margin-left: 1vw;
+      display: inline-block;
+      img {
+        max-height: 150px;
+
+        width: auto;
+        transform: rotate(9deg);
+        // padding-right: 1vw;
+      }
     }
 
     .logo {
@@ -59,7 +71,7 @@
       justify-content: center;
 
       img {
-        max-height: 100px;
+        max-height: 50px;
       }
     }
   }
@@ -97,29 +109,45 @@
     }
 
     &-images {
+      padding: 0;
       .left {
-        height: 40px;
-        transform: rotate(-10deg);
-        // padding-right: 1vw;
+        width: fit-content;
+        margin: 0;
+        img {
+          height: 40px;
+          transform: rotate(-10deg);
+          margin: 0 !important;
+          padding: 0;
+        }
       }
       .top {
-        max-height: 50px;
-        transform: rotate(9deg);
-        position: relative;
+        width: fit-content;
+        img {
+          max-height: 40px;
+          transform: rotate(9deg);
+          margin: 0;
+          padding: 0;
+        }
       }
       .right {
-        max-height: 50px;
-        transform: rotate(21deg);
-        // margin-left: 1vw;
+        width: fit-content;
+        img {
+          max-height: 40px;
+          transform: rotate(21deg);
+          padding: 0;
+          // margin-left: 1vw;
+        }
       }
 
       .logo {
         display: flex;
         justify-content: center;
+        margin-top: 10px;
+        margin-left: 0;
 
         img {
-          width: 80px;
-          position: relative;
+          max-height: 25px;
+          max-width: 60px;
         }
       }
     }

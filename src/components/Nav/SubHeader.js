@@ -17,7 +17,7 @@ const SubHeader = ({ word, cat }) => {
             style={{
               fontFamily: "Arial Rounded MT",
               fontWeight: 600,
-              marginLeft: 15,
+              marginLeft: 5,
               cursor: "pointer",
             }}
             onClick={() => history.push("/search?category=Phones")}
@@ -28,7 +28,7 @@ const SubHeader = ({ word, cat }) => {
             style={{
               fontFamily: "Arial Rounded MT",
               fontWeight: 600,
-              marginLeft: 15,
+              marginLeft: 5,
               color: "#f68a1e",
             }}
           >
@@ -44,7 +44,7 @@ const SubHeader = ({ word, cat }) => {
             style={{
               fontFamily: "Arial Rounded MT",
               fontWeight: 600,
-              marginLeft: 15,
+              marginLeft: 5,
               cursor: "pointer",
             }}
             onClick={() => history.push("/search?category=Wareables")}
@@ -55,7 +55,7 @@ const SubHeader = ({ word, cat }) => {
             style={{
               fontFamily: "Arial Rounded MT",
               fontWeight: 600,
-              marginLeft: 15,
+              marginLeft: 5,
               color: "#f68a1e",
             }}
           >
@@ -71,7 +71,7 @@ const SubHeader = ({ word, cat }) => {
             style={{
               fontFamily: "Arial Rounded MT",
               fontWeight: 600,
-              marginLeft: 15,
+              marginLeft: 5,
               cursor: "pointer",
             }}
             onClick={() => history.push("/search?category=Computers")}
@@ -82,7 +82,7 @@ const SubHeader = ({ word, cat }) => {
             style={{
               fontFamily: "Arial Rounded MT",
               fontWeight: 600,
-              marginLeft: 15,
+              marginLeft: 5,
               color: "#f68a1e",
             }}
           >

@@ -243,9 +243,12 @@ const Home = () => {
         <h1>Our best deals</h1>
 
         <div className="home-most-products">
-          {products.slice(10, 14).map((product) => (
-            <Product product={product} />
-          ))}
+          {products
+            .filter((ps) => ps.tags.includes("deal"))
+            .slice(9, 13)
+            .map((product) => (
+              <Product product={product} />
+            ))}
         </div>
         <button onClick={() => history.push("/best-deals")}>View all</button>
       </div>

@@ -255,10 +255,11 @@ const ProductDetail = () => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
 
-          {product.sub == "ActivityTrackers" &&
-            activity.map((ts) => {
-              return <BoxImg image={ts.image} name={ts.name} />;
-            })}
+          {product.sub == "ActivityTrackers" ||
+            (product.sub == "SmartWatches" &&
+              activity.map((ts) => {
+                return <BoxImg image={ts.image} name={ts.name} />;
+              }))}
 
           {product.sub == "Music" &&
             music.map((ts) => {
@@ -305,9 +306,12 @@ const ProductDetail = () => {
         <h1>Our best deals</h1>
 
         <div className="most-products">
-          {products.slice(9, 13).map((product) => (
-            <Product product={product} />
-          ))}
+          {products
+            .filter((ps) => ps.tags.includes("deal"))
+            .slice(5, 9)
+            .map((product) => (
+              <Product product={product} />
+            ))}
         </div>
       </div>
       <div className="price-stick">

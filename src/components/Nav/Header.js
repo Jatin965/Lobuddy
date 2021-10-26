@@ -40,7 +40,7 @@ const menu = (
         <MobileOutlined
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
         />{" "}
-        Phone
+        Phones
       </Link>
     </Menu.Item>
     <Menu.Item>
@@ -230,7 +230,7 @@ const side = (
       <MobileOutlined
         style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
       />{" "}
-      Phone
+      Phones
     </Link>
 
     <Link
