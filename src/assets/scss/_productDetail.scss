@@ -356,6 +356,54 @@
           }
         }
       }
+
+      img.logo {
+        max-width: 125px;
+      }
+
+      h4.thank {
+        text-align: center;
+        color: $theme-color;
+        font-family: "Sitka Small";
+        font-weight: 600;
+        margin: 3vh 0;
+
+        @media #{$md-layout} {
+          font-size: 1rem;
+        }
+        @media #{$xs-layout} {
+          font-size: 1rem;
+        }
+      }
+
+      h5.you {
+        text-align: center;
+        font-family: "Sitka Small";
+        font-weight: 600;
+        margin-bottom: -70px;
+
+        @media #{$md-layout} {
+          font-size: 0.9rem;
+          margin-bottom: 0;
+        }
+        @media #{$xs-layout} {
+          font-size: 0.9rem;
+          margin-bottom: 0;
+        }
+      }
+
+      img.success {
+        max-width: 30vw;
+        display: block;
+        margin: auto;
+
+        @media #{$md-layout} {
+          max-width: 80vw;
+        }
+        @media #{$xs-layout} {
+          max-width: 80vw;
+        }
+      }
     }
 
     .ant-modal-footer {

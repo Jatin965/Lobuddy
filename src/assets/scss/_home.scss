@@ -185,6 +185,13 @@
         margin: 0;
       }
     }
+    button {
+      border: none;
+
+      &:hover {
+        background: white;
+      }
+    }
   }
 
   .testimonials {

@@ -37,11 +37,10 @@
     }
 
     button {
-      margin: 2vh inherit;
+      margin: 2vh 30px;
       background: $theme-color;
       color: white;
       padding-left: 30px;
-      border: none;
 
       &:hover {
         background: white;
@@ -55,7 +54,6 @@
 .product-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin: 50px 0;
   row-gap: 2vh;
 }

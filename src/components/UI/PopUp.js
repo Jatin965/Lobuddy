@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
 
@@ -34,13 +34,29 @@ const PopUp = ({ view }) => {
     }
     view(false);
     setVisible(true);
+    console.log(visible);
   };
 
+  console.log(visible);
   const handleCancel = () => {
     view(false);
+    console.log(visible);
   };
 
   const { loading, success, error } = useSelector((state) => state.userAdd);
+
+  let flag = 0;
+
+  useEffect(() => {
+    if (success && flag === 0 && !loading && !error) {
+      setVisible(true);
+      flag++;
+    } else {
+      setVisible(false);
+    }
+    console.log(flag);
+    console.log(success);
+  }, [success, loading, error]);
 
   if (loading) {
     return <Loader />;
@@ -129,39 +145,13 @@ const PopUp = ({ view }) => {
         onCancel={() => setVisible(false)}
         footer={[<Button type="primary">Explore</Button>]}
       >
-        <img style={{ maxWidth: "125px" }} src={logo} alt="Logo" />
-        <h4
-          style={{
-            textAlign: "center",
-            color: "#f68a1e",
-            fontFamily: "Sitka Small",
-            fontWeight: 600,
-            margin: "3vh 0",
-            // padding: "0 200px",
-          }}
-        >
-          Thank you for your subscription
-        </h4>
-        <h5
-          style={{
-            textAlign: "center",
-            fontFamily: "Sitka Small",
-            fontWeight: 600,
-            marginBottom: "-70px",
-          }}
-        >
+        <img className="logo" src={logo} alt="Logo" />
+        <h4 className="thank">Thank you for your subscription</h4>
+        <h5 className="you">
           Welcome to best technology world, we will be in touch with you soon
           with your dream gadget
         </h5>
-        <img
-          style={{
-            maxWidth: "30vw",
-            display: "block",
-            margin: "auto",
-          }}
-          src={img3}
-          alt="celebrate"
-        />
+        <img className="success" src={img3} alt="celebrate" />
       </Modal>
     </div>
   );

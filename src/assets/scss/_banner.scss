@@ -99,10 +99,11 @@
         font-size: 12px !important;
         padding: 3px !important;
         width: 150px !important;
+        border: 1px solid $theme-color !important;
 
         &:hover {
           background-color: white;
-          border: 1px solid $theme-color;
+
           color: $theme-color;
         }
       }

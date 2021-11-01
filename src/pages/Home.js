@@ -220,6 +220,9 @@ const Home = () => {
               <ProductWidth product={product} />
             ))}
         </div>
+        <button onClick={() => history.push("/search?category=Computers")}>
+          View all
+        </button>
       </div>
 
       <Banner

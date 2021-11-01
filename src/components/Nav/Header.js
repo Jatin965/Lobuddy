@@ -7,6 +7,7 @@ import { listProducts } from "../../redux/actions/productActions";
 
 import logo from "../../assets/images/logo.png";
 import head from "../../assets/images/hpik.png";
+import dot from "../../assets/images/dot.png";
 
 import { IoMdWatch } from "react-icons/io";
 import { BiDotsVertical } from "react-icons/bi";
@@ -412,16 +413,16 @@ const Header = () => {
               placement="bottomCenter"
             >
               <button className="btn bg-transparent">
-                <BiDotsVertical style={{ margin: "-5px" }} />
-                <BiDotsVertical style={{ margin: "-5px", padding: 0 }} />
-                <BiDotsVertical style={{ margin: "-6px", padding: 0 }} />
+                <img
+                  style={{ height: 12, width: "auto" }}
+                  src={dot}
+                  alt="dots"
+                />
                 <p> Categories </p>
               </button>
             </Dropdown>
             <div className="mob" onClick={() => setIsSideVisible(true)}>
-              <BiDotsVertical style={{ marginRight: -10 }} />
-              <BiDotsVertical style={{ marginRight: -10 }} />
-              <BiDotsVertical style={{ marginLeft: -1 }} />
+              <img style={{ height: 12, width: "auto" }} src={dot} alt="dots" />
             </div>
           </div>
           <div
