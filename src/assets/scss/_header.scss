@@ -36,14 +36,16 @@ header {
       }
       div {
         button {
-          display: flex;
-          align-items: center;
+          display: inline-block;
+          vertical-align: middle;
           border-radius: 32px;
           box-shadow: $shadow;
           padding: 10px 20px;
           border: none;
 
           p {
+            display: inline-block;
+            vertical-align: middle;
             margin: 0 !important;
             font-family: "Arial Rounded MT";
           }

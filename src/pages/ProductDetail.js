@@ -19,6 +19,8 @@ import { FaTruckMoving } from "react-icons/fa";
 import Faq from "../components/UI/Faq";
 import Product from "../components/Cards/Product";
 
+import tag from "../assets/images/detail/tag.png";
+
 import Test from "../assets/images/home/test.png";
 import Customer from "../assets/images/home/cus.png";
 import Customer2 from "../assets/images/home/cus2.png";
@@ -137,9 +139,10 @@ const ProductDetail = () => {
     <div className="detail">
       <SubHeader word={product.sub} cat={product.category} />
       <div className="tag">
-        <TagFilled
+        {/* <TagFilled
           style={{ transform: "scale(-1,1)", fontSize: 50, color: "white" }}
-        />
+        /> */}
+        <img style={{ height: 60, width: "auto" }} src={tag} alt="tag" />
         <p>
           Welcome Buddy. Use discount coupon{" "}
           <span style={{ cursor: "pointer" }} onClick={showModal}>

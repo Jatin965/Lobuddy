@@ -417,7 +417,7 @@ const Header = () => {
                   style={{ height: 12, width: "auto" }}
                   src={dot}
                   alt="dots"
-                />
+                />{" "}
                 <p> Categories </p>
               </button>
             </Dropdown>

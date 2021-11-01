@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CircleBag from "../components/UI/CircleBag";
 import Loader from "../components/UI/Loader";
 
@@ -13,12 +13,23 @@ import { listProducts } from "../redux/actions/productActions";
 
 const Trends = () => {
   const dispatch = useDispatch();
+  const [flag, setFlag] = useState(9);
 
   const { products, loading, error } = useSelector(
     (state) => state.productList
   );
 
-  console.log(products.filter((ps) => ps.tags.includes("2")));
+  let tProducts = products.filter((ps) => ps.tags.includes("trendy"));
+
+  const moreHandler = () => {
+    if (flag + 9 > tProducts.length) {
+      setFlag(tProducts.length);
+      let b = document.getElementById("more-btn");
+      b.style.display = "none";
+    } else {
+      setFlag(flag + 9);
+    }
+  };
 
   useEffect(() => {
     dispatch(listProducts());
@@ -37,7 +48,7 @@ const Trends = () => {
 
       <div className="best-header-content">
         <div className="best-header-content-text">
-          <h1>Trendy gadgets of October month </h1>
+          <h1>Trendy gadgets of November month </h1>
           <h4>
             Lobuddy has a availability of your dream gadget with affordable
             rates..
@@ -48,14 +59,21 @@ const Trends = () => {
 
       <div className="best-products">
         {window.innerWidth > 500 ? (
-          <ProductList
-            products={products.filter((ps) => ps.tags.includes("trendy"))}
-          />
+          <ProductList products={tProducts.slice(0, flag)} />
         ) : (
-          products
-            .filter((ps) => ps.tags.includes("trendy"))
+          tProducts
+            .slice(0, flag)
             .map((product) => <ProductWidth product={product} />)
         )}
+      </div>
+
+      <div className="down-sec">
+        <p>
+          You have seen {flag} of {tProducts.length} products
+        </p>
+        <button id="more-btn" onClick={moreHandler}>
+          View More
+        </button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CircleBag from "../components/UI/CircleBag";
 import Loader from "../components/UI/Loader";
 
@@ -13,12 +13,23 @@ import { listProducts } from "../redux/actions/productActions";
 
 const Best = () => {
   const dispatch = useDispatch();
+  const [flag, setFlag] = useState(9);
 
   const { products, loading, error } = useSelector(
     (state) => state.productList
   );
 
-  console.log(products.filter((ps) => ps.tags.includes("2")));
+  let bProducts = products.filter((ps) => ps.tags.includes("deal"));
+
+  const moreHandler = () => {
+    if (flag + 9 > bProducts.length) {
+      setFlag(bProducts.length);
+      let b = document.getElementById("more-btn");
+      b.style.display = "none";
+    } else {
+      setFlag(flag + 9);
+    }
+  };
 
   useEffect(() => {
     dispatch(listProducts());
@@ -45,14 +56,21 @@ const Best = () => {
 
       <div className="best-products">
         {window.innerWidth > 500 ? (
-          <ProductList
-            products={products.filter((ps) => ps.tags.includes("deal"))}
-          />
+          <ProductList products={bProducts.slice(0, flag)} />
         ) : (
-          products
-            .filter((ps) => ps.tags.includes("deal"))
+          bProducts
+            .slice(0, flag)
             .map((product) => <ProductWidth product={product} />)
         )}
+      </div>
+
+      <div className="down-sec">
+        <p>
+          You have seen {flag} of {bProducts.length} products
+        </p>
+        <button id="more-btn" onClick={moreHandler}>
+          View More
+        </button>
       </div>
     </div>
   );

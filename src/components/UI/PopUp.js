@@ -7,18 +7,16 @@ import { addUser } from "../../redux/actions/productActions";
 
 import { Modal, Input, Button } from "antd";
 
-import {
-  TagFilled,
-  UserOutlined,
-  MailOutlined,
-  PhoneOutlined,
-} from "@ant-design/icons";
+import { UserOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 
 import img1 from "../../assets/images/detail/1.png";
 import img2 from "../../assets/images/detail/2.png";
 import img3 from "../../assets/images/detail/3.png";
+import tag from "../../assets/images/detail/tag.png";
 import logo from "../../assets/images/logo.png";
 import Loader from "./Loader";
+
+let flag = 0;
 
 const PopUp = ({ view }) => {
   const dispatch = useDispatch();
@@ -45,18 +43,14 @@ const PopUp = ({ view }) => {
 
   const { loading, success, error } = useSelector((state) => state.userAdd);
 
-  let flag = 0;
-
-  useEffect(() => {
-    if (success && flag === 0 && !loading && !error) {
-      setVisible(true);
-      flag++;
-    } else {
-      setVisible(false);
-    }
-    console.log(flag);
-    console.log(success);
-  }, [success, loading, error]);
+  if (success && flag === 0 && !loading && !error) {
+    setVisible(true);
+    flag++;
+  } else {
+    setVisible(false);
+  }
+  console.log(flag);
+  console.log(success);
 
   if (loading) {
     return <Loader />;
@@ -91,13 +85,7 @@ const PopUp = ({ view }) => {
           <img src={img2} alt="person" />
           <div className="content">
             <div className="tag">
-              <TagFilled
-                style={{
-                  transform: "scale(-1,1)",
-                  fontSize: 30,
-                  color: "white",
-                }}
-              />
+              <img style={{ height: 60, width: "auto" }} src={tag} alt="tag" />
               <p>
                 Subscribe with lobuddy to get <span>1 month free</span>{" "}
                 subscription on any of your dream gadget.

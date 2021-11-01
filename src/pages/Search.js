@@ -15,16 +15,25 @@ import { searchProducts } from "../redux/actions/productActions";
 const Search = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const [flag, setFlag] = useState(9);
 
   let keyword = history.location.search;
+
+  let [key, word] = keyword.split("=");
 
   const { products, loading, error } = useSelector(
     (state) => state.productSearch
   );
 
-  let [key, word] = keyword.split("=");
-
-  console.log(products.length);
+  const moreHandler = () => {
+    if (flag + 9 > products.length) {
+      setFlag(products.length);
+      let b = document.getElementById("more-btn");
+      b.style.display = "none";
+    } else {
+      setFlag(flag + 9);
+    }
+  };
 
   useEffect(() => {
     dispatch(searchProducts(keyword));
@@ -38,7 +47,6 @@ const Search = () => {
     return <h1>{error}</h1>;
   }
 
-  console.log(products);
   return (
     <div className="search">
       {key == "?name" ? (
@@ -48,7 +56,16 @@ const Search = () => {
       ) : (
         <CategoryHeader word={word} />
       )}
-      <ProductList products={products} />
+      <ProductList products={products.slice(0, flag)} />
+
+      <div className="down-sec">
+        <p>
+          You have seen {flag} of {products.length} products
+        </p>
+        <button id="more-btn" onClick={moreHandler}>
+          View More
+        </button>
+      </div>
     </div>
   );
 };

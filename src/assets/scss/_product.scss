@@ -148,7 +148,7 @@
   left: 50%;
   transform: translateX(-50%);
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   max-width: 350px;
   border-radius: 30px;
   box-shadow: $shadow;
@@ -507,6 +507,7 @@
         width: 120px !important;
         padding: 2px 5px;
         font-size: 10px;
+        margin: 0;
       }
     }
   }
