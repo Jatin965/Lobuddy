@@ -24,33 +24,24 @@ const PopUp = ({ view }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [visible, setVisible] = useState(false);
+  const [visible1, setVisible1] = useState(true);
+  const [visible2, setVisible2] = useState(false);
 
   const handleOk = () => {
     if (name !== "" && phone !== "" && email !== "") {
       dispatch(addUser(name, email, phone));
     }
-    view(false);
-    setVisible(true);
-    console.log(visible);
+    setVisible1(false);
+    setVisible2(true);
   };
 
-  console.log(visible);
   const handleCancel = () => {
     view(false);
-    console.log(visible);
+    setVisible1(false);
+    setVisible2(false);
   };
 
   const { loading, success, error } = useSelector((state) => state.userAdd);
-
-  if (success && flag === 0 && !loading && !error) {
-    setVisible(true);
-    flag++;
-  } else {
-    setVisible(false);
-  }
-  console.log(flag);
-  console.log(success);
 
   if (loading) {
     return <Loader />;
@@ -63,7 +54,7 @@ const PopUp = ({ view }) => {
   return (
     <div>
       <Modal
-        visible={true}
+        visible={visible1}
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
@@ -95,7 +86,7 @@ const PopUp = ({ view }) => {
               onChange={(e) => setName(e.target.value)}
               type="text"
               size="large"
-              prefix={<UserOutlined />}
+              prefix={<UserOutlined className="popup-icon" />}
               placeholder="Name"
               required
               bordered={false}
@@ -105,7 +96,7 @@ const PopUp = ({ view }) => {
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               size="large"
-              prefix={<MailOutlined />}
+              prefix={<MailOutlined className="popup-icon" />}
               placeholder="E-mail"
               required
               bordered={false}
@@ -115,7 +106,7 @@ const PopUp = ({ view }) => {
               onChange={(e) => setPhone(e.target.value)}
               type="phone"
               size="large"
-              prefix={<PhoneOutlined rotate={90} />}
+              prefix={<PhoneOutlined className="popup-icon" rotate={90} />}
               placeholder="Phone No."
               required
               bordered={false}
@@ -125,12 +116,13 @@ const PopUp = ({ view }) => {
         </div>
       </Modal>
       <Modal
-        visible={visible}
+        visible={visible2}
         onOk={() => {
-          setVisible(false);
+          setVisible2(false);
+          view(false);
           history.push("/");
         }}
-        onCancel={() => setVisible(false)}
+        onCancel={handleCancel}
         footer={[<Button type="primary">Explore</Button>]}
       >
         <img className="logo" src={logo} alt="Logo" />

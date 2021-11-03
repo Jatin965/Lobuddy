@@ -10,9 +10,6 @@ import { detailProduct, listProducts } from "../redux/actions/productActions";
 
 import { computers, smartPhones, tab, activity, music } from "../utils/box.js";
 
-import { Carousel } from "antd";
-import { TagFilled, RightOutlined, LeftOutlined } from "@ant-design/icons";
-
 import { AiFillTag } from "react-icons/ai";
 import { FaTruckMoving } from "react-icons/fa";
 
@@ -21,74 +18,11 @@ import Product from "../components/Cards/Product";
 
 import tag from "../assets/images/detail/tag.png";
 
-import Test from "../assets/images/home/test.png";
-import Customer from "../assets/images/home/cus.png";
-import Customer2 from "../assets/images/home/cus2.png";
-import Customer3 from "../assets/images/home/cus3.png";
-
 import Loader from "../components/UI/Loader";
 import PopUp from "../components/UI/PopUp";
 import BoxImg from "../components/UI/BoxImg";
 import Slider from "../components/UI/Slider";
-
-const SampleNextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        color: "black",
-        background: "white",
-        fontSize: "25px",
-        lineHeight: "1.5715",
-        borderRadius: "50%",
-        boxShadow: "0 3px 6px rgb(0 0 0 / 0.2)",
-        padding: 25,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        right: -5,
-        zIndex: 10,
-      }}
-      onClick={onClick}
-    >
-      <RightOutlined />
-    </div>
-  );
-};
-
-const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        color: "black",
-        background: "white",
-        fontSize: "25px",
-        lineHeight: "1.5715",
-        borderRadius: "50%",
-        boxShadow: "0 3px 6px rgb(0 0 0 / 0.2)",
-        padding: 25,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        left: -5,
-        zIndex: 10,
-      }}
-      onClick={onClick}
-    >
-      <LeftOutlined />
-    </div>
-  );
-};
-
-const settings = {
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
-};
+import Testimonial from "../components/UI/Testimonial";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -139,9 +73,6 @@ const ProductDetail = () => {
     <div className="detail">
       <SubHeader word={product.sub} cat={product.category} />
       <div className="tag">
-        {/* <TagFilled
-          style={{ transform: "scale(-1,1)", fontSize: 50, color: "white" }}
-        /> */}
         <img style={{ height: 60, width: "auto" }} src={tag} alt="tag" />
         <p>
           Welcome Buddy. Use discount coupon{" "}
@@ -284,26 +215,7 @@ const ProductDetail = () => {
         <Faq />
       </div>
 
-      <div className="testimonials row">
-        <div className="content col-lg-6">
-          <h1>Our happy customers in Germany</h1>
-          <div className="row">
-            <div class="col-6">
-              <p>Check out what our customer saying about us...</p>
-            </div>
-            <div className="col-6">
-              <img src={Test} alt="Happy User" />
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-6">
-          <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
-            <img src={Customer} alt="Customer" />
-            <img src={Customer2} alt="Customer" />
-            <img src={Customer3} alt="Customer" />
-          </Carousel>
-        </div>
-      </div>
+      <Testimonial />
 
       <div className="detail-most">
         <h1>Our best deals</h1>

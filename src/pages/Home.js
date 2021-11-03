@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import Swiper from "react-id-swiper";
-
-import Iphone from "../assets/images/home/ip.png";
-import Test from "../assets/images/home/test.png";
-
-import Customer from "../assets/images/home/cus.png";
-import Customer2 from "../assets/images/home/cus2.png";
-import Customer3 from "../assets/images/home/cus3.png";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/actions/productActions";
@@ -38,73 +30,9 @@ import ProductThree from "../components/Cards/ProductThree";
 import ProductWidth from "../components/Cards/ProductWidth";
 import Product from "../components/Cards/Product";
 
-import {
-  MobileOutlined,
-  LaptopOutlined,
-  RightOutlined,
-  LeftOutlined,
-} from "@ant-design/icons";
+import { MobileOutlined, LaptopOutlined } from "@ant-design/icons";
 
-import { Carousel } from "antd";
-
-const SampleNextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        color: "black",
-        background: "white",
-        fontSize: "25px",
-        lineHeight: "1.5715",
-        borderRadius: "50%",
-        boxShadow: "0 3px 6px rgb(0 0 0 / 0.2)",
-        padding: 25,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        right: -5,
-        zIndex: 10,
-      }}
-      onClick={onClick}
-    >
-      <RightOutlined />
-    </div>
-  );
-};
-
-const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-        color: "black",
-        background: "white",
-        fontSize: "25px",
-        lineHeight: "1.5715",
-        borderRadius: "50%",
-        boxShadow: "0 3px 6px rgb(0 0 0 / 0.2)",
-        padding: 25,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        left: -5,
-        zIndex: 10,
-      }}
-      onClick={onClick}
-    >
-      <LeftOutlined />
-    </div>
-  );
-};
-
-const settings = {
-  nextArrow: <SampleNextArrow />,
-  prevArrow: <SamplePrevArrow />,
-};
+import Testimonial from "../components/UI/Testimonial";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -144,13 +72,9 @@ const Home = () => {
         <h3>Most Viewed</h3>
 
         <div className="home-most-products">
-          {/* <Swiper> */}
-          {/* <div className="scrolling-wrapper"> */}
           {products.slice(0, 4).map((product) => (
             <Product product={product} />
           ))}
-          {/* </div> */}
-          {/* </Swiper> */}
         </div>
       </div>
 
@@ -256,26 +180,7 @@ const Home = () => {
         <button onClick={() => history.push("/best-deals")}>View all</button>
       </div>
 
-      <div className="testimonials row">
-        <div className="content col-lg-6">
-          <h1>Our happy customers in Germany</h1>
-          <div className="row">
-            <div className="col-6">
-              <p>Check out what our customer saying about us...</p>
-            </div>
-            <div className="col-6">
-              <img src={Test} alt="Happy User" />
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-6">
-          <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
-            <img src={Customer} alt="Customer" />
-            <img src={Customer2} alt="Customer" />
-            <img src={Customer3} alt="Customer" />
-          </Carousel>
-        </div>
-      </div>
+      <Testimonial />
     </div>
   );
 };

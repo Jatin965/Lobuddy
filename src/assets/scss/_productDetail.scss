@@ -340,7 +340,7 @@
             }
           }
           input {
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid rgba($text-grey-light, 0.5);
             width: 80%;
 
             @media #{$md-layout} {
@@ -352,6 +352,10 @@
 
             &:focus {
               border-bottom: 1px solid $theme-color;
+
+              .popup-icon {
+                color: $theme-color;
+              }
             }
           }
         }

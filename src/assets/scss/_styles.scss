@@ -12,6 +12,35 @@
   }
 }
 
+.popup-icon {
+  color: $theme-color;
+}
+
+.search-sort {
+  width: 85vw;
+  margin: 10px auto;
+  h4 {
+    display: inline-block;
+    font-family: "Arial Rounded MT";
+    font-weight: 500;
+  }
+  button {
+    padding: 5px 15px;
+    border-radius: 2px;
+    background: white;
+    margin: 0 10px;
+    border: 1px solid white;
+    font-family: "Arial Rounded MT";
+    font-weight: 500;
+
+    &:active,
+    &:focus {
+      color: $theme-color;
+      border-color: $theme-color;
+    }
+  }
+}
+
 button {
   padding: 10px 30px;
   border-radius: 30px;

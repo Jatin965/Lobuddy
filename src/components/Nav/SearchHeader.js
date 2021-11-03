@@ -7,8 +7,6 @@ const SearchHeader = ({ word, len }) => {
         Showing {len > 9 ? "1-9" : len >= 2 ? `1-${len}` : "1"} of {len} results
         for "{word}"
       </p>
-
-      <hr />
     </div>
   );
 };
