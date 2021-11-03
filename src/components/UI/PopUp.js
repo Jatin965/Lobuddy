@@ -58,7 +58,11 @@ const PopUp = ({ view }) => {
         onOk={handleOk}
         onCancel={handleCancel}
         footer={[
-          <Button type="primary" onClick={handleOk}>
+          <Button
+            style={{ fontWeight: "600", fontFamily: "Sitka Small" }}
+            type="primary"
+            onClick={handleOk}
+          >
             Subscribe
           </Button>,
         ]}
@@ -123,7 +127,14 @@ const PopUp = ({ view }) => {
           history.push("/");
         }}
         onCancel={handleCancel}
-        footer={[<Button type="primary">Explore</Button>]}
+        footer={[
+          <Button
+            style={{ fontWeight: "600", fontFamily: "Sitka Small" }}
+            type="primary"
+          >
+            Explore
+          </Button>,
+        ]}
       >
         <img className="logo" src={logo} alt="Logo" />
         <h4 className="thank">Thank you for your subscription</h4>

@@ -218,15 +218,12 @@ const ProductDetail = () => {
       <Testimonial />
 
       <div className="detail-most">
-        <h1>Our best deals</h1>
+        <h1>Most Viewed</h1>
 
         <div className="most-products">
-          {products
-            .filter((ps) => ps.tags.includes("deal"))
-            .slice(5, 9)
-            .map((product) => (
-              <Product product={product} />
-            ))}
+          {products.slice(21, 25).map((product) => (
+            <Product product={product} />
+          ))}
         </div>
       </div>
       <div className="price-stick">

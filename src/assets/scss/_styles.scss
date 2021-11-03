@@ -9,6 +9,15 @@
     &:hover {
       background: white;
     }
+
+    @media #{$md-layout} {
+      display: inline-block;
+      margin-bottom: 30%;
+    }
+    @media #{$xs-layout} {
+      display: inline-block;
+      margin-left: 30%;
+    }
   }
 }
 
@@ -16,9 +25,48 @@
   color: $theme-color;
 }
 
+.search-header {
+  width: 85vw;
+  margin: 20px auto;
+
+  @media #{$md-layout} {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  @media #{$xs-layout} {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  p {
+    @media #{$md-layout} {
+      display: inline-block;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    @media #{$xs-layout} {
+      display: inline-block;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+}
+
+.search-option {
+  display: inline-block;
+}
+
 .search-sort {
   width: 85vw;
   margin: 10px auto;
+
+  @media #{$md-layout} {
+    display: none;
+  }
+  @media #{$xs-layout} {
+    display: none;
+  }
+
   h4 {
     display: inline-block;
     font-family: "Arial Rounded MT";
@@ -37,6 +85,50 @@
     &:focus {
       color: $theme-color;
       border-color: $theme-color;
+    }
+  }
+}
+
+.sort-mob {
+  display: none;
+
+  @media #{$md-layout} {
+    display: inline-block;
+  }
+  @media #{$xs-layout} {
+    display: inline-block;
+  }
+}
+
+.mob-sort {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: white;
+  z-index: 100;
+  padding: 5px 10px;
+
+  h5 {
+    font-family: "Arial Rounded MT";
+    margin: 5px 0;
+  }
+
+  .bag {
+    font-family: "Arial Rounded MT";
+    p {
+      display: inline-block;
+      margin: 1px 0;
+      width: 80%;
+    }
+
+    input {
+      display: inline-block;
+      margin-right: 0;
+      margin-left: auto;
+      width: 20%;
     }
   }
 }
