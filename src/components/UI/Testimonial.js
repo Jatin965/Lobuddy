@@ -31,7 +31,7 @@ const SampleNextArrow = (props) => {
         alignItems: "center",
         justifyContent: "center",
         right: -5,
-        zIndex: 10,
+        zIndex: 5,
       }}
       onClick={onClick}
     >
@@ -58,7 +58,7 @@ const SamplePrevArrow = (props) => {
         alignItems: "center",
         justifyContent: "center",
         left: -5,
-        zIndex: 10,
+        zIndex: 5,
       }}
       onClick={onClick}
     >

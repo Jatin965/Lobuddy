@@ -4,7 +4,7 @@ header {
   position: sticky;
   top: 0;
   background: white;
-  z-index: 50;
+  z-index: 8;
   .container-fluid {
     padding: 20px 80px;
     @media #{$xl-layout} {
@@ -219,11 +219,12 @@ header {
   }
 }
 .backdrop {
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.4);
   z-index: 9;
+  top: 0;
 }
 
 .ant-dropdown-menu {

@@ -59,9 +59,11 @@
 
   @media #{$md-layout} {
     display: inline-block;
+    width: fit-content;
   }
   @media #{$xs-layout} {
     display: inline-block;
+    width: fit-content;
   }
 
   .search-sort {
