@@ -189,11 +189,11 @@ const ProductDetail = () => {
               return <BoxImg image={ts.image} name={ts.name} />;
             })}
 
-          {product.sub == "ActivityTrackers" ||
-            (product.sub == "SmartWatches" &&
-              activity.map((ts) => {
-                return <BoxImg image={ts.image} name={ts.name} />;
-              }))}
+          {(product.sub == "ActivityTrackers" ||
+            product.sub == "SmartWatches") &&
+            activity.map((ts) => {
+              return <BoxImg image={ts.image} name={ts.name} />;
+            })}
 
           {product.sub == "Music" &&
             music.map((ts) => {
