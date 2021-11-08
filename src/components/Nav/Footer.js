@@ -42,7 +42,7 @@ const Footer = () => {
         <div className="contact col-lg-4 mr-4">
           <h4>CONTACT US</h4>
           <p>1800-720-6260</p>
-          <p>8595641828 (9am-6pm)</p>
+          <p>9540318965 (10am-6pm)</p>
           <p>contact@lobuddy.com</p>
         </div>
         <div className="company col-lg-4">

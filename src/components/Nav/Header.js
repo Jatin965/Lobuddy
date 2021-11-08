@@ -376,7 +376,11 @@ const Header = () => {
     if (e.target.value === "") {
       setFilterProducts([]);
     } else {
-      setFilterProducts(products);
+      setFilterProducts(
+        products.filter((ps) =>
+          ps.name.toLowerCase().includes(key.toLowerCase())
+        )
+      );
     }
   };
   useEffect(() => {
@@ -448,30 +452,25 @@ const Header = () => {
 
             {filterProducts.length != 0 && (
               <div className="dataResult col-xl-6 col-lg-6 col-sm-8 col-6">
-                {products
-                  .filter((ps) =>
-                    ps.name.toLowerCase().includes(key.toLowerCase())
-                  )
-                  .slice(0, 15)
-                  .map((value, key) => {
-                    return (
-                      <Link
-                        to={`/product/${value.id}`}
-                        onClick={() => {
-                          setKey("");
-                          setFilterProducts([]);
-                        }}
-                        className="dataItem"
-                      >
-                        <img
-                          style={({ paddingRight: 20 }, { height: 30 })}
-                          src={value.image[0]}
-                          alt=""
-                        />
-                        <p>{value.name.slice(0, 30)}... </p>
-                      </Link>
-                    );
-                  })}
+                {filterProducts.slice(0, 15).map((value, key) => {
+                  return (
+                    <Link
+                      to={`/product/${value.id}`}
+                      onClick={() => {
+                        setKey("");
+                        setFilterProducts([]);
+                      }}
+                      className="dataItem"
+                    >
+                      <img
+                        style={({ paddingRight: 20 }, { height: 30 })}
+                        src={value.image[0]}
+                        alt=""
+                      />
+                      <p>{value.name.slice(0, 30)}... </p>
+                    </Link>
+                  );
+                })}
               </div>
             )}
           </div>

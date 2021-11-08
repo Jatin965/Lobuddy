@@ -31,6 +31,7 @@ const Search = () => {
 
   useEffect(() => {
     setFProducts(products);
+    console.log("Run");
   }, [loading, error]);
 
   const moreHandler = () => {
@@ -82,13 +83,16 @@ const Search = () => {
     dispatch(searchProducts(keyword));
   }, [keyword, dispatch, history.location.search]);
 
-  if (loading) {
+  if (loading || loading === undefined) {
     return <Loader />;
   }
 
   if (error) {
     return <h1>{error}</h1>;
   }
+
+  console.log(fProducts);
+  console.log(products);
 
   const mobSort = (
     <div className="mob-sort">
@@ -131,7 +135,7 @@ const Search = () => {
       {key == "?name" ? (
         <SearchHeader word={word} len={fProducts.length} />
       ) : key == "?sub" ? (
-        <SubHeader word={word} cat={fProducts[0].category} />
+        <SubHeader word={word} cat={products[0].category} />
       ) : (
         <CategoryHeader word={word} />
       )}

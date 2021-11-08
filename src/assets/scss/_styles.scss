@@ -53,38 +53,44 @@
 }
 
 .search-option {
-  display: inline-block;
-}
-
-.search-sort {
+  // display: inline-block;
   width: 85vw;
   margin: 10px auto;
 
   @media #{$md-layout} {
-    display: none;
+    display: inline-block;
   }
   @media #{$xs-layout} {
-    display: none;
-  }
-
-  h4 {
     display: inline-block;
-    font-family: "Arial Rounded MT";
-    font-weight: 500;
   }
-  button {
-    padding: 5px 15px;
-    border-radius: 2px;
-    background: white;
-    margin: 0 10px;
-    border: 1px solid white;
-    font-family: "Arial Rounded MT";
-    font-weight: 500;
 
-    &:active,
-    &:focus {
-      color: $theme-color;
-      border-color: $theme-color;
+  .search-sort {
+    @media #{$md-layout} {
+      display: none;
+    }
+    @media #{$xs-layout} {
+      display: none;
+    }
+
+    h4 {
+      display: inline-block;
+      font-family: "Arial Rounded MT";
+      font-weight: 500;
+    }
+    button {
+      padding: 5px 15px;
+      border-radius: 2px;
+      background: white;
+      margin: 0 10px;
+      border: 1px solid white;
+      font-family: "Arial Rounded MT";
+      font-weight: 500;
+
+      &:active,
+      &:focus {
+        color: $theme-color;
+        border-color: $theme-color;
+      }
     }
   }
 }
