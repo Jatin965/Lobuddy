@@ -7,7 +7,7 @@ import { listProducts } from "../../redux/actions/productActions";
 
 import close from "../../assets/images/close.png";
 
-const SearchView = ({ cls }) => {
+const SearchView = ({ cls, vs }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [filterProducts, setFilterProducts] = useState([]);
@@ -42,7 +42,10 @@ const SearchView = ({ cls }) => {
 
       <img
         className="close"
-        onClick={() => cls(false)}
+        onClick={() => {
+          cls(false);
+          vs(false);
+        }}
         src={close}
         alt="close"
       />

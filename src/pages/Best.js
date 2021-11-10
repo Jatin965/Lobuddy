@@ -55,7 +55,7 @@ const Best = () => {
       </div>
 
       <div className="best-products">
-        {window.innerWidth > 500 ? (
+        {window.innerWidth > 995 ? (
           <ProductList products={bProducts.slice(0, flag)} />
         ) : (
           bProducts

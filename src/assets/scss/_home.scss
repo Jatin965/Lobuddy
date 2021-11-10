@@ -169,7 +169,11 @@
 
     &-products > * {
       flex: 1 1 33%;
-      margin: 10px 20px;
+      // margin: 5px;
+
+      @media #{$md-layout} {
+        margin: 10px 20px;
+      }
     }
   }
 

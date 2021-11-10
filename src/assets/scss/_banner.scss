@@ -77,9 +77,10 @@
   }
 }
 
-@media screen and (max-device-width: 995px), screen and (max-width: 995px) {
+@media #{$xs-layout} {
   .banner {
-    min-height: 20px !important;
+    padding: 5px;
+    min-height: 200px;
 
     h1 {
       color: $text-black;
@@ -90,7 +91,8 @@
       p {
         color: $text-grey-light;
         font-size: 10px !important;
-        width: 150px !important;
+        width: 100%;
+        line-height: 1.15;
       }
 
       button {
@@ -149,6 +151,86 @@
         img {
           max-height: 25px;
           max-width: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$md-layout} {
+  .banner {
+    padding: 10px;
+    min-height: 170px;
+
+    h1 {
+      color: $text-black;
+      font-size: 1.2rem;
+    }
+
+    &-content {
+      p {
+        color: $text-grey-light;
+        font-size: 0.8rem;
+        line-height: 1;
+        width: 100%;
+      }
+
+      button {
+        background-color: $theme-color;
+        color: white;
+        font-size: 12px !important;
+        padding: 3px !important;
+        width: 150px !important;
+        border: 1px solid $theme-color !important;
+
+        &:hover {
+          background-color: white;
+
+          color: $theme-color;
+        }
+      }
+    }
+
+    &-images {
+      padding: 0;
+      .left {
+        width: fit-content;
+        margin-left: 70px;
+        img {
+          height: 80px;
+          transform: rotate(-10deg);
+          margin: 0 !important;
+          padding: 0;
+        }
+      }
+      .top {
+        width: fit-content;
+        img {
+          max-height: 80px;
+          transform: rotate(9deg);
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .right {
+        width: fit-content;
+        img {
+          max-height: 80px;
+          transform: rotate(21deg);
+          padding: 0;
+          // margin-left: 1vw;
+        }
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-left: 0;
+
+        img {
+          max-height: 45px;
+          max-width: 120px;
         }
       }
     }

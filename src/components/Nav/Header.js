@@ -364,7 +364,7 @@ const side = (
   </div>
 );
 
-const Header = () => {
+const Header = ({ vs }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [filterProducts, setFilterProducts] = useState([]);
@@ -394,7 +394,7 @@ const Header = () => {
   );
 
   if (sView) {
-    return <SearchView cls={setSView} />;
+    return <SearchView cls={setSView} vs={vs} />;
   }
 
   return (
@@ -446,7 +446,10 @@ const Header = () => {
               className="mobSr"
               type="text"
               placeholder="Search for product, brands and more..."
-              onClick={() => setSView(true)}
+              onClick={() => {
+                setSView(true);
+                vs(true);
+              }}
             />
             <input
               className="sr"

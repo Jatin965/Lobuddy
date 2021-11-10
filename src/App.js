@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.scss";
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -17,55 +18,58 @@ import Trends from "./pages/Trends";
 import Faq from "./components/UI/Faq";
 
 function App() {
+  const [view, setView] = useState(false);
   return (
     <div className="App">
       <BrowserRouter>
         <ScrollToTop />
-        <Header />
+        <Header vs={setView} />
 
-        <main>
-          <Route path="/" exact>
-            <Home />
-          </Route>
+        {!view && (
+          <main>
+            <Route path="/" exact>
+              <Home />
+            </Route>
 
-          <Route path="/search">
-            <Search />
-          </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
 
-          <Route path="/explore">
-            <Explore />
-          </Route>
+            <Route path="/explore">
+              <Explore />
+            </Route>
 
-          <Route path="/terms-and-conditions">
-            <Terms />
-          </Route>
+            <Route path="/terms-and-conditions">
+              <Terms />
+            </Route>
 
-          <Route path="/privacy-policy">
-            <Privacy />
-          </Route>
+            <Route path="/privacy-policy">
+              <Privacy />
+            </Route>
 
-          <Route path="/how">
-            <How />
-          </Route>
+            <Route path="/how">
+              <How />
+            </Route>
 
-          <Route path="/trends">
-            <Trends />
-          </Route>
+            <Route path="/trends">
+              <Trends />
+            </Route>
 
-          <Route path="/best-deals">
-            <Best />
-          </Route>
+            <Route path="/best-deals">
+              <Best />
+            </Route>
 
-          <Route path="/faq">
-            <Faq />
-          </Route>
+            <Route path="/faq">
+              <Faq />
+            </Route>
 
-          <Route path="/product/:id">
-            <Product />
-          </Route>
-        </main>
+            <Route path="/product/:id">
+              <Product />
+            </Route>
+          </main>
+        )}
 
-        <Footer />
+        {!view && <Footer />}
       </BrowserRouter>
       {/* </ThemeProvider> */}
     </div>

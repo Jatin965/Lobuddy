@@ -174,7 +174,7 @@ const Search = () => {
 
       {/* <ProductList products={fProducts.slice(0, flag)} /> */}
 
-      {window.innerWidth > 500 ? (
+      {window.innerWidth > 995 ? (
         <ProductList products={fProducts.slice(0, flag)} />
       ) : (
         fProducts

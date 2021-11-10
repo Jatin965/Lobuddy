@@ -58,7 +58,7 @@ const Trends = () => {
       </div>
 
       <div className="best-products">
-        {window.innerWidth > 500 ? (
+        {window.innerWidth > 995 ? (
           <ProductList products={tProducts.slice(0, flag)} />
         ) : (
           tProducts
