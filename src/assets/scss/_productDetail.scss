@@ -20,15 +20,16 @@
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 1.2rem;
       font-weight: bold;
       padding-left: 20px;
+      margin: 0;
 
       @media #{$md-layout} {
-        font-size: 0.9em;
+        font-size: 0.9rem;
       }
       @media #{$xs-layout} {
-        font-size: 0.9em;
+        font-size: 0.7rem;
       }
 
       span {
@@ -66,11 +67,11 @@
 
       @media #{$md-layout} {
         width: 100%;
-        padding: 30px 0;
+        padding: 20px 0;
       }
       @media #{$xs-layout} {
         width: 100%;
-        padding: 30px 0;
+        padding: 10px 0;
       }
 
       &-left {
@@ -83,6 +84,13 @@
         h6 {
           color: $text-grey-light;
           width: 80%;
+
+          @media #{$md-layout} {
+            width: 100%;
+          }
+          @media #{$xs-layout} {
+            width: 100%;
+          }
         }
         margin: 0 10px;
       }
@@ -175,13 +183,12 @@
 
     .most-products {
       display: flex;
+      flex-wrap: wrap;
+    }
 
-      @media #{$md-layout} {
-        flex-direction: column;
-      }
-      @media #{$xs-layout} {
-        flex-direction: column;
-      }
+    .most-products > * {
+      flex: 1 1 23%;
+      margin: 10px;
     }
   }
 

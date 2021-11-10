@@ -107,15 +107,9 @@
     &-products {
       display: flex;
       flex-wrap: wrap;
-
-      .product-wrap-7 .product-img img {
-        max-width: 245px;
-        height: auto;
-        max-height: 240px;
-      }
     }
     &-products > * {
-      flex: 1 1 25%;
+      flex: 1 1 23%;
       margin: 10px;
     }
 
