@@ -191,6 +191,36 @@
       }
     }
   }
+
+  .testimonials {
+    align-items: center;
+    justify-content: space-between;
+
+    @media #{$md-layout} {
+      flex-direction: column;
+    }
+    @media #{$xs-layout} {
+      flex-direction: column;
+    }
+
+    .content {
+      h1 {
+        color: $theme-color;
+        font-size: 3rem;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: 320px;
+    }
+  }
 }
 
 @media #{$xs-layout} {

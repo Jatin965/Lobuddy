@@ -18,11 +18,18 @@
     h1 {
       font-weight: 200;
       padding-left: 30px;
+      @media #{$md-layout} {
+        font-size: 1.4rem !important;
+      }
     }
     h4 {
       color: $text-grey-light;
       font-weight: 200;
       padding-left: 30px;
+
+      @media #{$md-layout} {
+        font-size: 1rem !important;
+      }
     }
     h2 {
       padding: 1vh 0;
@@ -30,9 +37,17 @@
       font-weight: 250;
       padding-left: 30px;
 
+      @media #{$md-layout} {
+        font-size: 1rem !important;
+      }
+
       span {
         color: $theme-color;
         font-size: 3rem;
+
+        @media #{$md-layout} {
+          font-size: 1.4rem !important;
+        }
       }
     }
 
@@ -41,6 +56,12 @@
       background: $theme-color;
       color: white;
       padding-left: 30px;
+
+      @media #{$md-layout} {
+        font-size: 1rem !important;
+        width: auto !important;
+        padding: 5px 10px !important;
+      }
 
       &:hover {
         background: white;
@@ -78,6 +99,10 @@
     img {
       max-width: 300px;
       height: auto;
+
+      @media #{$md-layout} {
+        max-width: 180px !important;
+      }
     }
   }
 
@@ -98,6 +123,11 @@
           text-decoration: none;
           text-align: inherit;
 
+          @media #{$md-layout} {
+            font-size: 1.4rem !important;
+            line-height: 1 !important;
+          }
+
           color: #444;
           &:hover {
             color: $theme-color;
@@ -115,20 +145,47 @@
           text-decoration: none;
           text-align: inherit;
           color: $text-grey-light;
+
+          @media #{$md-layout} {
+            font-size: 1rem !important;
+            line-height: 1 !important;
+          }
         }
       }
       .price-2 {
         font-family: "Arial Rounded MT";
         span {
-          font-size: 15px;
+          font-size: 1rem;
           position: relative;
           color: #444;
+          @media #{$md-layout} {
+            font-size: 0.9rem !important;
+          }
           &.old {
             text-decoration: 3px solid line-through;
+            font-size: 1.8rem;
+
+            @media #{$md-layout} {
+              font-size: 1.2rem !important;
+            }
 
             color: #444;
-            &.red {
-              color: #ff3d2a;
+          }
+
+          &.fix {
+            font-size: 1.8rem;
+
+            @media #{$md-layout} {
+              font-size: 1.2rem !important;
+            }
+          }
+
+          &.new {
+            color: $theme-color;
+            font-size: 1.8rem;
+
+            @media #{$md-layout} {
+              font-size: 1.2rem !important;
             }
           }
 
@@ -505,7 +562,7 @@
         }
       }
       button {
-        width: 120px !important;
+        width: 120px;
         padding: 2px 5px;
         font-size: 10px;
         margin: 0;

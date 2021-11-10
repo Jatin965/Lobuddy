@@ -34,10 +34,10 @@ const ProductWidth = ({ product }) => {
               <Fragment>
                 <span style={{ color: "#878787" }}>
                   from{"  "}
-                  <span style={{ fontSize: 30 }} className="old">
+                  <span className="old">
                     {"₹" + (finalDiscountedPrice * 0.045).toFixed(0)}
                   </span>{" "}
-                  <span style={{ color: "#f68a1e", fontSize: 30 }}>
+                  <span className="new">
                     {"₹" + (finalDiscountedPrice * 0.04).toFixed(0)}
                   </span>{" "}
                   per month
@@ -46,7 +46,7 @@ const ProductWidth = ({ product }) => {
             ) : (
               <span style={{ color: "#878787" }}>
                 from{"  "}
-                <span style={{ fontSize: 30 }}>
+                <span className="fix">
                   {"₹" + (finalDiscountedPrice * 0.045).toFixed(0)}
                 </span>{" "}
                 per month
