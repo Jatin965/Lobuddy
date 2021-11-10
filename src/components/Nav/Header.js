@@ -25,6 +25,7 @@ import {
 } from "@ant-design/icons";
 
 import PopUp from "../UI/PopUp";
+import SearchView from "../Misc/SearchView";
 
 const menu = (
   <Menu>
@@ -370,6 +371,7 @@ const Header = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isSideVisible, setIsSideVisible] = useState(false);
   const [key, setKey] = useState("");
+  const [sView, setSView] = useState(false);
 
   const handleChange = (e) => {
     setKey(e.target.value);
@@ -390,6 +392,10 @@ const Header = () => {
   const { products, loading, error } = useSelector(
     (state) => state.productList
   );
+
+  if (sView) {
+    return <SearchView cls={setSView} />;
+  }
 
   return (
     <header>
@@ -437,6 +443,13 @@ const Header = () => {
             }
           >
             <input
+              className="mobSr"
+              type="text"
+              placeholder="Search for product, brands and more..."
+              onClick={() => setSView(true)}
+            />
+            <input
+              className="sr"
               type="text"
               placeholder="Search for product, brands and more..."
               onChange={handleChange}
@@ -456,6 +469,7 @@ const Header = () => {
                   return (
                     <Link
                       to={`/product/${value.id}`}
+                      key={key}
                       onClick={() => {
                         setKey("");
                         setFilterProducts([]);

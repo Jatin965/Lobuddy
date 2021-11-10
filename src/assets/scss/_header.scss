@@ -112,6 +112,10 @@ header {
             outline: none;
           }
         }
+
+        input.mobSr {
+          display: none;
+        }
         .dataResult {
           border: 1px solid #dcdcdc;
           border-radius: 30px;
@@ -293,6 +297,14 @@ header {
 
             font-size: 0.8rem;
             padding: 5px;
+          }
+
+          input.mobSr {
+            display: inline-block;
+          }
+
+          input.sr {
+            display: none;
           }
           .dataResult {
             width: 100% !important;

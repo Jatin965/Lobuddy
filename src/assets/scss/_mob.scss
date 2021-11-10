@@ -1,0 +1,51 @@
+.search-modal {
+  min-height: 100vh;
+  width: 100vw;
+
+  input {
+    width: 100vw;
+    border: none;
+    border-bottom: 1px solid $text-grey-light;
+    padding: 10px 5px;
+  }
+
+  img.close {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .dataResult {
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+
+    a.dataItem {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      margin: 5px 0;
+      padding: 2px 4px;
+
+      &:hover {
+        background: lightgray;
+        border-radius: 5px;
+      }
+
+      img {
+        height: 50px;
+        width: auto;
+      }
+      p {
+        width: 100%;
+        margin: 0;
+        // text-decoration: none;
+        color: black;
+        font-weight: 600;
+        padding-left: 10px;
+      }
+    }
+  }
+}
