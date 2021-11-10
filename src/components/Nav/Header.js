@@ -416,7 +416,7 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
+          <div className="col-xl-2 col-lg-2 col-md-1 col-sm-2 col-2">
             <Dropdown
               trigger={["click"]}
               overlay={menu}
@@ -438,8 +438,8 @@ const Header = () => {
           <div
             className={
               filterProducts.length != 0
-                ? "col-xl-6 col-lg-6 col-sm-8 col-6 search__box  card focus"
-                : "col-xl-6 col-lg-6 col-sm-8 col-6 search__box  card"
+                ? "col-xl-6 col-lg-6 col-md-10 col-sm-8 col-6 search__box  card focus"
+                : "col-xl-6 col-lg-6 col-md-10 col-sm-8 col-6 search__box  card"
             }
           >
             <input
@@ -489,7 +489,7 @@ const Header = () => {
             )}
           </div>
 
-          <div className="col-xl-2 col-lg-2 col-sm-2 col-2">
+          <div className="col-xl-2 col-lg-2 col-md-1 col-sm-2 col-2">
             <img
               className="Header-group"
               style={{ maxWidth: "18vw", marginLeft: "-4vw" }}

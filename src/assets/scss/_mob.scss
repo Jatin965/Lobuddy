@@ -1,6 +1,10 @@
 .search-modal {
   min-height: 100vh;
   width: 100vw;
+  // position: fixed;
+  // inset: 0;
+  // background: white;
+  // z-index: 5;
 
   input {
     width: 100vw;

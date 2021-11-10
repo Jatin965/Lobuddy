@@ -5,18 +5,10 @@
   }
   button {
     border: none;
-    margin-left: 45%;
+    display: block;
+    margin: 20px auto;
     &:hover {
       background: white;
-    }
-
-    @media #{$md-layout} {
-      display: inline-block;
-      margin-bottom: 30%;
-    }
-    @media #{$xs-layout} {
-      display: inline-block;
-      margin-left: 30%;
     }
   }
 }
@@ -187,7 +179,7 @@ button {
   margin: 15% 50%;
 
   @media #{$md-layout} {
-    margin: 50% 40%;
+    margin: 45%;
   }
   @media #{$xs-layout} {
     margin: 50% 40%;

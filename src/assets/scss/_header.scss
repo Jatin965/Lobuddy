@@ -29,6 +29,10 @@ header {
         img {
           max-width: 200px;
           height: auto;
+
+          @media #{$md-layout} {
+            max-width: 140px !important;
+          }
         }
       }
       a.mob-link {
@@ -78,6 +82,10 @@ header {
         margin-left: -3vw;
         box-shadow: $shadow;
         z-index: 1;
+
+        @media #{$md-layout} {
+          width: 83% !important;
+        }
 
         &:focus {
           box-shadow: 1px 1px 8px 1px #dcdcdc;
@@ -286,7 +294,7 @@ header {
         }
 
         .search__box {
-          width: 65% !important;
+          width: 65%;
           margin: 0 0 0 0px;
 
           input {

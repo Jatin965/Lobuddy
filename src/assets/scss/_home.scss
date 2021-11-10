@@ -38,13 +38,16 @@
 
     img {
       max-width: 95vw;
+      display: block;
+      margin: auto;
     }
 
     button {
       background: $theme-color;
       color: white;
       padding: 5px 15px;
-      margin: 20px 33%;
+      display: block;
+      margin: 20px auto;
     }
   }
 
@@ -113,7 +116,7 @@
     }
     &-products > * {
       flex: 1 1 25%;
-      margin: 10px 0;
+      margin: 10px;
     }
 
     button {
@@ -145,7 +148,7 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin: 2vh 0;
+      margin: 20px 0;
       row-gap: 3vh;
 
       button {
@@ -158,7 +161,7 @@
         margin: 0 10vw;
 
         @media #{$md-layout} {
-          max-width: 50vw;
+          max-width: 24vw;
         }
         @media #{$xs-layout} {
           max-width: 50vw;
@@ -172,6 +175,7 @@
 
     &-products > * {
       flex: 1 1 33%;
+      margin: 10px 20px;
     }
   }
 
@@ -193,39 +197,9 @@
       }
     }
   }
-
-  .testimonials {
-    align-items: center;
-    justify-content: space-between;
-
-    @media #{$md-layout} {
-      flex-direction: column;
-    }
-    @media #{$xs-layout} {
-      flex-direction: column;
-    }
-
-    .content {
-      h1 {
-        color: $theme-color;
-        font-size: 3rem;
-        font-weight: 600;
-      }
-
-      p {
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-    }
-
-    img {
-      height: 100%;
-      width: 250px;
-    }
-  }
 }
 
-@media screen and (max-device-width: 995px), screen and (max-width: 995px) {
+@media #{$xs-layout} {
   .content {
     h1 {
       color: $theme-color;
@@ -234,6 +208,23 @@
 
     p {
       font-size: 0.8rem !important;
+    }
+    img {
+      height: 100% !important;
+      width: 100% !important;
+    }
+  }
+}
+
+@media #{$md-layout} {
+  .content {
+    h1 {
+      color: $theme-color;
+      font-size: 2rem !important;
+    }
+
+    p {
+      font-size: 1rem !important;
     }
     img {
       height: 100% !important;
