@@ -38,6 +38,15 @@ const SearchView = ({ cls, vs }) => {
         type="text"
         placeholder="Search for product, brands and more..."
         onChange={handleChange}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            history.push(`/search?name=${e.target.value}`);
+            setFilterProducts([]);
+            setKey("");
+            cls(false);
+            vs(false);
+          }
+        }}
       />
 
       <img
