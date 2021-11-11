@@ -132,7 +132,6 @@ const ProductDetail = () => {
               <p>Free delivery</p>
             </div>
             <button onClick={showModal}>Rent it</button>
-            {isModalVisible && <PopUp view={setIsModalVisible} />}
           </div>
         </div>
 

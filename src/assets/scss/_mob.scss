@@ -9,15 +9,15 @@
   input {
     width: 100vw;
     border: none;
-    border-bottom: 1px solid $text-grey-light;
+    border-bottom: 2px solid rgba($text-grey-light, 0.3);
     padding: 10px 5px;
   }
 
   img.close {
     position: absolute;
-    top: 13px;
+    top: 15px;
     right: 15px;
-    height: 20px;
+    height: 17px;
     cursor: pointer;
   }
 

@@ -175,6 +175,13 @@
 
     &-content > * {
       flex: 0 1 33%;
+
+      @media #{$md-layout} {
+        flex-grow: 1;
+      }
+      @media #{$xs-layout} {
+        flex-grow: 1;
+      }
     }
   }
 

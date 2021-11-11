@@ -131,6 +131,11 @@ const PopUp = ({ view }) => {
           <Button
             style={{ fontWeight: "600", fontFamily: "Sitka Small" }}
             type="primary"
+            onClick={() => {
+              setVisible2(false);
+              view(false);
+              history.push("/");
+            }}
           >
             Explore
           </Button>,

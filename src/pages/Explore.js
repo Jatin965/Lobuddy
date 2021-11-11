@@ -38,10 +38,7 @@ const Explore = () => {
         src={key === "samsung" ? samsung : key === "oneplus" ? one : apple}
         alt="Banner"
       />
-      <ProductList
-        products={products.filter((ps) => ps.brand.toLowerCase() === key)}
-      />
-      {window.innerWidth > 500 ? (
+      {window.innerWidth > 995 ? (
         <ProductList
           products={products.filter((ps) => ps.brand.toLowerCase() === key)}
         />

@@ -69,6 +69,8 @@ const SearchView = ({ cls, vs }) => {
                 onClick={() => {
                   setKey("");
                   setFilterProducts([]);
+                  cls(false);
+                  vs(false);
                 }}
                 className="dataItem"
               >
