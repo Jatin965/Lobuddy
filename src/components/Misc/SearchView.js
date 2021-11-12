@@ -59,9 +59,30 @@ const SearchView = ({ cls, vs }) => {
         alt="close"
       />
 
-      {filterProducts.length != 0 && (
+      {filterProducts.length != 0 ? (
         <div className="dataResult">
           {filterProducts.map((value, key) => {
+            return (
+              <Link
+                key={key}
+                to={`/product/${value.id}`}
+                onClick={() => {
+                  setKey("");
+                  setFilterProducts([]);
+                  cls(false);
+                  vs(false);
+                }}
+                className="dataItem"
+              >
+                <img src={value.image[0]} alt="" />
+                <p>{value.name.slice(0, 30)}... </p>
+              </Link>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="dataResult">
+          {products.slice(20, 30).map((value, key) => {
             return (
               <Link
                 key={key}

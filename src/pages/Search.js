@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
 
 import Loader from "../components/UI/Loader";
 import ProductList from "../components/Cards/ProductList";
@@ -16,6 +16,7 @@ import { searchProducts } from "../redux/actions/productActions";
 import { BsFilterLeft } from "react-icons/bs";
 
 const Search = () => {
+  const match = useRouteMatch();
   const dispatch = useDispatch();
   const history = useHistory();
   const [flag, setFlag] = useState(9);
@@ -31,7 +32,6 @@ const Search = () => {
 
   useEffect(() => {
     setFProducts(products);
-    console.log("Run");
   }, [loading, error]);
 
   const moreHandler = () => {
@@ -81,7 +81,7 @@ const Search = () => {
 
   useEffect(() => {
     dispatch(searchProducts(keyword));
-  }, [keyword, dispatch, history.location.search]);
+  }, [keyword, dispatch, match.params]);
 
   if (loading || loading === undefined) {
     return <Loader />;
@@ -90,9 +90,6 @@ const Search = () => {
   if (error) {
     return <h1>{error}</h1>;
   }
-
-  console.log(fProducts);
-  console.log(products);
 
   const mobSort = (
     <div className="mob-sort">

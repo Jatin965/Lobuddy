@@ -187,184 +187,7 @@ const menu = (
   </Menu>
 );
 
-const side = (
-  <div className="side">
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to={process.env.PUBLIC_URL + "/best-deals"}
-    >
-      <GiftOutlined
-        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
-      />{" "}
-      Our best deals
-    </Link>
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to={process.env.PUBLIC_URL + "/trends"}
-    >
-      <RiseOutlined
-        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
-      />{" "}
-      Products on trend
-    </Link>
-
-    <hr />
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?category=Phones"
-    >
-      <MobileOutlined
-        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
-      />{" "}
-      Phones
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?sub=Tablets"
-    >
-      Tablets
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?sub=SmartPhones"
-    >
-      Smartphones
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?category=Computers"
-    >
-      <LaptopOutlined
-        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
-      />{" "}
-      Computers
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?sub=Gaming"
-    >
-      Gaming
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?sub=Laptops"
-    >
-      Laptops
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?sub=Convertibles"
-    >
-      Convertibles
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-        fontWeight: 200,
-      }}
-      to="/search?category=Wareables"
-    >
-      <IoMdWatch
-        style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
-      />{" "}
-      Wearables
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?sub=SmartWatches"
-    >
-      Smartwatches
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?sub=Music"
-    >
-      Music
-    </Link>
-
-    <Link
-      style={{
-        textDecoration: "none",
-        display: "flex",
-        alignItems: "center",
-        fontFamily: "Arial Rounded MT",
-      }}
-      to="/search?sub=ActivityTrackers"
-    >
-      Activity Trackers
-    </Link>
-  </div>
-);
-
-const Header = ({ vs }) => {
+const Header = ({ vs, fix }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [filterProducts, setFilterProducts] = useState([]);
@@ -372,6 +195,235 @@ const Header = ({ vs }) => {
   const [isSideVisible, setIsSideVisible] = useState(false);
   const [key, setKey] = useState("");
   const [sView, setSView] = useState(false);
+
+  const side = (
+    <div className="side">
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to={process.env.PUBLIC_URL + "/best-deals"}
+      >
+        <GiftOutlined
+          style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+        />{" "}
+        Our best deals
+      </Link>
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to={process.env.PUBLIC_URL + "/trends"}
+      >
+        <RiseOutlined
+          style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+        />{" "}
+        Products on trend
+      </Link>
+
+      <hr />
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?category=Phones"
+      >
+        <MobileOutlined
+          style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+        />{" "}
+        Phones
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?sub=Tablets"
+      >
+        Tablets
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?sub=SmartPhones"
+      >
+        Smartphones
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?category=Computers"
+      >
+        <LaptopOutlined
+          style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+        />{" "}
+        Computers
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?sub=Gaming"
+      >
+        Gaming
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?sub=Laptops"
+      >
+        Laptops
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?sub=Convertibles"
+      >
+        Convertibles
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+          fontWeight: 200,
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?category=Wareables"
+      >
+        <IoMdWatch
+          style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
+        />{" "}
+        Wearables
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?sub=SmartWatches"
+      >
+        Smartwatches
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?sub=Music"
+      >
+        Music
+      </Link>
+
+      <Link
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          fontFamily: "Arial Rounded MT",
+        }}
+        onClick={() => {
+          setIsSideVisible(false);
+          fix(false);
+        }}
+        to="/search?sub=ActivityTrackers"
+      >
+        Activity Trackers
+      </Link>
+    </div>
+  );
 
   const handleChange = (e) => {
     setKey(e.target.value);
@@ -400,7 +452,13 @@ const Header = ({ vs }) => {
   return (
     <header>
       {isSideVisible && (
-        <div className="backdrop" onClick={() => setIsSideVisible(false)}></div>
+        <div
+          className="backdrop"
+          onClick={() => {
+            setIsSideVisible(false);
+            fix(false);
+          }}
+        ></div>
       )}
       {isSideVisible && side}
       <div className={"container-fluid"}>
@@ -431,7 +489,13 @@ const Header = ({ vs }) => {
                 <p> Categories </p>
               </button>
             </Dropdown>
-            <div className="mob" onClick={() => setIsSideVisible(true)}>
+            <div
+              className="mob"
+              onClick={() => {
+                setIsSideVisible(true);
+                fix(true);
+              }}
+            >
               <img style={{ height: 12, width: "auto" }} src={dot} alt="dots" />
             </div>
           </div>

@@ -19,11 +19,12 @@ import Faq from "./components/UI/Faq";
 
 function App() {
   const [view, setView] = useState(false);
+  const [scr, setScr] = useState(false);
   return (
-    <div className="App">
+    <div className={scr ? "fix-body App" : "App"}>
       <BrowserRouter>
         <ScrollToTop />
-        <Header vs={setView} />
+        <Header vs={setView} fix={setScr} />
 
         {!view && (
           <main>
