@@ -474,7 +474,7 @@ const Header = ({ vs, fix }) => {
               </Link>
             </div>
           </div>
-          <div className="col-xl-2 col-lg-2 col-md-1 col-sm-2 col-2">
+          <div className="col-xl-2 col-lg-2 col-md-1 col-sm-2 col-2 drop">
             <Dropdown
               trigger={["click"]}
               overlay={menu}

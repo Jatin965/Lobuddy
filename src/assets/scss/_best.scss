@@ -8,6 +8,8 @@
     align-items: center;
 
     h1 {
+      margin: 0;
+      padding-left: 10px;
       @media #{$md-layout} {
         font-size: 1.2rem;
       }
@@ -20,10 +22,6 @@
       color: $theme-color;
       font-size: 50px;
       // padding: 5px;
-    }
-
-    h1 {
-      padding-left: 10px;
     }
   }
 

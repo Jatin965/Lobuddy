@@ -240,7 +240,7 @@ header {
 }
 
 .ant-dropdown-menu {
-  position: relative;
+  position: fixed;
   margin: 0;
   padding: 4px 10px;
   min-width: 200px;
@@ -276,7 +276,9 @@ header {
           }
         }
 
-        div {
+        div.drop {
+          display: flex;
+          justify-content: center;
           button {
             display: none;
           }

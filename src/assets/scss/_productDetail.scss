@@ -1,6 +1,6 @@
 .detail {
   width: 90vw;
-  margin: 4vh auto;
+  margin: 20px auto;
 
   .tag {
     display: flex;
@@ -177,7 +177,7 @@
       flex: 0 1 33%;
 
       @media #{$md-layout} {
-        flex-grow: 1;
+        flex-grow: 0;
       }
       @media #{$xs-layout} {
         flex-grow: 1;
@@ -254,6 +254,7 @@
 
 .ant-modal {
   min-width: 50vw;
+  overflow-x: hidden;
   .ant-modal-content {
     border-radius: 30px;
     min-width: 50vw;
@@ -300,8 +301,8 @@
           @media #{$md-layout} {
             position: absolute;
             left: 50%;
-            top: 50%;
-            max-width: 40vw;
+            top: 30%;
+            max-width: 30vw;
           }
           @media #{$xs-layout} {
             position: absolute;
@@ -326,7 +327,7 @@
           max-height: 30vh;
 
           @media #{$md-layout} {
-            max-width: 35vw;
+            max-width: 25vw;
           }
           @media #{$xs-layout} {
             max-width: 35vw;
@@ -342,6 +343,11 @@
             box-shadow: $shadow;
             background-color: rgba($theme-color, 0.1);
             margin: 2vh;
+
+            img {
+              height: 60px !important;
+              width: auto !important;
+            }
 
             p {
               font-size: 1rem;
@@ -418,7 +424,7 @@
         margin: auto;
 
         @media #{$md-layout} {
-          max-width: 80vw;
+          max-width: 50vw;
         }
         @media #{$xs-layout} {
           max-width: 80vw;

@@ -80,7 +80,7 @@ const PopUp = ({ view }) => {
           <img src={img2} alt="person" />
           <div className="content">
             <div className="tag">
-              <img style={{ height: 60, width: "auto" }} src={tag} alt="tag" />
+              <img src={tag} alt="tag" />
               <p>
                 Subscribe with lobuddy to get <span>1 month free</span>{" "}
                 subscription on any of your dream gadget.

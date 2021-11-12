@@ -16,6 +16,10 @@
     border: none;
     border-bottom: 2px solid rgba($text-grey-light, 0.3);
     padding: 10px 5px;
+
+    &:focus-within {
+      outline: none;
+    }
   }
 
   img.close {
