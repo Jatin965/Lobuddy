@@ -104,3 +104,16 @@
 .dropdown-content1 {
   display: inline-block;
 }
+
+@media #{$md-layout} {
+  .flex-container {
+    margin: 106px 0;
+    width: 463px;
+  }
+
+  .flex-container .num {
+    font-size: 15px;
+    width: 40px;
+    margin: 0 80px 0 10px;
+  }
+}

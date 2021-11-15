@@ -87,7 +87,12 @@ const Testimonial = () => {
         </div>
       </div>
       <div className="col-lg-6">
-        <Carousel style={{ maxWidth: "100%" }} arrows {...settings}>
+        <Carousel
+          dots={false}
+          style={{ maxWidth: "100%" }}
+          arrows
+          {...settings}
+        >
           <img src={Customer} alt="Customer" />
           <img src={Customer2} alt="Customer" />
           <img src={Customer3} alt="Customer" />

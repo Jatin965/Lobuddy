@@ -20,10 +20,12 @@
 .search-header {
   width: 85vw;
   margin: 20px auto;
+  padding-left: 20px;
 
   @media #{$md-layout} {
     display: inline-block;
     margin-bottom: 0;
+    width: 94vw;
   }
   @media #{$xs-layout} {
     display: inline-block;
@@ -114,6 +116,10 @@
   h5 {
     font-family: "Arial Rounded MT";
     margin: 5px 0;
+
+    @media #{$md-layout} {
+      font-size: 2rem;
+    }
   }
 
   .bag {
@@ -122,6 +128,10 @@
       display: inline-block;
       margin: 1px 0;
       width: 80%;
+      @media #{$md-layout} {
+        font-size: 1rem;
+        width: 90%;
+      }
     }
 
     input {
@@ -129,6 +139,10 @@
       margin-right: 0;
       margin-left: auto;
       width: 20%;
+
+      @media #{$md-layout} {
+        width: 10%;
+      }
     }
   }
 }
@@ -185,6 +199,7 @@ button {
     margin: 50% 40%;
   }
 }
+/*
 .spinner:after {
   content: " ";
   display: block;
@@ -204,7 +219,7 @@ button {
   100% {
     transform: rotate(360deg);
   }
-}
+}*/
 
 .faq {
   box-shadow: $shadow;

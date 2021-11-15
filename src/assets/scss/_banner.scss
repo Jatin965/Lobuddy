@@ -194,8 +194,8 @@
     &-images {
       padding: 0;
       .left {
-        width: fit-content;
-        margin-left: 9vw;
+        width: max-content;
+        margin-left: 11vw;
         img {
           height: 80px;
           transform: rotate(-10deg);

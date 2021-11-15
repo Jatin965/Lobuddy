@@ -181,7 +181,8 @@ const Search = () => {
 
       <div className="down-sec">
         <p>
-          You have seen {flag} of {fProducts.length} products
+          You have seen {fProducts.length < flag ? fProducts.length : flag} of{" "}
+          {fProducts.length} products
         </p>
         <button id="more-btn" onClick={moreHandler}>
           View More

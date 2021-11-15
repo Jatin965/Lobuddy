@@ -28,11 +28,12 @@ const PopUp = ({ view }) => {
   const [visible2, setVisible2] = useState(false);
 
   const handleOk = () => {
-    if (name !== "" && phone !== "" && email !== "") {
+    if (name !== "" && email !== "") {
       dispatch(addUser(name, email, phone));
+
+      setVisible1(false);
+      setVisible2(true);
     }
-    setVisible1(false);
-    setVisible2(true);
   };
 
   const handleCancel = () => {

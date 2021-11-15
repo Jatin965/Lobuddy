@@ -165,7 +165,7 @@
             font-size: 0.9rem !important;
           }
           &.old {
-            text-decoration: 3px solid line-through;
+            text-decoration: 2px solid line-through;
             font-size: 1.8rem;
 
             @media #{$md-layout} {
@@ -474,6 +474,7 @@
     box-shadow: none;
     border: 1px solid rgba(#707070, 0.1);
     border-radius: 10px;
+    min-width: 30vw;
 
     .product-img {
       padding: 10px;

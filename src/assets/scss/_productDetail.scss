@@ -126,7 +126,6 @@
           border-radius: 26px;
           color: white;
           background-color: $theme-color;
-          border: none;
           box-shadow: $shadow;
 
           &:hover {
@@ -302,7 +301,7 @@
             position: absolute;
             left: 50%;
             top: 30%;
-            max-width: 30vw;
+            max-width: 240px;
           }
           @media #{$xs-layout} {
             position: absolute;
@@ -505,6 +504,8 @@
         padding: 10px 25px;
         box-shadow: $shadow;
         height: 3rem;
+        margin-right: 10px;
+        margin-left: auto;
 
         &:hover {
           background-color: white;
