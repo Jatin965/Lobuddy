@@ -11,6 +11,22 @@ $shadow-hover: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
   --swiper-theme-color: $theme-color;
 }
 
+@font-face {
+  font-family: "Arial Rounded MT";
+  src: url("../fonts/armt.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sitka Small";
+  src: url("../fonts/sitka.ttc#1") format("truetype");
+}
+
+@font-face {
+  font-family: "Sitka Small";
+  src: url("../fonts/sitka-small-599.ttf") format("truetype");
+  font-weight: 700;
+}
+
 // Responsive Variables
 $xx-layout: "only screen and (min-width: 1366px) and (max-width: 1600px)";
 $xl-layout: "only screen and (min-width: 1200px) and (max-width: 1365px)";
