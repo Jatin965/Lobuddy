@@ -13,6 +13,7 @@
 
   input {
     width: 100vw;
+    position: fixed;
     border: none;
     border-bottom: 2px solid rgba($text-grey-light, 0.3);
     padding: 10px 5px;
@@ -23,7 +24,7 @@
   }
 
   img.close {
-    position: absolute;
+    position: fixed;
     top: 15px;
     right: 15px;
     height: 17px;
@@ -34,6 +35,7 @@
     padding: 5px;
     text-decoration: none;
     color: black;
+    padding-top: 40px;
 
     a.dataItem {
       display: flex;

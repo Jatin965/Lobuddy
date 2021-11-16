@@ -112,7 +112,7 @@ const PopUp = ({ view }) => {
               type="phone"
               size="large"
               prefix={<PhoneOutlined className="popup-icon" rotate={90} />}
-              placeholder="Phone No."
+              placeholder="Phone No. (Optional)"
               required
               bordered={false}
               style={{ left: "5%" }}

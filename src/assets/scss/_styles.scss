@@ -113,6 +113,11 @@
   z-index: 100;
   padding: 5px 10px;
 
+  @media #{$md-layout} {
+    height: 260px;
+    padding: 10px 15px;
+  }
+
   h5 {
     font-family: "Arial Rounded MT";
     margin: 5px 0;
@@ -122,7 +127,7 @@
     }
   }
 
-  .bag {
+  /*.bag {
     font-family: "Arial Rounded MT";
     p {
       display: inline-block;
@@ -131,6 +136,7 @@
       @media #{$md-layout} {
         font-size: 1rem;
         width: 90%;
+        margin: 3px 0;
       }
     }
 
@@ -144,6 +150,44 @@
         width: 10%;
       }
     }
+  }*/
+
+  .ant-radio-group {
+    width: 100%;
+
+    .ant-space {
+      width: inherit;
+
+      &-item {
+        .ant-radio-wrapper {
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          width: 100%;
+
+          span:nth-child(2) {
+            margin-left: 0;
+            margin-right: auto;
+            font-family: "Arial Rounded MT";
+
+            @media #{$md-layout} {
+              font-size: 1rem;
+              margin: 3px inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ant-radio-checked .ant-radio-inner {
+    border-color: $theme-color !important ;
+  }
+
+  .ant-radio-checked .ant-radio-inner:after {
+    background-color: $theme-color;
+  }
+
+  .ant-radio:hover .ant-radio-inner {
+    border-color: $theme-color;
   }
 }
 
@@ -199,7 +243,7 @@ button {
     margin: 50% 40%;
   }
 }
-/*
+
 .spinner:after {
   content: " ";
   display: block;
@@ -208,7 +252,7 @@ button {
   margin: 8px;
   border-radius: 50%;
   border: 6px solid $theme-color;
-  border-color: $theme-color transparent $theme-color transparent;
+  border-color: $theme-color $theme-color transparent transparent;
   animation: spinner 1.2s linear infinite;
   margin: auto;
 }
@@ -219,7 +263,7 @@ button {
   100% {
     transform: rotate(360deg);
   }
-}*/
+}
 
 .faq {
   box-shadow: $shadow;

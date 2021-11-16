@@ -15,6 +15,8 @@ import { searchProducts } from "../redux/actions/productActions";
 
 import { BsFilterLeft } from "react-icons/bs";
 
+import { Radio, Input, Space } from "antd";
+
 const Search = () => {
   const match = useRouteMatch();
   const dispatch = useDispatch();
@@ -22,6 +24,7 @@ const Search = () => {
   const [flag, setFlag] = useState(9);
   const [visible, setVisible] = useState(false);
   const [fProducts, setFProducts] = useState([]);
+  const [value, setValue] = useState(1);
 
   let keyword = history.location.search;
   let [key, word] = keyword.split("=");
@@ -96,7 +99,7 @@ const Search = () => {
       <h5>Sort by </h5>
       <hr />
 
-      <div className="bag">
+      {/*<div className="bag">
         <p>Relevance</p>
         <input onClick={handleRel} type="radio" />
       </div>
@@ -119,7 +122,26 @@ const Search = () => {
       <div className="bag">
         <p>Price - High to Low</p>
         <input onClick={() => handleCompare("hl")} type="radio" />
-      </div>
+  </div>*/}
+      <Radio.Group onChange={(e) => setValue(e.target.value)} value={value}>
+        <Space direction="vertical">
+          <Radio onClick={handleRel} value={1}>
+            Relevance
+          </Radio>
+          <Radio onClick={handleTrend} value={2}>
+            Trendy
+          </Radio>
+          <Radio onClick={handleDeal} value={3}>
+            Deals
+          </Radio>
+          <Radio onClick={() => handleCompare("lh")} value={4}>
+            Price - Low to High
+          </Radio>
+          <Radio onClick={() => handleCompare("hl")} value={5}>
+            Price - High to Low
+          </Radio>
+        </Space>
+      </Radio.Group>
     </div>
   );
 
