@@ -95,7 +95,10 @@ const PopUp = ({ view }) => {
               placeholder="Name"
               required
               bordered={false}
-              style={{ left: "5%" }}
+              style={{
+                left: "5%",
+                fontFamily: "Arial Rounded MT",
+              }}
             />
             <Input
               onChange={(e) => setEmail(e.target.value)}
@@ -105,7 +108,7 @@ const PopUp = ({ view }) => {
               placeholder="E-mail"
               required
               bordered={false}
-              style={{ left: "5%" }}
+              style={{ left: "5%", fontFamily: "Arial Rounded MT" }}
             />
             <Input
               onChange={(e) => setPhone(e.target.value)}
@@ -115,7 +118,7 @@ const PopUp = ({ view }) => {
               placeholder="Phone No. (Optional)"
               required
               bordered={false}
-              style={{ left: "5%" }}
+              style={{ left: "5%", fontFamily: "Arial Rounded MT" }}
             />
           </div>
         </div>

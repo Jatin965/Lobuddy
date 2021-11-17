@@ -1,6 +1,7 @@
 footer {
   text-align: center;
   overflow: hidden;
+  font-family: "Arial Rounded MT";
   .upper {
     justify-content: space-evenly;
     margin-bottom: 20px;
@@ -9,6 +10,7 @@ footer {
         display: block;
         text-decoration: none;
         color: black;
+        margin: 10px auto;
 
         &:hover {
           color: $theme-color;
@@ -16,7 +18,7 @@ footer {
       }
     }
     img {
-      max-width: 15vw;
+      max-width: 10vw;
     }
   }
 
@@ -28,7 +30,6 @@ footer {
       a {
         text-decoration: none;
         color: black;
-        margin: 0 1vw;
       }
     }
   }
