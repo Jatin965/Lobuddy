@@ -73,7 +73,43 @@
       font-family: "Arial Rounded MT";
       font-weight: 500;
     }
-    button {
+
+    .ant-radio-button-wrapper {
+      margin: 0 10px;
+      font-family: "Arial Rounded MT";
+      box-shadow: $shadow;
+      border: 1px solid white;
+      border-radius: 2px;
+      outline: none;
+
+      span {
+        // font-family: inherit;
+        &:hover,
+        &:active,
+        &:focus,
+        &:focus-within {
+          color: $theme-color !important;
+        }
+      }
+
+      &::before {
+        display: none;
+      }
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+
+    .ant-radio-button-wrapper-checked {
+      color: $theme-color;
+      border: 1px solid $theme-color;
+    }
+
+    .ant-radio-button-wrapper-checked:not([class*=" ant-radio-button-wrapper-disabled"]).ant-radio-button-wrapper:first-child {
+      border-right-color: $theme-color;
+    }
+    /*button {
       padding: 5px 15px;
       border-radius: 2px;
       background: white;
@@ -87,7 +123,7 @@
         color: $theme-color;
         border-color: $theme-color;
       }
-    }
+    }*/
   }
 }
 

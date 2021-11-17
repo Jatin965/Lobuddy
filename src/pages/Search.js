@@ -163,17 +163,24 @@ const Search = () => {
         <div className="search-option">
           <div className="search-sort">
             <h4>Sort By : </h4>
-            <button id="rel" onClick={handleRel}>
-              Relevance
-            </button>
-            <button onClick={handleTrend}>Trendy</button>
-            <button onClick={handleDeal}>Deals</button>
-            <button onClick={() => handleCompare("lh")}>
-              Price - Low to High
-            </button>
-            <button onClick={() => handleCompare("hl")}>
-              Price - High to Low
-            </button>
+
+            <Radio.Group defaultValue="a" size="large">
+              <Radio.Button onClick={handleRel} value="a">
+                Relevance
+              </Radio.Button>
+              <Radio.Button onClick={handleTrend} value="b">
+                Trendy
+              </Radio.Button>
+              <Radio.Button onClick={handleDeal} value="c">
+                Deals
+              </Radio.Button>
+              <Radio.Button onClick={() => handleCompare("lh")} value="d">
+                Price - Low to High
+              </Radio.Button>
+              <Radio.Button onClick={() => handleCompare("hl")} value="e">
+                Price - High to Low
+              </Radio.Button>
+            </Radio.Group>
 
             <hr />
           </div>
