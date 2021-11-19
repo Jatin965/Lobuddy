@@ -68,7 +68,19 @@ const Home = () => {
           <ProductThree product={product} />
         ))}
 
-      <div className="home-most" style={{ boxShadow: "none", margin: "2vh 0" }}>
+      <div
+        className="home-most"
+        style={{ boxShadow: "none", padding: " 0", marginTop: 50 }}
+      >
+        <h3>Most Viewed</h3>
+        <div className="scrolling-wrapper">
+          {products.slice(10, 18).map((product) => (
+            <Product product={product} />
+          ))}
+        </div>
+      </div>
+
+      {/* <div className="home-most" style={{ boxShadow: "none", margin: "2vh 0" }}>
         <h3>Most Viewed</h3>
 
         <div className="home-most-products">
@@ -76,7 +88,7 @@ const Home = () => {
             <Product product={product} />
           ))}
         </div>
-      </div>
+      </div> */}
 
       <Banner
         head="Samsung - Inspire the World, Create the Future"

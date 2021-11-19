@@ -16,8 +16,6 @@ import tag from "../../assets/images/detail/tag.png";
 import logo from "../../assets/images/logo.png";
 import Loader from "./Loader";
 
-let flag = 0;
-
 const PopUp = ({ view }) => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -33,6 +31,13 @@ const PopUp = ({ view }) => {
 
       setVisible1(false);
       setVisible2(true);
+    } else {
+      // alert("Please Fill the details to Subscribe");
+      Modal.error({
+        title: "Hello Buddy",
+        content:
+          "Looks like you forgot to enter your details. Please enter your details to avail offers in near future.",
+      });
     }
   };
 

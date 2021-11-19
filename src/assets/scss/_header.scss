@@ -239,6 +239,10 @@ header {
   top: 0;
 }
 
+.ant-dropdown-placement-bottomCenter {
+  position: fixed !important;
+}
+
 .ant-dropdown-menu {
   position: fixed;
   margin: 0;

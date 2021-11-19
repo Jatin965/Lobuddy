@@ -219,11 +219,17 @@ const ProductDetail = () => {
       <div className="detail-most">
         <h1>Most Viewed</h1>
 
-        <div className="most-products">
-          {products.slice(21, 25).map((product) => (
+        <div className="scrolling-wrapper">
+          {products.slice(20, 28).map((product) => (
             <Product product={product} />
           ))}
         </div>
+
+        {/* <div className="most-products">
+          {products.slice(21, 25).map((product) => (
+            <Product product={product} />
+          ))}
+        </div> */}
       </div>
       <div className="price-stick">
         <div className="row">

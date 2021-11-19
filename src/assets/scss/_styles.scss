@@ -268,6 +268,8 @@ button {
 
 .ant-btn-primary {
   border: 1px solid $theme-color !important;
+  transition: none !important;
+  background-color: $theme-color !important;
   &:hover {
     background-color: white !important;
     color: $theme-color;
@@ -299,6 +301,10 @@ button {
   border-color: $theme-color $theme-color transparent transparent;
   animation: spinner 1.2s linear infinite;
   margin: auto;
+
+  @media #{$xs-layout} {
+    border-width: 5px;
+  }
 }
 @keyframes spinner {
   0% {
