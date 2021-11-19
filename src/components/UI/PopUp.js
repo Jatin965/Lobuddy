@@ -34,7 +34,7 @@ const PopUp = ({ view }) => {
     } else {
       // alert("Please Fill the details to Subscribe");
       Modal.error({
-        title: "Hello Buddy",
+        title: "Why Buddy",
         content:
           "Looks like you forgot to enter your details. Please enter your details to avail offers in near future.",
       });

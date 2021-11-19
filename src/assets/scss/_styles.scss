@@ -46,6 +46,8 @@
   }
 }
 
+/* Laptop Sorting */
+
 .search-option {
   // display: inline-block;
   width: 85vw;
@@ -109,23 +111,10 @@
     .ant-radio-button-wrapper-checked:not([class*=" ant-radio-button-wrapper-disabled"]).ant-radio-button-wrapper:first-child {
       border-right-color: $theme-color;
     }
-    /*button {
-      padding: 5px 15px;
-      border-radius: 2px;
-      background: white;
-      margin: 0 10px;
-      border: 1px solid white;
-      font-family: "Arial Rounded MT";
-      font-weight: 500;
-
-      &:active,
-      &:focus {
-        color: $theme-color;
-        border-color: $theme-color;
-      }
-    }*/
   }
 }
+
+/* Mobile Sorting */
 
 .sort-mob {
   display: none;
@@ -162,31 +151,6 @@
       font-size: 2rem;
     }
   }
-
-  /*.bag {
-    font-family: "Arial Rounded MT";
-    p {
-      display: inline-block;
-      margin: 1px 0;
-      width: 80%;
-      @media #{$md-layout} {
-        font-size: 1rem;
-        width: 90%;
-        margin: 3px 0;
-      }
-    }
-
-    input {
-      display: inline-block;
-      margin-right: 0;
-      margin-left: auto;
-      width: 20%;
-
-      @media #{$md-layout} {
-        width: 10%;
-      }
-    }
-  }*/
 
   .ant-radio-group {
     width: 100%;
@@ -235,6 +199,8 @@ button {
   font-weight: 600;
 }
 
+/* Circle Background with Icon */
+
 .circleBag {
   height: 70px;
   width: 70px;
@@ -266,15 +232,28 @@ button {
   }
 }
 
+/* Pop UP Error */
+
+.ant-modal-confirm-title {
+  font-family: "Arial Rounded MT" !important;
+}
+
+.ant-modal-confirm-content {
+  font-family: "Sitka Small" !important;
+}
+
 .ant-btn-primary {
   border: 1px solid $theme-color !important;
   transition: none !important;
   background-color: $theme-color !important;
+  border-radius: 20px;
   &:hover {
     background-color: white !important;
     color: $theme-color;
   }
 }
+
+/* Loader */
 
 .spinner {
   display: inline-block;
@@ -315,6 +294,8 @@ button {
   }
 }
 
+/* FAQ */
+
 .faq {
   box-shadow: $shadow;
   flex: 0.9;
@@ -354,148 +335,9 @@ button {
   }
 }
 
-.product-large-image-wrapper {
-  position: relative;
-  height: inherit;
-
-  .swiper-container {
-    width: 30vw;
-  }
-  .product-img-badges {
-    position: absolute;
-    z-index: 3;
-    top: 20px;
-    left: 20px;
-    span {
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1;
-
-      display: block;
-
-      margin-bottom: 10px;
-      padding: 3px 11px;
-
-      color: #fff;
-      border-radius: 3px;
-      &.pink {
-        background-color: #fa6bff;
-      }
-      &.purple {
-        background-color: #a749ff;
-      }
-    }
-  }
-
-  .react_lightgallery_item {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    button {
-      font-size: 30px;
-
-      padding: 0;
-
-      border: none;
-      background: none;
-    }
-  }
-
-  &--slider {
-    .ht-swiper-button-nav {
-      font-size: 50px;
-
-      visibility: hidden;
-
-      padding: 0;
-
-      transition: 0.3s;
-
-      opacity: 0;
-      color: #333;
-      border: none;
-      background: none;
-    }
-
-    &:hover {
-      .ht-swiper-button-nav {
-        visibility: visible;
-
-        opacity: 1;
-      }
-    }
-  }
-
-  .single-image {
-    img {
-      display: block;
-      margin: auto;
-      width: auto;
-      max-height: 35vh;
-    }
-  }
-}
-
 .shop-area {
   .sticky {
     top: 70px !important;
-  }
-}
-
-.product-small-image-wrapper {
-  .ht-swiper-button-nav {
-    visibility: hidden;
-
-    opacity: 0;
-    color: #333;
-    border: none;
-    background: none;
-    i {
-      font-size: 40px;
-    }
-  }
-  .single-image {
-    cursor: pointer;
-    img {
-      max-width: 150px;
-      height: auto;
-    }
-  }
-
-  &:hover {
-    .ht-swiper-button-nav {
-      visibility: visible;
-
-      opacity: 1;
-    }
-  }
-  .single-image {
-    height: auto !important;
-    img {
-      max-height: 90px;
-
-      object-fit: cover;
-      object-position: center;
-    }
-  }
-  .swiper-container-vertical {
-    height: 100%;
-    .swiper-slide {
-      height: auto !important;
-      padding: 1vh 0;
-    }
-  }
-
-  &--side-thumb {
-    overflow: hidden;
-
-    height: 630px;
-    @media #{$lg-layout,
-    $md-layout,
-    $xs-layout} {
-      height: auto;
-      margin-top: 15px;
-    }
   }
 }
 

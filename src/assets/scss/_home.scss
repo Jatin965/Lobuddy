@@ -12,6 +12,15 @@
     display: none;
     visibility: hidden;
   }
+
+  .product-wrap-7 {
+    @media #{$md-layout} {
+      margin: auto 10px;
+    }
+    @media #{$xs-layout} {
+      margin: auto 5px;
+    }
+  }
 }
 .scrolling-wrapper-flexbox {
   display: flex;
