@@ -165,7 +165,7 @@
             font-size: 0.9rem !important;
           }
           &.old {
-            text-decoration: 2px solid line-through;
+            text-decoration: 3px solid line-through;
             font-size: 1.8rem;
 
             @media #{$md-layout} {
@@ -393,7 +393,7 @@
           font-family: "Arial Rounded MT";
           color: #444;
           &.old {
-            text-decoration: 2px solid line-through;
+            text-decoration: 3px solid line-through;
 
             color: #444;
             &.red {

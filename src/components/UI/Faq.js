@@ -34,7 +34,8 @@ const Faq = () => {
         >
           <p>
             You will need some basic documents related ID and Address to collect
-            your delivery ( Aadhar Card or any ID and Electricity Bill ){" "}
+            your delivery ( Aadhaar card or any proof of Identity, Electricity
+            Bill or any proof of Address, and Pan Card ){" "}
           </p>
         </Panel>
 
