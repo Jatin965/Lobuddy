@@ -244,6 +244,31 @@
     }
   }
 }
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  padding: 0;
+  padding-bottom: 30px;
+  padding-right: 50px;
+  margin: 0;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    visibility: hidden;
+  }
+
+  .product-wrap-7 {
+    @media #{$md-layout} {
+      margin: auto 10px;
+    }
+    @media #{$xs-layout} {
+      margin: auto 5px;
+    }
+  }
+}
 .price-stick {
   display: none;
   position: fixed;

@@ -224,12 +224,6 @@ const ProductDetail = () => {
             <Product product={product} />
           ))}
         </div>
-
-        {/* <div className="most-products">
-          {products.slice(21, 25).map((product) => (
-            <Product product={product} />
-          ))}
-        </div> */}
       </div>
       <div className="price-stick">
         <div className="row">
