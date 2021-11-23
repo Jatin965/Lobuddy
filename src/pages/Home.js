@@ -44,7 +44,7 @@ const Home = () => {
     (state) => state.productList
   );
 
-  console.log(products);
+  // console.log(products);
 
   useEffect(() => {
     dispatch(listProducts());
@@ -65,32 +65,10 @@ const Home = () => {
       {products
         .filter((ps) => ps.name === "Apple iPhone 13 Mini (256GB) - Blue")
         .map((product) => (
-          <ProductThree product={product} />
+          <ProductThree key={product.id} product={product} />
         ))}
 
-      {/* <div
-        className="home-most"
-        style={{ boxShadow: "none", padding: " 0", marginTop: 50 }}
-      >
-        <h3>Most Viewed</h3>
-        <div className="scrolling-wrapper">
-          {products.slice(10, 18).map((product) => (
-            <Product product={product} />
-          ))}
-        </div>
-      </div> */}
-
       <MostViewed />
-
-      {/* <div className="home-most" style={{ boxShadow: "none", margin: "2vh 0" }}>
-        <h3>Most Viewed</h3>
-
-        <div className="home-most-products">
-          {products.slice(0, 4).map((product) => (
-            <Product product={product} />
-          ))}
-        </div>
-      </div> */}
 
       <Banner
         head="Samsung - Inspire the World, Create the Future"
@@ -117,7 +95,7 @@ const Home = () => {
             .filter((ps) => ps.category === "Phones")
             .slice(10, 15)
             .map((product) => (
-              <Product product={product} />
+              <Product key={product.id} product={product} />
             ))}
 
           <button
@@ -155,7 +133,7 @@ const Home = () => {
             .filter((ps) => ps.category === "Computers")
             .slice(10, 13)
             .map((product) => (
-              <ProductWidth product={product} />
+              <ProductWidth key={product.id} product={product} />
             ))}
         </div>
         <button onClick={() => history.push("/search?category=Computers")}>
@@ -177,7 +155,7 @@ const Home = () => {
       />
 
       {products.slice(15, 17).map((product) => (
-        <ProductThree product={product} />
+        <ProductThree key={product.id} product={product} />
       ))}
 
       <div className="home-most">
@@ -188,7 +166,7 @@ const Home = () => {
             .filter((ps) => ps.tags.includes("deal"))
             .slice(16, 20)
             .map((product) => (
-              <Product product={product} />
+              <Product key={product.id} product={product} />
             ))}
         </div>
         <button onClick={() => history.push("/best-deals")}>View all</button>

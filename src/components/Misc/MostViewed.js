@@ -25,7 +25,7 @@ const MostViewed = () => {
       <h3>Most Viewed</h3>
       <div className="scrolling-wrapper">
         {mProducts.map((product) => (
-          <Product product={product} />
+          <Product key={product.id} product={product} />
         ))}
       </div>
     </div>

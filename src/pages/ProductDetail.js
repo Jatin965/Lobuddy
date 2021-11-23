@@ -45,7 +45,7 @@ const ProductDetail = () => {
     (state) => state.productList
   );
 
-  console.log(product);
+  // console.log(product);
 
   const image = product.image
     ? product.image.map((img) => {
