@@ -7,12 +7,14 @@ import {
   productDetailReducer,
   addUserReducer,
   productSearchReducer,
+  mostViewReducer,
 } from "./reducers/productReducers";
 
 const reducers = combineReducers({
   productList: productListReducer,
   productDetail: productDetailReducer,
   productSearch: productSearchReducer,
+  mostView: mostViewReducer,
 
   userAdd: addUserReducer,
 });

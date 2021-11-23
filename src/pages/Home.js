@@ -33,11 +33,11 @@ import Product from "../components/Cards/Product";
 import { MobileOutlined, LaptopOutlined } from "@ant-design/icons";
 
 import Testimonial from "../components/UI/Testimonial";
+import MostViewed from "../components/Misc/MostViewed";
 
 const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [flag, setFlag] = useState(5);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const { products, loading, error } = useSelector(
@@ -68,7 +68,7 @@ const Home = () => {
           <ProductThree product={product} />
         ))}
 
-      <div
+      {/* <div
         className="home-most"
         style={{ boxShadow: "none", padding: " 0", marginTop: 50 }}
       >
@@ -78,7 +78,9 @@ const Home = () => {
             <Product product={product} />
           ))}
         </div>
-      </div>
+      </div> */}
+
+      <MostViewed />
 
       {/* <div className="home-most" style={{ boxShadow: "none", margin: "2vh 0" }}>
         <h3>Most Viewed</h3>
@@ -113,7 +115,7 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Phones")
-            .slice(0, flag)
+            .slice(10, 15)
             .map((product) => (
               <Product product={product} />
             ))}
@@ -151,7 +153,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(5, 8)
+            .slice(10, 13)
             .map((product) => (
               <ProductWidth product={product} />
             ))}
@@ -174,7 +176,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(12, 14).map((product) => (
+      {products.slice(15, 17).map((product) => (
         <ProductThree product={product} />
       ))}
 
@@ -184,7 +186,7 @@ const Home = () => {
         <div className="home-most-products">
           {products
             .filter((ps) => ps.tags.includes("deal"))
-            .slice(9, 13)
+            .slice(16, 20)
             .map((product) => (
               <Product product={product} />
             ))}

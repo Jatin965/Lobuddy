@@ -11,6 +11,9 @@ import {
   PRODUCT_SEARCH_REQUEST,
   PRODUCT_SEARCH_SUCCESS,
   PRODUCT_SEARCH_FAIL,
+  PRODUCT_MOST_VIEW_REQUEST,
+  PRODUCT_MOST_VIEW_SUCCESS,
+  PRODUCT_MOST_VIEW_FAIL,
 } from "../constants/productConstants";
 
 export const productListReducer = (state = { products: [] }, action) => {
@@ -25,6 +28,25 @@ export const productListReducer = (state = { products: [] }, action) => {
       };
 
     case PRODUCT_LIST_FAIL:
+      return { loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export const mostViewReducer = (state = { mProducts: [] }, action) => {
+  switch (action.type) {
+    case PRODUCT_MOST_VIEW_REQUEST:
+      return { loading: true, mProducts: [] };
+
+    case PRODUCT_MOST_VIEW_SUCCESS:
+      return {
+        loading: false,
+        mProducts: action.payload.product,
+      };
+
+    case PRODUCT_MOST_VIEW_FAIL:
       return { loading: false, error: action.payload };
 
     default:
