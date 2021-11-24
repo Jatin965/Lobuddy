@@ -18,19 +18,19 @@ const MostViewed = () => {
   const slideRight = () => {
     if (currentPosition != 0) {
       document.getElementById("slider").style.marginLeft =
-        currentMargin + 25 + "%";
+        currentMargin + 100 + "%";
       // currentMargin += 100 / 8;
-      setCurrentMargin((prev) => prev + 25);
+      setCurrentMargin((prev) => prev + 100);
       setCurrentPosition((prev) => prev - 1);
     }
   };
 
   const slideLeft = () => {
-    if (currentPosition != 4) {
+    if (currentPosition != 1) {
       document.getElementById("slider").style.marginLeft =
-        currentMargin - 10 + "%";
+        currentMargin - 100 + "%";
       // currentMargin += 100 / 8;
-      setCurrentMargin((prev) => prev - 25);
+      setCurrentMargin((prev) => prev - 100);
       setCurrentPosition((prev) => prev + 1);
     }
   };
@@ -53,7 +53,7 @@ const MostViewed = () => {
       <div id="container">
         <div className="scrolling-container">
           <span onClick={slideRight} className="arrow-btn left">
-            <LeftOutlined />
+            <LeftOutlined style={{ fontSize: 22 }} />
           </span>
           <div id="slider" className="scrolling-wrapper">
             {mProducts.map((product) => (
@@ -61,7 +61,7 @@ const MostViewed = () => {
             ))}
           </div>
           <span onClick={slideLeft} className="arrow-btn right">
-            <RightOutlined />
+            <RightOutlined style={{ fontSize: 22 }} />
           </span>
         </div>
       </div>
