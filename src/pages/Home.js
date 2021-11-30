@@ -63,7 +63,9 @@ const Home = () => {
       </div>
 
       {products
-        .filter((ps) => ps.name.includes("Microsoft Surface Laptop Go-Intel"))
+        .filter((ps) =>
+          ps.name.includes("2020 Apple iPad Air with A14 Bionic chip 10.9-inch")
+        )
         .map((product) => (
           <ProductThree key={product.id} product={product} />
         ))}
@@ -93,7 +95,7 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Phones")
-            .slice(15, 20)
+            .slice(20, 25)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
@@ -131,7 +133,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(20, 23)
+            .slice(24, 26)
             .map((product) => (
               <ProductWidth key={product.id} product={product} />
             ))}
@@ -154,7 +156,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(125, 127).map((product) => (
+      {products.slice(135, 137).map((product) => (
         <ProductThree key={product.id} product={product} />
       ))}
 
@@ -164,7 +166,7 @@ const Home = () => {
         <div className="home-most-products">
           {products
             .filter((ps) => ps.tags.includes("deal"))
-            .slice(26, 30)
+            .slice(21, 25)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
