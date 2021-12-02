@@ -48,7 +48,7 @@ const Trends = () => {
 
       <div className="best-header-content">
         <div className="best-header-content-text">
-          <h1>Trendy gadgets of November month </h1>
+          <h1>Trendy gadgets of December month </h1>
           <h4>
             Lobuddy has a availability of your dream gadget with affordable
             rates..

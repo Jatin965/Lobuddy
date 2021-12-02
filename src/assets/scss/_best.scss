@@ -10,6 +10,7 @@
     h1 {
       margin: 0;
       padding-left: 10px;
+      font-family: "Arial Rounded MT";
       @media #{$md-layout} {
         font-size: 1.2rem;
       }

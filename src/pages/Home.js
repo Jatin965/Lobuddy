@@ -64,7 +64,9 @@ const Home = () => {
 
       {products
         .filter((ps) =>
-          ps.name.includes("2020 Apple iPad Air with A14 Bionic chip 10.9-inch")
+          ps.name.includes(
+            "Apple AirPods (3rd generation) - bluetooth headphones"
+          )
         )
         .map((product) => (
           <ProductThree key={product.id} product={product} />
@@ -95,7 +97,7 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Phones")
-            .slice(20, 25)
+            .slice(40, 45)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
@@ -133,7 +135,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(24, 26)
+            .slice(34, 36)
             .map((product) => (
               <ProductWidth key={product.id} product={product} />
             ))}
@@ -156,7 +158,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(135, 137).map((product) => (
+      {products.slice(155, 157).map((product) => (
         <ProductThree key={product.id} product={product} />
       ))}
 
@@ -166,7 +168,7 @@ const Home = () => {
         <div className="home-most-products">
           {products
             .filter((ps) => ps.tags.includes("deal"))
-            .slice(21, 25)
+            .slice(41, 45)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
