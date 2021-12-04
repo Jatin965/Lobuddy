@@ -137,7 +137,7 @@ const menu = (
           fontFamily: "Arial Rounded MT",
           fontWeight: 200,
         }}
-        to="/search?category=Wareables"
+        to="/search?category=Wearables"
       >
         <IoMdWatch
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}
@@ -367,7 +367,7 @@ const Header = ({ vs, fix }) => {
           setIsSideVisible(false);
           fix(false);
         }}
-        to="/search?category=Wareables"
+        to="/search?category=Wearables"
       >
         <IoMdWatch
           style={{ color: "#f68a1e", fontWeight: 900, marginRight: 5 }}

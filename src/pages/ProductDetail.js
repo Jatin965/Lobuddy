@@ -79,7 +79,7 @@ const ProductDetail = () => {
           <span style={{ cursor: "pointer" }} onClick={showModal}>
             Hellobuddy007
           </span>{" "}
-          and get 70% off in your first rental plan - It's valid till 31.11.21.
+          and get 70% off in your first rental plan - It's valid till 31.01.22.
         </p>
       </div>
 
@@ -220,7 +220,7 @@ const ProductDetail = () => {
         <h1>Most Viewed</h1>
 
         <div className="scrolling-wrapper">
-          {products.slice(20, 28).map((product) => (
+          {products.slice(80, 88).map((product) => (
             <Product product={product} />
           ))}
         </div>

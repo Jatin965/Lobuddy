@@ -37,7 +37,7 @@ const SubHeader = ({ word, cat }) => {
         </div>
       )}
 
-      {cat === "Wareables" && (
+      {cat === "Wearables" && (
         <div style={{ display: "flex", alignItems: "center" }}>
           <CircleBag child={<IoMdWatch className="circle-icon" />} />
           <h1
@@ -47,9 +47,9 @@ const SubHeader = ({ word, cat }) => {
               marginLeft: 5,
               cursor: "pointer",
             }}
-            onClick={() => history.push("/search?category=Wareables")}
+            onClick={() => history.push("/search?category=Wearables")}
           >
-            Wareables {"> "}
+            Wearables {"> "}
           </h1>
           <h1
             style={{

@@ -22,7 +22,7 @@ const CategoryHeader = ({ word }) => {
         </div>
       )}
 
-      {word === "Wareables" && (
+      {word === "Wearables" && (
         <div style={{ display: "flex", alignItems: "center" }}>
           <CircleBag child={<IoMdWatch className="circle-icon" />} />
           <h1
@@ -32,7 +32,7 @@ const CategoryHeader = ({ word }) => {
               marginLeft: 15,
             }}
           >
-            Wareables
+            Wearables
           </h1>
         </div>
       )}
