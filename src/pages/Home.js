@@ -64,9 +64,7 @@ const Home = () => {
 
       {products
         .filter((ps) =>
-          ps.name.includes(
-            "Apple AirPods (3rd generation) - bluetooth headphones"
-          )
+          ps.name.includes("Asus ExpertBook B9 - Notebook - Intel® Core ™ i7")
         )
         .map((product) => (
           <ProductThree key={product.id} product={product} />
@@ -97,7 +95,7 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Phones")
-            .slice(40, 45)
+            .slice(35, 40)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
@@ -135,7 +133,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(34, 36)
+            .slice(38, 40)
             .map((product) => (
               <ProductWidth key={product.id} product={product} />
             ))}
@@ -158,7 +156,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(155, 157).map((product) => (
+      {products.slice(158, 160).map((product) => (
         <ProductThree key={product.id} product={product} />
       ))}
 
@@ -168,7 +166,7 @@ const Home = () => {
         <div className="home-most-products">
           {products
             .filter((ps) => ps.tags.includes("deal"))
-            .slice(41, 45)
+            .slice(46, 50)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}

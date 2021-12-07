@@ -34,7 +34,7 @@ const Search = () => {
   );
 
   useEffect(() => {
-    setFProducts(products);
+    setFProducts(products.reverse());
   }, [loading, error]);
 
   const moreHandler = () => {

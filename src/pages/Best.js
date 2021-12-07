@@ -19,7 +19,7 @@ const Best = () => {
     (state) => state.productList
   );
 
-  let bProducts = products.filter((ps) => ps.tags.includes("deal"));
+  let bProducts = products.filter((ps) => ps.tags.includes("deal")).reverse();
 
   const moreHandler = () => {
     if (flag + 9 > bProducts.length) {

@@ -19,7 +19,7 @@ const Trends = () => {
     (state) => state.productList
   );
 
-  let tProducts = products.filter((ps) => ps.tags.includes("trendy"));
+  let tProducts = products.filter((ps) => ps.tags.includes("trendy")).reverse();
 
   const moreHandler = () => {
     if (flag + 9 > tProducts.length) {
