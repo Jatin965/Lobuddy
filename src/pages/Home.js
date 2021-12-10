@@ -64,7 +64,9 @@ const Home = () => {
 
       {products
         .filter((ps) =>
-          ps.name.includes("Asus ExpertBook B9 - Notebook - Intel® Core ™ i7")
+          ps.name.includes(
+            "Samsung Galaxy Buds 2 in-ear noise canceling bluetooth"
+          )
         )
         .map((product) => (
           <ProductThree key={product.id} product={product} />
@@ -95,7 +97,7 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Phones")
-            .slice(35, 40)
+            .slice(25, 30)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
@@ -133,7 +135,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(38, 40)
+            .slice(32, 34)
             .map((product) => (
               <ProductWidth key={product.id} product={product} />
             ))}
@@ -156,7 +158,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(158, 160).map((product) => (
+      {products.slice(178, 180).map((product) => (
         <ProductThree key={product.id} product={product} />
       ))}
 
@@ -166,7 +168,7 @@ const Home = () => {
         <div className="home-most-products">
           {products
             .filter((ps) => ps.tags.includes("deal"))
-            .slice(46, 50)
+            .slice(51, 55)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
