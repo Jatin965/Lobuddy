@@ -63,11 +63,7 @@ const Home = () => {
       </div>
 
       {products
-        .filter((ps) =>
-          ps.name.includes(
-            "Samsung Galaxy Buds 2 in-ear noise canceling bluetooth"
-          )
-        )
+        .filter((ps) => ps.name.includes("Apple iPhone SE (2020) - 64GB 4.7"))
         .map((product) => (
           <ProductThree key={product.id} product={product} />
         ))}
@@ -97,7 +93,7 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Phones")
-            .slice(25, 30)
+            .slice(31, 36)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
@@ -135,7 +131,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(32, 34)
+            .slice(38, 40)
             .map((product) => (
               <ProductWidth key={product.id} product={product} />
             ))}
@@ -158,7 +154,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(178, 180).map((product) => (
+      {products.slice(180, 182).map((product) => (
         <ProductThree key={product.id} product={product} />
       ))}
 
@@ -168,7 +164,7 @@ const Home = () => {
         <div className="home-most-products">
           {products
             .filter((ps) => ps.tags.includes("deal"))
-            .slice(51, 55)
+            .slice(55, 59)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
