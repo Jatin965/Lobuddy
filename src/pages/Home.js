@@ -63,7 +63,7 @@ const Home = () => {
       </div>
 
       {products
-        .filter((ps) => ps.name.includes("Apple iPhone SE (2020) - 64GB 4.7"))
+        .filter((ps) => ps.name.includes("Fitbit Charge 4 Special Edition Fitness Built-in GPS"))
         .map((product) => (
           <ProductThree key={product.id} product={product} />
         ))}
@@ -93,7 +93,7 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Phones")
-            .slice(31, 36)
+            .slice(41, 46)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
@@ -131,7 +131,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(38, 40)
+            .slice(48, 50)
             .map((product) => (
               <ProductWidth key={product.id} product={product} />
             ))}
@@ -154,7 +154,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(180, 182).map((product) => (
+      {products.slice(184, 186).map((product) => (
         <ProductThree key={product.id} product={product} />
       ))}
 
@@ -164,7 +164,7 @@ const Home = () => {
         <div className="home-most-products">
           {products
             .filter((ps) => ps.tags.includes("deal"))
-            .slice(55, 59)
+            .slice(45, 49)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
