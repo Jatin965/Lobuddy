@@ -63,7 +63,7 @@ const Home = () => {
       </div>
 
       {products
-        .filter((ps) => ps.name.includes("Fitbit Charge 4 Special Edition Fitness Built-in GPS"))
+        .filter((ps) => ps.name.includes("Garmin Venu Sq Music GPS, battery for up to 6 days"))
         .map((product) => (
           <ProductThree key={product.id} product={product} />
         ))}
@@ -93,7 +93,7 @@ const Home = () => {
         <div className="category-phone-products">
           {products
             .filter((ps) => ps.category === "Phones")
-            .slice(41, 46)
+            .slice(51, 56)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
@@ -131,7 +131,7 @@ const Home = () => {
         <div className="category-laptop-products">
           {products
             .filter((ps) => ps.category === "Computers")
-            .slice(48, 50)
+            .slice(18, 20)
             .map((product) => (
               <ProductWidth key={product.id} product={product} />
             ))}
@@ -154,7 +154,7 @@ const Home = () => {
         logo={appLogo}
       />
 
-      {products.slice(184, 186).map((product) => (
+      {products.slice(84, 86).map((product) => (
         <ProductThree key={product.id} product={product} />
       ))}
 
@@ -164,7 +164,7 @@ const Home = () => {
         <div className="home-most-products">
           {products
             .filter((ps) => ps.tags.includes("deal"))
-            .slice(45, 49)
+            .slice(15, 19)
             .map((product) => (
               <Product key={product.id} product={product} />
             ))}
